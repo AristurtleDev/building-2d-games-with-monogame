@@ -192,7 +192,7 @@ protected override void Draw(GameTime gameTime)
 }
 ```
 
-Before we updated the `Draw` method, it was only performing two actions; clearing the graphics device to the color cornflower blue, adn then the call to the base `Draw` method.  The lines we added draw the snake and food textures to the screen.  If you run the project now you should the same window as Figure 3-10
+Before we updated the `Draw` method, it was only performing two actions; clearing the graphics device to the color cornflower blue, and then the call to the base `Draw` method.  The lines we added draw the snake and food textures to the screen.  If you run the project now you should the same window as Figure 3-10
 
 ![Figure 3-10: The snake and food textures loaded and rendered.](./images/chapter_03/snake_food_draw.png)  
 **Figure 3-10:** *The snake and food textures loaded and rendered.*
