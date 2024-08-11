@@ -204,4 +204,142 @@ Well dive more into detail about the `SpriteBatch` object in [{TODO ADD CHAPTER}
 Now that we have our graphics loading and rendering, we can start adding logic to the game to make it an actual playable game.
 
 ## Game Logic
+The game logic is the code that actually makes things happen in our game.  This can be polling user input, moving the player, or updating the score.  Generally, you would not want to put all of the game logic within the `Game1` class.  Overtime it can grow quite large and become harder to maintain.  For small projects, like our current prototype, it's ok. Later, as we begin to develop beyond the prototype, we'll start separating logic into classes that we can make reusable modules to use with other game projects.
+
+For now, the logic for our prototype will look something like this
+
+1. Create instance members to keep track of the snake location, food location, direction the snake is moving, score, and the state of the game.
+2. Handle keyboard input and game state
+3. Update snake location
+4. Check for collisions.  
+   4.A. When colliding with food, increase length of snake by 1, increase score, and spawn new food  
+   4.B. When colliding with itself, change state to game over
+ 
+### Create Instance Members
+We'll start with the class level instance members used to keep track of the snake, food, direction the snake is moving, score, and the state of the game.  In the `Game1` class, add the following instance members
+
+```cs
+private bool[] _grid;
+private readonly Point _cellSize = new Point(32, 32);
+
+private List<Rectangle> _snake;
+private Rectangle _food;
+
+private int _score;
+private int _highScore;
+
+private Point _direction;
+private bool _playing;
+```
+
+The `_grid` array is a 1D representation of the 2D game grid.  Each index can be mapped to a corresponding column and row that can tell us if that location is empty (`false`) or contains part of the snake or a food block (`true`). The `_cellSize` represents the pixel width and height of each grid cell.
+
+The snake itself is made up of individual body part segments.  Each body part part can be represented as a `Rectangle` value which defines the xy-coordinate location and the width and height of the segment.  We'll also need to add a new segment each time the snake eats food, which means our collection will need to grow.  Knowing this, we can represent the snake using a `List<Rectangle>` collection.  There will only ever be a single piece of food spawned at a time.  The food, much like the body part segments of the snake, can be represented using a `Rectangle`.  
+
+Each time a piece of food is eaten, the score will increase for the player.  Score will be tracked as a whole number, so we'll use an `int` value for that.  We'll also use an `int` to keep track of the highest score a player has achieved to give incentive to do better each game session.
+
+The snake itself can only move in four direction; up, down, left, and right.  These directions can be represented by using a `-1` or `1` value for the `X` or `Y` components of a `Point` object.  For instance is `_direction.X` is `-1` we can use this to represent left, or if `_direction.Y` is `1`, we can use this to represent down.  `1` is down because the y-axis in graphics begins in the top-left of the screen at `0` and increments positively when moving down the screen.
+
+Finally, we can use a `bool` to represent the state of the game, whether the player is currently playing or not.
+
+### Grid Mapping
+Since we are using a 1D array representation of the 2D grid of the game world, we'll need to implement methods that can map between the two systems.  Add the following methods to the `Game1` class:
+
+```cs
+private Point GetLocation(int gridID)
+{
+    int totalColumns = _graphics.PreferredBackBufferWidth / _cellSize.X;
+    int row = gridID / totalColumns;
+    int column = gridID % totalColumns;
+    return new Point(column * _cellSize.X, row * _cellSize.Y);
+}
+
+private int GetGridID(int column, int row)
+{
+    int columns = _graphics.PreferredBackBufferWidth / _cellSize.X;
+    return row * columns + column;
+}
+```
+
+The first method, `GetLocation()` takes the index of the 1D array, which we'll call the `gridID` and uses integer division and modulo division to calculate which column and row that index maps to.  It then returns back a new `Point` value that maps to a physical location within the game world by multiplying the column and row values by the cell size  Conversely, `GetGridID()` takes the column and row and calculates the index that they map too.
+
+We'll also need a method that can determine all of the grid IDs that represent an empty space.  This will be useful when we are picking a random location on the grid to spawn the food.  Add the following method to the `Game1` class
+
+```cs
+public int[] GetEmptyGridIDs()
+{
+    return Enumerable.Range(0, _grid.Length)
+                     .Where(gridID => _grid[gridID] == false)
+                     .ToArray();
+}
+```
+
+This method will enumerator all elements of the grid and only select the index of those elements that are empty (`false`), then return back an array containing those indices.
+
+### Spawning Food
+Each time food is eaten in by the snake, a new location will need to be calculated for the food to spawn at.  We want the location to be random and also ensure it only spawns in grid cells that are empty.  To do this, add the following method to the `Game1` class:
+
+```cs
+private void SpawnFood()
+{
+    int[] emptyIndices = GetEmptyGridIDs();
+    int gridID = Random.Shared.Next(0, emptyIndices.Length);
+    Point location = GetLocation(gridID);
+    _food = new Rectangle(location, _cellSize);
+    _grid[gridID] = true;
+}
+```
+
+The method itself is rather simple.  First, we get an array of all grid IDs in the grid that are empty by calling the `GetEmptyGridIDs()` method we created above.  Next, we choose one of the grid IDs at random, then we use the `GetLocation()` method, passing in that grid ID to get the actual location. Then we initialize the `_food` value to a new `Rectangle` using the location calculated.  Finally, we tell the grid that this new grid cell is no longer empty by setting it to `true`.
+
+### Initializations
+When the game first loads, we need to initialize a new game session to be ready to played.  We'll also need a way to initialize a new game each time there is a game over and the player decides to play again.  Since there are two logical times this initialization can occur, let's create a method that can be called when we need it.  Add the following method to the `Game1` class:
+
+```cs
+private void InitializeNewGame()
+{
+    _score = 0;
+
+    int totalColumns = _graphics.PreferredBackBufferWidth / _cellSize.X;
+    int totalRows = _graphics.PreferredBackBufferHeight / _cellSize.Y;
+    _grid = new bool[totalColumns * totalRows];
+
+    _snake = new List<Rectangle>();
+
+    for (int i = 0; i < 5; i++)
+    {
+        int column = (totalColumns / 2) - i;
+        int row = totalRows / 2;
+        int gridID = GetGridID(column, row);
+        Point location = GetLocation(gridID);
+
+        Rectangle segment = new Rectangle(location, _cellSize);
+
+        _snake.Add(segment);
+        _grid[gridID] = true;
+    }
+
+    SpawnFood();
+}
+```
+
+Here we set the `_score` to zero.  Then the `_grid` is initialized by calculating the total number of columns and rows available. We use the `_graphics.PreferredBackBufferWidth` and `_graphics.PreferredBackBufferHeight` values here which represent the total width and height in pixels of the game screen (back buffer).
+
+Once the grid is initialized, we the initialize the `_snake`.  First, it is set to a new `List<Rectangle>` instance and then five segments are created for the snake by using a loop.  Each iteration of the loop will calculate the `column` and `row` for the segment.  The row for each segment will be the center row, and the column will be the center column but decremented by `1` for each segment so the snake will appear horizontally.  We use the `column` and `row` calculated to get the `gridID`, then use the `gridID` to determine the `location` in the game.  The `segment` is then created using the `location` and added to the `_snake` collection.  Finally, the `gridID` for that `segment` is set to `true` in the `_grid` since it now contains something.
+
+With the grid and the snake initialized, the final action to perform is to spawn the food.
+
+Now that we have a method for initializing a new game session, we need to ensure that it's called at the start of the game when it's first initializing.  Find the `Initialize()` method and update it to the following
+
+```cs
+protected override void Initialize()
+{
+    InitializeNewGame();
+    base.Initialize();
+}
+```
+
+Now when the game first runs, during the initialization we also initialize a new game session by calling the `InitializeNewGame()` method we just created.
+
+### Update
 bleh
