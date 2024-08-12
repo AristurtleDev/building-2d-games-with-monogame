@@ -72,7 +72,7 @@ Before installing VSCode we'll need to setup the .NET SDK in our environment. To
 > ```
 
 ### Install the MonoGame C# Templates
-The .NET SDk installation provides the default C# project templates, but it does not include the MonoGame templates.  To install the MonOGame templates, open a command prompt or terminal and enter the following command
+The .NET SDk installation provides the default C# project templates, but it does not include the MonoGame templates.  To install the MonoGame templates, open a command prompt or terminal and enter the following command
 
 ```sh
 dotnet new install MonoGame.Templates.CSharp
@@ -81,7 +81,7 @@ dotnet new install MonoGame.Templates.CSharp
 We'll discuss the MonoGame templates and their differences later.
 
 ### Install Visual Studio Code
-TO install VSCode, follow the instructions for your operating system below:
+To install VSCode, follow the instructions for your operating system below:
 
 - **Windows**: Download the installer from https://code.visualstudio.com/.  Once the download finishes, run the installer to install VSCode.
 - **Mac**: Download the archive from https://code.visualstudio.com/.  Once the archive finishes downloading, doubl-click it to extract the **Visual Studio Code.app** file.  Finally, drag-and-drop the **Visual Studio Code.app** file into your **Applications** directory to make it available in the macOS LaunchPad
