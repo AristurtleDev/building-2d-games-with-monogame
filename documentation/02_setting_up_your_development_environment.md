@@ -1,4 +1,16 @@
 # Chapter 2: Setting Up Your Development Environment
+
+- [Visual Studio 2022 (Windows Only)](#visual-studio-2022-windows-only)
+- [Visual Studio Code](#visual-studio-code)
+  - [Install the .NET SDK](#install-the-net-sdk)
+  - [Install the MonoGame C# Templates](#install-the-monogame-c-templates)
+  - [Install Visual Studio Code](#install-visual-studio-code)
+  - [Install the C# Dev Kit Extension](#install-the-c-dev-kit-extension)
+  - [Setup WINE for Effect Compilation (macOS and Linux Only)](#setup-wine-for-effect-compilation-macos-and-linux-only)
+- [Conclusion](#conclusion)
+
+--- 
+
 Unlike game engines such as Godot, Unity, and Unreal, MonoGame is not a program that you download and install then use to create games. Instead, you just need to perform the typical setup any user would do for C# development then install the MonoGame C# templates.  Since you're setting up a typical C# development environment, this also means you can use Windows, macOS, or Linux for development, though there is a slight setup difference depending on which you are using.
 
 ## Visual Studio 2022 (Windows Only)

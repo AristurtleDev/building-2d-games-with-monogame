@@ -1,6 +1,13 @@
 
 # Chapter 1: What Is MonoGame
 
+- [What Can MonoGame Do](#what-can-monogame-do)
+- [Key Features and Capabilities](#key-features-and-capabilities)
+- [Programming Languages](#programming-languages)
+- [Conclusion](#conclusion)
+
+---
+
 Before we dive into writing code, let's talk a little bit about the history of MonoGame. MonoGame is an open-source implementation of the [Microsoft XNA 4.0 Framework](https://en.wikipedia.org/wiki/Microsoft_XNA). XNA was originally developed by Microsoft to facilitate game development for Windows and Xbox 360. An open-source project named XNA Touch was created by José Antonio Leal de Farias to port XNA games to mobile devices. XNA Touch was later renamed MonoGame and expanded over time to include  support for Mac and Linux, as well as OpenGL on Windows, making it truly cross-platform.
 
 In 2013, Microsoft discontinued development of XNA while MonoGame continued to be developed and started seeing its first titles coming to the PS4 console.  Then in 2014 [Tom Spilman](https://github.com/tomspilman) and [Steve Willams](https://github.com/KonajuGames) became the new stewards of the MonoGame project.  Finally September 29th, 2023, the [MonoGame Foundation]<https://monogame.net/about/> was formed. Today, the MonoGame project is actively developed and supported by the foundation and the community of contributors and maintainers.
