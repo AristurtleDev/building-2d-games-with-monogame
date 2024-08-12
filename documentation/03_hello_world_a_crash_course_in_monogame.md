@@ -495,14 +495,11 @@ protected override void Draw(GameTime gameTime)
 This new updated `Draw()` method only has a few changes.  First, when clearing the graphics device, we're now using the color `new Color(224, 219, 205)`.  This color better matches the color palette of our textures than the default cornflower blue.  Next a loop was added that iterates through the entire collection of the snake, then renders a `_snakeTexture` at the destination represented by the `Rectangle` bounds of that segment.  Then it renders the `_foodTexture` at the destination represented by the `Rectangle` bounds of the `_food` value.
 
 ### Audio
-Finally, to give some extra life to our prototype, let's add some sound effects that will play either with a piece of food is eaten or when there is a game over.  To do this, first create a new directory inside the *Content* directory called *Audio*.  Then right-click the following audio files and save them into 
-that *Audio* directory.
+Finally, to give some extra life to our prototype, let's add some sound effects that will play either with a piece of food is eaten or when there is a game over.  To do this, first create a new directory inside the *Content* directory called *Audio*.  Then right-click the following audio files and save them into that *Audio* directory:
 
-[![eat_food.wav sound effect](./images/audio_file_icon.png)](./images/chapter_03/eat_food.wav)  
-*eat_food.wav*
 
-[![game_over.wav sound effect](./images/audio_file_icon.png)](./images/chapter_03/game_over.wav)  
-*game_over.wav*
+- [eat_food.wav](./images/chapter_03/eat_food.wav)
+- [game_over.wav](./images/chapter_03/game_over.wav)  
 
 Next, open the *MGCB Editor* just like we did previously when adding the images.  When it's open, right-click on the *Content* node, and select **Add > Existing Folder**, then choose the *Audio* the wav files were added to.  Expand the *Audio* node in the *Project Panel* and ensure both files were added.  It should look similar to the following
 
