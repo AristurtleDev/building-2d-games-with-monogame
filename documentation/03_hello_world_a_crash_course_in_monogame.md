@@ -264,7 +264,7 @@ For the prototype, we can use a simple `int` value to represent the direction th
 | `3`   | Up        |
 | `4`   | Down      |
 
-The `_timer` will be used to track the total amount of time passed between updates, and the `_tickTime` is the target time that needs to be reached before we actually update the snake.  Basically X amount of time must pass before the snake is updated to move one space.  By default MonoGame will attempt to run the game at 60 frames per second (FPS).  If we don't limit somehow how often the snake moves, then it will move 60 spaces every second, which is visually too fast to play the game. So we use the timers to limit this.
+The `_timer` will be used to track the total amount of time passed between updates, and the `_tickTime` is the target time that needs to be reached before we actually update the snake.  Basically X amount of time must pass before the snake is updated to move one space.  By default MonoGame will attempt to run the game at 60 frames per second (FPS).  If we don't limit how often the snake moves, then it will move 60 spaces every second, which is visually too fast to play the game. So we use the timers to limit this.
 
 Finally, a single `bool` value `_isPlaying` will be used to track the game state for if the game is being played or not.
 
@@ -321,7 +321,7 @@ private void InitializeNewGame()
 When initializing, first we determine how many total columns and rows there are available to use.  We calculate this by dividing the `_graphics.PreferredBackBufferWidth` and `_graphics.PreferredBackBufferHeight` by the size of each grid cell.  These two values represent the total width and height, in pixels, of the render-able game area (aka the *back buffer*). 
 
 > [!NOTE]
-> The back buffer is only the visible render-able area only of the game window.  When we ran our initial project that showed the cornflower blue window in Figure 3-3, the blue area is the back buffer.  It does not also include the width and height of things like this title bar of the game window or any border around the game window.
+> The back buffer is only the visible render-able area of the game window.  When we ran our initial project that showed the cornflower blue window in Figure 3-3, the blue area is the back buffer.  It also does not include the width and height of things like the title bar of the game window or any border around the game window.
 
 After calculating the total number of columns and rows, we then initialize the `_tickTime` and set it to 100ms.  The value defines the total amount of time that must elapse before the snake moves. Increasing this number will increase that delay, making the snake move slower while lowering it will shorten the delay making it move faster.  You can adjust this value to what you find to be comfortable, I find 100ms to be a good value for most players.
 
@@ -450,7 +450,7 @@ A lot was added to the `Update()` method so let's break it down into smaller chu
 
 4. After handling input, we increment the `_timer` by the amount of time that has elapsed since the last update, then check if the accumulated time is greater than or equal to the `_tickTime`.  If not, this is where update ends
 
-5. If the `_tickTime` has been reached, we then moving into the logic of updating the snake.  
+5. If the `_tickTime` has been reached, we then move into the logic of updating the snake.  
    
    5.1. First, we decrement the `_timer`, keeping any time that was left over.  
    
@@ -460,7 +460,7 @@ A lot was added to the `Update()` method so let's break it down into smaller chu
 
    5.4. We create a `bool` value called `isGameOver` which we can use to flag if the game over condition has been met.
 
-   5.5. The we check if the position the new head segment will move to is outside the bounds of the game area.  If it is, we set `isGameOver` to `true`.
+   5.5. Then we check if the position the new head segment will move to is outside the bounds of the game area.  If it is, we set `isGameOver` to `true`.
 
    5.6. If the new head segment position is still within the bounds of the play area, then we check if it will collide with the `_food` using the `Rectangle.Intersects()` method.  If collision with food is detected, then a new food is spawned.  If there is no collision with food, then the tail is removed from the collection.
     
