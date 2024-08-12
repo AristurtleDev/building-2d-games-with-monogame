@@ -15,6 +15,7 @@ The following is a list of chapters for the documentation in this repository.  T
 - [Chapter 01: What Is MonoGame](./documentation/01_what_is_monogame.md)
 - [Chapter 02: Setting Up Your Development Environment](./documentation/02_setting_up_your_development_environment.md)
 - [Chapter 03: Hello World - A Crash Course in MonoGame](./documentation/03_hello_world_a_crash_course_in_monogame.md)
+- [Chapter 04: MonoGame Project Overview](./documentation/04_monogame_project_overview.md)
 
 # Acknowledgements
 
