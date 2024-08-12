@@ -136,9 +136,6 @@ These tools are necessary if you are using the *Content Pipeline* to manage and 
 > [!NOTE]
 > It may seem wasted to include the *MonoGame Content Builder Editor* launchers for all three operating system types, especially if you are only developing on one operating system.  However, by including all three, it makes it easier if you ever need to switch to a different operating system for your project, or when working on a team where the code is shared using a git repository and team members have different operating system.
 
-> [!NOTE]
-> The first time you build a MonoGame project, the dotnet tools here will be restored.  If they've never been restored before, then they will be downloaded from the official NuGet feed.  The *dotnet-mgcb* package is ~400mb, so depending on your internet connection speed, it may take a moment for the first build to finish.  Once the packages have been downloaded for the first time, they are cached in your global NuGet directory, so subsequent builds and projects will not have to download them.
-
 ## The *Icon.ico* and *Icon.bmp* Files
 These are the icon files used when by the application for it's desktop icon, the icon displayed in the window title bar area, and the icon displayed in the task bar on windows or the docs on macOS. By default, these are icons of the MonoGame logo
 
