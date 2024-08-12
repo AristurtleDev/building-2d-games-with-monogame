@@ -109,3 +109,5 @@ After performing these setups, regardless of macOS or Linux, a new directory cal
 
 ## Conclusion
 Now that you’ve set up your development environment for MonoGame, you’re ready to dive into game development. Whether you’re using Visual Studio 2022 or Visual Studio Code, you’ve got the tools and configurations you need to start coding. With everything in place, you’re well-prepared to begin creating your MonoGame projects. In the next chapter, we’ll walk through the steps for creating a new project and get you started on your first game.
+
+[Go to Chapter 3: Hello World - A Crash Course in MonoGame](./03_hello_world_a_crash_course_in_monogame.md)

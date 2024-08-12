@@ -44,3 +44,5 @@ Developers should have a foundational understanding of C# and be comfortable wit
 
 ## Conclusion
 Now that we've covered the history and capabilities of MonoGame, you should have a good grasp of what this framework can do. We've seen how it builds on the legacy of XNA to offer a flexible, cross-platform solution for game development. With an understanding of its key features and supported languages, you're ready to start using MonoGame to create your own games. In the next chapter, we'll guide you through setting up your development environment, so you can get started with your projects.
+
+[Go to Chapter 2: Setting up your Development Environment](./02_setting_up_your_development_environment.md)

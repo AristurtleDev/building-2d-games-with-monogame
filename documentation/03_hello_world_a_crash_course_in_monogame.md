@@ -551,3 +551,4 @@ That's it for the game logic.  Run the game and play the prototype
 
 ## Conclusion
 During this chapter, we covered loading and rendering images, keyboard input, audio, and managing the the state of the game.  It doesn't have a lot of polish, but that was not the point.  The goal was to touch on concepts of MonoGame that we'll be using the the upcoming chapters.
+
