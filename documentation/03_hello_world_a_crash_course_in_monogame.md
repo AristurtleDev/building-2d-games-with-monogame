@@ -1,4 +1,23 @@
 # Chapter 3: Hello World - A Crash Course in MonoGame
+
+- [MonoGame Snake Game](#monogame-snake-game)
+- [Creating the Project](#creating-the-project)
+  - [Visual Studio 2022](#visual-studio-2022)
+  - [Visual Studio Code](#visual-studio-code)
+  - [Running The Game For The First Time](#running-the-game-for-the-first-time)
+- [Loading Textures](#loading-textures)
+- [Loading and Rendering](#loading-and-rendering)
+- [Game Logic](#game-logic)
+  - [Create Instance Members](#create-instance-members)
+  - [Spawning Food](#spawning-food)
+  - [Initializations](#initializations)
+  - [Update](#update)
+  - [Rendering](#rendering)
+  - [Audio](#audio)
+- [Conclusion](#conclusion)
+
+---
+
 When learning a new programming language, tutorials will often start with some form of the "Hello World" program.  For example, a classic Hello World program in C# would look something like this
 
 ```cs
@@ -22,20 +41,20 @@ The entire point of the Hello World program is to introduce some usage of the la
 The Snake game we're going to create is by itself a very simple and straightforward game.  This is because the goal of this tutorial isn't to teach you to create a Snake game, but to teach you game development with MonoGame.  By creating a Snake game, we'll cover the following topics
 
 1. Creating a new project
-2. Creating assets such as graphics, audio, and text
+2. Creating assets such as graphics, audio.
 3. Loading the assets using the Content Pipeline
 4. Setting up the program structure
-5. Updating the game by handling input, checking for collision, and tracking score
+5. Updating the game by handling input and checking for collision
 6. Rendering the game
 
-When we are finished with creating this initial prototype, you should be familiar enough with MonoGame to begin creating your own projects.
+When we are finished with creating this initial prototype, you should be familiar enough with MonoGame to begin creating your own projects.  After this chapter, we'll dive more deeply into MonoGame and take the Snake game from prototype to a completed game.
 
 
 ## Creating the Project
 To create a new project.  Follow the instructions below depending on if you are using Visual Studio 2022 or VSCode
 
 ### Visual Studio 2022
-If you are using Visual Studio 2022, to create a new project, first launch the Visual Studio 2022 application.  This will open the initial launch window.  On the the, click the **Create New Project** button.  Next, in the **Project Type** dro-down, choose **MonoGame** to filter the templates to only show the MonoGame templates.  In the list of MonoGame templates shown, choose the **MonoGame Cross-Platform Desktop Application** project template and click the **Next** button.  You'll now be prompted to enter a name for the project and a location to save it.  For the name, we're going to enter `MonoGameSnake`.  As for the location, you can choose where you would like it to be saved.  When finished, click the **Create** button to have the project created based on the template and opened automatically in Visual Studio 2022.
+If you are using Visual Studio 2022, to create a new project, first launch the Visual Studio 2022 application.  This will open the initial launch window.  In the launch window, click the **Create New Project** button.  Next, in the **Project Type** dro-down, choose **MonoGame** to filter the templates to only show the MonoGame templates.  In the list of MonoGame templates shown, choose the **MonoGame Cross-Platform Desktop Application** project template and click the **Next** button.  You'll now be prompted to enter a name for the project and a location to save it.  For the name, we're going to enter `MonoGameSnake`.  As for the location, you can choose where you would like it to be saved.  When finished, click the **Create** button to have the project created based on the template and opened automatically in Visual Studio 2022.
 
 ![New Project Created Visual Studio 2022](./images/chapter_03/vs.png)
 **Figure 3-1:** *A new MonoGame project after being created in Visual Studio 2022.*
@@ -68,7 +87,7 @@ If you were to set all of this up manually, it could take hours of research and 
 Next we'll load some graphical assets and rendering them to the screen.  If you still have the game window open, you can close it now by pressing `Esc` on your keyboard or clicking the [x] in the window title bar.
 
 ## Loading Textures
-Textures are the graphical assets in our game that get rendered.  Textures, as well as most other content types in general, can be created or loaded in MonoGame in various ways.  For instance, you can load a texture directly from a file
+Textures are the graphical assets in our game that get rendered. Textures and most other content types can be created or loaded in MonoGame in various ways.  For instance, you can load a texture directly from a file
 
 ```cs
 Texture2D texture = Texture2D.FromFile("image.png");
@@ -119,7 +138,7 @@ To open the **MGCB Editor**
 
 With the **MGCB Editor** now open, right-click on the **Content** node in the **Project Panel** on the left, then select **Add > Existing Folder**.  In the **Select Folder** dialog that opens, choose the **Graphics** folder we created and added the images too.  This will automatically add all files in that folder to our content project.  If you expand the **Graphics** node in the **MGCB Editor**, you can see both the **food.png** and **snake.png** files.
 
-![food.png and snake.png files added](./images/chapter_03/food_snake_added.png)
+![food.png and snake.png files added](./images/chapter_03/food_snake_added.png)  
 **Figure 3-8:** *The Graphics directory containing the food.png and snake.png files were added to the content project.*
 
 If you click on either of the two image files in the **MGCB Editor**, you can view the properties in the **Properties Panel** at the bottom left.  Here you can see the configurations used by the content pipeline such as the build action, which importer and processor is used, and the configurations that can be adjusted for the processor.
@@ -204,142 +223,331 @@ Well dive more into detail about the `SpriteBatch` object in [{TODO ADD CHAPTER}
 Now that we have our graphics loading and rendering, we can start adding logic to the game to make it an actual playable game.
 
 ## Game Logic
-The game logic is the code that actually makes things happen in our game.  This can be polling user input, moving the player, or updating the score.  Generally, you would not want to put all of the game logic within the `Game1` class.  Overtime it can grow quite large and become harder to maintain.  For small projects, like our current prototype, it's ok. Later, as we begin to develop beyond the prototype, we'll start separating logic into classes that we can make reusable modules to use with other game projects.
+The game logic is the code that actually makes things happen in our game.  This can be polling user input, moving the player, or updating the score.  Generally, you would not want to put all of the game logic within the `Game1` class.  Overtime it can grow quite large and become harder to maintain.  For small projects, like our current prototype, it's ok. Later, as we begin to develop beyond the prototype, we'll start separating logic into classes.
 
 For now, the logic for our prototype will look something like this
 
-1. Create instance members to keep track of the snake location, food location, direction the snake is moving, score, and the state of the game.
-2. Handle keyboard input and game state
-3. Update snake location
-4. Check for collisions.  
-   4.A. When colliding with food, increase length of snake by 1, increase score, and spawn new food  
-   4.B. When colliding with itself, change state to game over
- 
+1. Create instance members to keep track of the snake, food, and direction the snake is moving.
+2. Update the game by polling for keyboard input, updating the snake location, and checking for collisions.
+
+
 ### Create Instance Members
-We'll start with the class level instance members used to keep track of the snake, food, direction the snake is moving, score, and the state of the game.  In the `Game1` class, add the following instance members
+First we need to define a few class level instance members used to track different object and values in the game, such as the snake, the food, and the direction the snake is moving.  Add the following to the `Game1` class:
 
 ```cs
-private bool[] _grid;
-private readonly Point _cellSize = new Point(32, 32);
-
+private const int GRID_SIZE = 32;
+private int _columns;
+private int _rows;
 private List<Rectangle> _snake;
 private Rectangle _food;
-
-private int _score;
-private int _highScore;
-
-private Point _direction;
-private bool _playing;
+private int _direction;
+private TimeSpan _timer;
+private TimeSpan _tickTime;
+private bool _isPlaying;
 ```
+A snake game is played on a grid like game structure.  So there are going to be various times that we need to know how many columns and rows total there are on the screen.  We'll calculate this in a moment and store them in the `_columns` and `_rows` member values.  The `GRID_SIZE` constant value represents the width and height size of each grid cell in pixels.
 
-The `_grid` array is a 1D representation of the 2D game grid.  Each index can be mapped to a corresponding column and row that can tell us if that location is empty (`false`) or contains part of the snake or a food block (`true`). The `_cellSize` represents the pixel width and height of each grid cell.
+The snake itself is made up of individual body part segments.  Each body part can be represented as a `Rectangle` value which defines the xy-coordinate location and the width and height components of the segment.  We'll also need to add a new segment each time the snake eats food, which means our collection will need to be able to grow over time. For this, a `List<Rectangle>` collection works nicely.
 
-The snake itself is made up of individual body part segments.  Each body part part can be represented as a `Rectangle` value which defines the xy-coordinate location and the width and height of the segment.  We'll also need to add a new segment each time the snake eats food, which means our collection will need to grow.  Knowing this, we can represent the snake using a `List<Rectangle>` collection.  There will only ever be a single piece of food spawned at a time.  The food, much like the body part segments of the snake, can be represented using a `Rectangle`.  
+There will only ever be a single piece of food in the game at any given time, so much like the individual body segments of the snake, we can use a `Rectangle` to represent the food object.
 
-Each time a piece of food is eaten, the score will increase for the player.  Score will be tracked as a whole number, so we'll use an `int` value for that.  We'll also use an `int` to keep track of the highest score a player has achieved to give incentive to do better each game session.
+For the prototype, we can use a simple `int` value to represent the direction the snake is moving.  The following table represents the values and the direction they correlate to.
 
-The snake itself can only move in four direction; up, down, left, and right.  These directions can be represented by using a `-1` or `1` value for the `X` or `Y` components of a `Point` object.  For instance is `_direction.X` is `-1` we can use this to represent left, or if `_direction.Y` is `1`, we can use this to represent down.  `1` is down because the y-axis in graphics begins in the top-left of the screen at `0` and increments positively when moving down the screen.
+| Value | Direction |
+| ----- | --------- |
+| `1`   | Right     |
+| `2`   | Left      |
+| `3`   | Up        |
+| `4`   | Down      |
 
-Finally, we can use a `bool` to represent the state of the game, whether the player is currently playing or not.
+The `_timer` will be used to track the total amount of time passed between updates, and the `_tickTime` is the target time that needs to be reached before we actually update the snake.  Basically X amount of time must pass before the snake is updated to move one space.  By default MonoGame will attempt to run the game at 60 frames per second (FPS).  If we don't limit somehow how often the snake moves, then it will move 60 spaces every second, which is visually too fast to play the game. So we use the timers to limit this.
 
-### Grid Mapping
-Since we are using a 1D array representation of the 2D grid of the game world, we'll need to implement methods that can map between the two systems.  Add the following methods to the `Game1` class:
-
-```cs
-private Point GetLocation(int gridID)
-{
-    int totalColumns = _graphics.PreferredBackBufferWidth / _cellSize.X;
-    int row = gridID / totalColumns;
-    int column = gridID % totalColumns;
-    return new Point(column * _cellSize.X, row * _cellSize.Y);
-}
-
-private int GetGridID(int column, int row)
-{
-    int columns = _graphics.PreferredBackBufferWidth / _cellSize.X;
-    return row * columns + column;
-}
-```
-
-The first method, `GetLocation()` takes the index of the 1D array, which we'll call the `gridID` and uses integer division and modulo division to calculate which column and row that index maps to.  It then returns back a new `Point` value that maps to a physical location within the game world by multiplying the column and row values by the cell size  Conversely, `GetGridID()` takes the column and row and calculates the index that they map too.
-
-We'll also need a method that can determine all of the grid IDs that represent an empty space.  This will be useful when we are picking a random location on the grid to spawn the food.  Add the following method to the `Game1` class
-
-```cs
-public int[] GetEmptyGridIDs()
-{
-    return Enumerable.Range(0, _grid.Length)
-                     .Where(gridID => _grid[gridID] == false)
-                     .ToArray();
-}
-```
-
-This method will enumerator all elements of the grid and only select the index of those elements that are empty (`false`), then return back an array containing those indices.
+Finally, a single `bool` value `_isPlaying` will be used to track the game state for if the game is being played or not.
 
 ### Spawning Food
-Each time food is eaten in by the snake, a new location will need to be calculated for the food to spawn at.  We want the location to be random and also ensure it only spawns in grid cells that are empty.  To do this, add the following method to the `Game1` class:
+When the food in the game spawns, we want the location it spawns in to be random.  Since the logic for this is something we'll need to call from multiple places, it makes sense to put this it its own method.  Add the following method to the `Game1` class.
 
 ```cs
 private void SpawnFood()
 {
-    int[] emptyIndices = GetEmptyGridIDs();
-    int gridID = Random.Shared.Next(0, emptyIndices.Length);
-    Point location = GetLocation(gridID);
-    _food = new Rectangle(location, _cellSize);
-    _grid[gridID] = true;
+    _food = new Rectangle();
+    _food.X = Random.Shared.Next(0, _columns) * GRID_SIZE;
+    _food.Y = Random.Shared.Next(0, _rows) * GRID_SIZE;
+    _food.Width = _food.Height = GRID_SIZE;
 }
 ```
 
-The method itself is rather simple.  First, we get an array of all grid IDs in the grid that are empty by calling the `GetEmptyGridIDs()` method we created above.  Next, we choose one of the grid IDs at random, then we use the `GetLocation()` method, passing in that grid ID to get the actual location. Then we initialize the `_food` value to a new `Rectangle` using the location calculated.  Finally, we tell the grid that this new grid cell is no longer empty by setting it to `true`.
+Here, we initialize the `_food` member as a new `Rectangle`.  Then the `X` and `Y` location components are chosen by picking a random column and row.  The `Width` and `Height` components are set to the size of a grid cell.
 
 ### Initializations
-When the game first loads, we need to initialize a new game session to be ready to played.  We'll also need a way to initialize a new game each time there is a game over and the player decides to play again.  Since there are two logical times this initialization can occur, let's create a method that can be called when we need it.  Add the following method to the `Game1` class:
-
-```cs
-private void InitializeNewGame()
-{
-    _score = 0;
-
-    int totalColumns = _graphics.PreferredBackBufferWidth / _cellSize.X;
-    int totalRows = _graphics.PreferredBackBufferHeight / _cellSize.Y;
-    _grid = new bool[totalColumns * totalRows];
-
-    _snake = new List<Rectangle>();
-
-    for (int i = 0; i < 5; i++)
-    {
-        int column = (totalColumns / 2) - i;
-        int row = totalRows / 2;
-        int gridID = GetGridID(column, row);
-        Point location = GetLocation(gridID);
-
-        Rectangle segment = new Rectangle(location, _cellSize);
-
-        _snake.Add(segment);
-        _grid[gridID] = true;
-    }
-
-    SpawnFood();
-}
-```
-
-Here we set the `_score` to zero.  Then the `_grid` is initialized by calculating the total number of columns and rows available. We use the `_graphics.PreferredBackBufferWidth` and `_graphics.PreferredBackBufferHeight` values here which represent the total width and height in pixels of the game screen (back buffer).
-
-Once the grid is initialized, we the initialize the `_snake`.  First, it is set to a new `List<Rectangle>` instance and then five segments are created for the snake by using a loop.  Each iteration of the loop will calculate the `column` and `row` for the segment.  The row for each segment will be the center row, and the column will be the center column but decremented by `1` for each segment so the snake will appear horizontally.  We use the `column` and `row` calculated to get the `gridID`, then use the `gridID` to determine the `location` in the game.  The `segment` is then created using the `location` and added to the `_snake` collection.  Finally, the `gridID` for that `segment` is set to `true` in the `_grid` since it now contains something.
-
-With the grid and the snake initialized, the final action to perform is to spawn the food.
-
-Now that we have a method for initializing a new game session, we need to ensure that it's called at the start of the game when it's first initializing.  Find the `Initialize()` method and update it to the following
+When the game first loads, we need to set up the initial values used by each game session.   We also need to initialize the game session to be played.  Whenever there is a game over, we want the player to be able to hit Enter to start a new game, there are multiple places in our code where initializing the game session will be called, so we can split that into it's own method.  Locate the `Initialize()` method in the `Game1` class and update it to the following, adding the `InitializeNewGame()` method after it as well.
 
 ```cs
 protected override void Initialize()
 {
+    _columns = _graphics.PreferredBackBufferWidth / GRID_SIZE;
+    _rows = _graphics.PreferredBackBufferHeight / GRID_SIZE;
+    _tickTime = TimeSpan.FromMilliseconds(100);
+
     InitializeNewGame();
+
     base.Initialize();
+}
+
+private void InitializeNewGame()
+{
+    _snake = new List<Rectangle>();
+    for (int i = 0; i < 5; i++)
+    {
+        Rectangle segment = new Rectangle();
+        segment.X = ((_columns / 2) - i) * GRID_SIZE;
+        segment.Y = (_rows / 2) * GRID_SIZE;
+        segment.Width = segment.Height = GRID_SIZE;
+        _snake.Add(segment);
+    }
+
+    SpawnFood();
+
+    _timer = TimeSpan.Zero;
+    _direction = 1;
+    _isPlaying = true;
 }
 ```
 
-Now when the game first runs, during the initialization we also initialize a new game session by calling the `InitializeNewGame()` method we just created.
+When initializing, first we determine how many total columns and rows there are available to use.  We calculate this by dividing the `_graphics.PreferredBackBufferWidth` and `_graphics.PreferredBackBufferHeight` by the size of each grid cell.  These two values represent the total width and height, in pixels, of the render-able game area (aka the *back buffer*). 
+
+> [!NOTE]
+> The back buffer is only the visible render-able area only of the game window.  When we ran our initial project that showed the cornflower blue window in Figure 3-3, the blue area is the back buffer.  It does not also include the width and height of things like this title bar of the game window or any border around the game window.
+
+After calculating the total number of columns and rows, we then initialize the `_tickTime` and set it to 100ms.  The value defines the total amount of time that must elapse before the snake moves. Increasing this number will increase that delay, making the snake move slower while lowering it will shorten the delay making it move faster.  You can adjust this value to what you find to be comfortable, I find 100ms to be a good value for most players.
+
+Then in the `Initialize()` method we call the `InitializeNewGame()` method to setup a new game session to be played.
+
+> [!NOTE]
+> Notice that while updating the `Initialize()` method, we did not remove the call to `base.Initialize()`.  This is because the during the call to the base `Initialize()` method, the final thing it does before returning back is calling the `LoadContent()` method.  If `base.Initialize()` is removed, then `LoadContent()` will not be called automatically by the framework.
+
+
+The `InitializeNewGame()` method is straight forward.  First it initialize the `_snake` collection. Next it iterates a loop five times, each loop creating a new body segment for the snake.  Each segment is position at the center of the screen with the `X` location component decrementing by 1 grid cell for each.  This will make it so the snake is laid out left-to-right horizontally when initially rendering.  Next, the food is spawned by calling `SpawnFood()`, the `_timer` is set to it's initialize zero value, `_direction` is set to 1, and `_isPlaying` is set to `true`.
 
 ### Update
-bleh
+Now that our game can initialize, let's setup the logic for updating. Updating the game is going to handle multiple things like polling for user input, increment the timers, moving the snake and handling collision.  Find the `Update()` method in the `Game1` class and change it to the following:
+
+```cs
+protected override void Update(GameTime gameTime)
+{
+    KeyboardState keyboard = Keyboard.GetState();
+
+    if (_isPlaying == false)
+    {
+        if (keyboard.IsKeyDown(Keys.Enter))
+        {
+            InitializeNewGame();
+        }
+
+        return;
+    }
+
+    int newDirection = _direction;
+
+    if (keyboard.IsKeyDown(Keys.Right) && _direction != 2)
+    {
+        newDirection = 1;
+    }
+    else if (keyboard.IsKeyDown(Keys.Left) && _direction != 1)
+    {
+        newDirection = 2;
+    }
+    else if (keyboard.IsKeyDown(Keys.Up) && _direction != 4)
+    {
+        newDirection = 3;
+    }
+    else if (keyboard.IsKeyDown(Keys.Down) && _direction != 3)
+    {
+        newDirection = 4;
+    }
+
+
+    _timer += gameTime.ElapsedGameTime;
+
+    if (_timer >= _tickTime)
+    {
+        _timer = _tickTime - _timer;
+
+        _direction = newDirection;
+
+        int x = _snake[0].X;
+        int y = _snake[0].Y;
+
+        if (_direction == 1)
+        {
+            x += GRID_SIZE;
+        }
+        else if (_direction == 2)
+        {
+            x -= GRID_SIZE;
+        }
+        else if (_direction == 3)
+        {
+            y -= GRID_SIZE;
+        }
+        else if (_direction == 4)
+        {
+            y += GRID_SIZE;
+        }
+
+        Rectangle previousHead = _snake[0];
+        Rectangle newHead = new Rectangle(x, y, GRID_SIZE, GRID_SIZE);
+
+        bool isGameOver = false;
+
+        if (newHead.X < 0 || newHead.X >= _graphics.PreferredBackBufferWidth ||
+           newHead.Y < 0 || newHead.Y >= _graphics.PreferredBackBufferHeight)
+        {
+            isGameOver = true;
+        }
+        else
+        {
+
+            if (newHead.Intersects(_food))
+            {
+                SpawnFood();
+            }
+            else
+            {
+                _snake.RemoveAt(_snake.Count - 1);
+            }
+            _snake.Insert(0, newHead);
+
+            for (int i = 1; i < _snake.Count; i++)
+            {
+                if (newHead.Intersects(_snake[i]))
+                {
+                    isGameOver = true;
+                    break;
+                }
+            }
+        }
+
+        if (isGameOver)
+        {
+            _isPlaying = false;
+        }
+    }
+}
+```
+
+A lot was added to the `Update()` method so let's break it down into smaller chunks to explain whats happening.
+
+1. First we poll the `Keyboard` for the current state of keyboard input.  This returns back a `KeyboardState` value that we can use to check which keys on the keyboard are currently pressed down.
+
+2. Next, we check if the value of `_isPlaying` is `false`.  This will only be `false` when a game over is detected, so we check for that first here.  If this condition passes, then we check if the player has hit the Enter key on the keyboard, and if so, initialize a new game session.  Regardless, since it's a game over state, the final thing that occurs within this block is an early return since the remainder of the `Update()` method can be ignored.
+
+3. If the game is being played, then we poll the keyboard to check for input from the user.  First we cache the current value of the `_direction` into `newDirection`.  The the *Right*, *Left*, *Up*, and *Down* keys are checked to see if they are pressed.  For each one, there is an additional condition to prevent it from passing if the snake is moving in the opposite direction currently of the direction that was pressed.  For instance, if the snake is moving up, we don't want to allow it to move down into itself, it should only be able to continue up, or move left or right.
+
+4. After handling input, we increment the `_timer` by the amount of time that has elapsed since the last update, then check if the accumulated time is greater than or equal to the `_tickTime`.  If not, this is where update ends
+
+5. If the `_tickTime` has been reached, we then moving into the logic of updating the snake.  
+   
+   5.1. First, we decrement the `_timer`, keeping any time that was left over.  
+   
+   5.2. Then the `_direction` is set to the `newDirection` detected and the `x` and `y` position that the snake head will be moving to is calculated based on this.  
+   
+   5.3. The current head segment is cached and the new head segment is created at the location that it will be moving too.  
+
+   5.4. We create a `bool` value called `isGameOver` which we can use to flag if the game over condition has been met.
+
+   5.5. The we check if the position the new head segment will move to is outside the bounds of the game area.  If it is, we set `isGameOver` to `true`.
+
+   5.6. If the new head segment position is still within the bounds of the play area, then we check if it will collide with the `_food` using the `Rectangle.Intersects()` method.  If collision with food is detected, then a new food is spawned.  If there is no collision with food, then the tail is removed from the collection.
+    
+   5.7. The `newHead` is inserted at the front of the collection. If food was eaten above, this means the new head becomes the new segment making our snake grow. If no food was eaten, this is logically like taking the tail out of the collection and moving it to the front of the collection.  Doing it this way means we only ever have to update the movement of the head and tail of the snake, not every single body segment.  
+   
+   5.8. Next a loop is iterated, starting at index `1` and looping through each body segment of the snake.  Each loop iteration will check if the `newHead` collides with the body segment for that iteration of the loop using the `Rectangle.Intersects()` method.  If `true`, then `isGameOver` is set to `true` and the loop will `break` early.
+
+   5.9. Finally a check is made to see if `isGameOver` was set to `true` during any of the previous checks.  If so, the `_isPlaying` state is changed to `false`.
+
+And that's it for the update logic.  We are now polling for player input from the keyboard and updating the game based on the value of `_isPlaying`.  Now that we're updating the game, the final step is to render the game.
+
+### Rendering
+Rendering out prototype Snake game is rather straight forward.  We just need to draw each of the snake segments and the food.  Find the `Draw()` method in the `Game1` class and update it to the following:
+
+```cs
+protected override void Draw(GameTime gameTime)
+{
+    GraphicsDevice.Clear(new Color(224, 219, 205));
+
+    _spriteBatch.Begin();
+   
+    for (int i = 0; i < _snake.Count; i++)
+    {
+        _spriteBatch.Draw(_snakeTexture, _snake[i], Color.White);
+    }
+    _spriteBatch.Draw(_foodTexture, _food, Color.White);
+   
+    _spriteBatch.End();
+}
+```
+
+This new updated `Draw()` method only has a few changes.  First, when clearing the graphics device, we're now using the color `new Color(224, 219, 205)`.  This color better matches the color palette of our textures than the default cornflower blue.  Next a loop was added that iterates through the entire collection of the snake, then renders a `_snakeTexture` at the destination represented by the `Rectangle` bounds of that segment.  Then it renders the `_foodTexture` at the destination represented by the `Rectangle` bounds of the `_food` value.
+
+### Audio
+Finally, to give some extra life to our prototype, let's add some sound effects that will play either with a piece of food is eaten or when there is a game over.  To do this, first create a new directory inside the *Content* directory called *Audio*.  Then right-click the following audio files and save them into 
+that *Audio* directory.
+
+[![eat_food.wav sound effect](./images/audio_file_icon.png)](./images/chapter_03/eat_food.wav)  
+*eat_food.wav*
+
+[![game_over.wav sound effect](./images/audio_file_icon.png)](./images/chapter_03/game_over.wav)  
+*game_over.wav*
+
+Next, open the *MGCB Editor* just like we did previously when adding the images.  When it's open, right-click on the *Content* node, and select **Add > Existing Folder**, then choose the *Audio* the wav files were added to.  Expand the *Audio* node in the *Project Panel* and ensure both files were added.  It should look similar to the following
+
+![The eat_food.wav and game_over.wav audio files added to the content project in the MGCB Editor](./images/chapter_03/audio_added.png)  
+**Figure 3-11:** *The eat_food.wav and game_over.wav audio files added to the content project in the MGCB Editor.*
+
+After verifying they were added, be sure you click the *Save* icon and then close the *MGCB Editor*.
+
+Switch back to the *Game1.cs* class file. First add two new instance members inside the `Game1` class
+
+```cs
+private SoundEffect _eatFoodSound;
+private SoundEffect _gameOverSound;
+```
+
+These are `SoundEffect` type which we'll use to load the two audio files into using the `ContentManager`.  To do that, next, find the `LoadContent()` method and add the following
+
+```cs
+_eatFoodSound = Content.Load<SoundEffect>("Audio/eat_food");
+_gameOverSound = Content.Load<SoundEffect>("Audio/game_over");
+```
+
+This will load the two sound effect audio files that were processed by the content pipeline into the two `SoundEffect` members.
+
+Finally, we need to adjust parts of the `Update()` method so that it plays the appropriate sound effect at the appropriate time.  First, locate the `if` block where we check if the `newHead` is colliding with `_food` and update it to the following so the `_eatFoodSound` is played
+
+```cs
+if (newHead.Intersects(_food))
+{
+    _eatFoodSound.Play();
+    SpawnFood();
+}
+```
+
+Next locate the the `if` block where the check is made to determine if `isGameOver` is `true` and update it to the following:
+
+```cs
+if (isGameOver)
+{
+    _gameOverSound.Play();
+    _isPlaying = false;
+}
+```
+
+That's it for the game logic.  Run the game and play the prototype
+
+![Playing the prototype of the snake game we just created](./images/chapter_03/snake_prototype.gif)  
+**Figure 3-12:** *Playing the prototype of the snake game we just created.*
+
+
+## Conclusion
+During this chapter, we covered loading and rendering images, keyboard input, audio, and managing the the state of the game.  It doesn't have a lot of polish, but that was not the point.  The goal was to touch on concepts of MonoGame that we'll be using the the upcoming chapters.
