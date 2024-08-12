@@ -106,13 +106,13 @@ texture.SetData<Color>(new Color[] { Color.White });
 
 However, MonoGame also offers the **Content Pipeline** that we can use to maintain and load all of a game's content, including textures.  Using the **Content Pipeline** has the advantage that it will compile our assets into a format that is more optimized for the platform we are targeting for the game.  We'll go in more detail about the **Content Pipeline** and the advantages of using it in [{TODO Add Chapter Link Text}]({TODO Add Chapter Link}).  For now, we'll go through the process of adding image files that we can later load and render in the game.
 
-To get started, first create a new directory called `Graphics` inside the **Content** directory in your game project.  Then, right-click on each of the square images below (Figure 3-4 and Figure 3-5) and save them in the **Graphics** directory you just created. Ensure they are named `snake.png` and `food.png`
+To get started, first create a new directory called `Graphics` inside the **Content** directory in your game project.  Then, right-click on each of the square images files below (Figure 3-4 and Figure 3-5) and save them in the **Graphics** directory you just created. Ensure they are named `snake.png` and `food.png`
 
 ![Figure 3-4: snake.png](./images/chapter_03/snake.png)  
-**Figure 3-4:** *snake.png*
+[**Figure 3-4:** *snake.png*](./images/chapter_03/snake.png)
 
 ![Figure 3-5: food.png](./images/chapter_03/food.png)  
-**Figure 3-5:** *food.png*
+[**Figure 3-5:** *food.png*](./images/chapter_03/food.png)
 
 If saved correctly, your **Content** directory in your project should look similar to the following:
 
