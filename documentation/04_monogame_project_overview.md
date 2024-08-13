@@ -28,7 +28,7 @@ MonoGameSnake
         Content.mgcb
 ```
 
-This is the project structure you would see when creating a MonoGame project targeting desktops.  Projects that target mobile devices such as Android or iOS will contain the same files along with some additional manifest files specific for those devices, which are not covered in this document. Some of these files are standard files you would find in any C# project, such as the *.csproj* C# project file, *app.manifest* application manifest file, and *dotnet-tools.json* tools manifest file.  Discussing these common files in detail is out of scope for this documentation, though we will touch on some brief concepts of them below.  If you would like to learn more about them you can find the official documentation on Microsoft Learn at the following linkes
+This is the project structure you would see when creating a MonoGame project targeting desktops.  Projects that target mobile devices such as Android or iOS will contain the same files along with some additional manifest files specific for those devices, which are not covered in this document. Some of these files are standard files you would find in any C# project, such as the *.csproj* C# project file, *app.manifest* application manifest file, and *dotnet-tools.json* tools manifest file.  Discussing these common files in detail is out of scope for this documentation, though we will touch on some brief concepts of them below.  If you would like to learn more about them you can find the official documentation on Microsoft Learn at the following links:
 
 - [Understanding The Project File](https://learn.microsoft.com/en-us/aspnet/web-forms/overview/deployment/web-deployment-in-the-enterprise/understanding-the-project-file)
 - [Application Manifests](https://learn.microsoft.com/en-us/windows/win32/sbscs/application-manifests)
@@ -148,7 +148,7 @@ If you want to customize the icons used for your game, you can replace these fil
 > When replacing the icon files with a custom icon for your game, ensure that they are named exactly the same as the default icon files.  This is because, as mentioned above, the MonoGame framework expects files with these names and extension to be embedded in the project assembly in order to load and display them.
 
 ## The *Content.mgcb* Content Project File
-Next up is the *Content.mgcb* content project file located in the *Contnet/* directory in the project's root directory.  The *MonoGame Content Builder* uses the configurations defined in this file to know what assets to build and how to build them so they can be loaded in your game.  
+Next up is the *Content.mgcb* content project file located in the *Content/* directory in the project's root directory.  The *MonoGame Content Builder* uses the configurations defined in this file to know what assets to build and how to build them so they can be loaded in your game.  
 
 ```
 #----------------------------- Global Properties ----------------------------#
