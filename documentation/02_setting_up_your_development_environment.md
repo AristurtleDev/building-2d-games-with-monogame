@@ -11,7 +11,14 @@
 
 --- 
 
-Unlike game engines such as Godot, Unity, and Unreal, MonoGame is not a program that you download and install then use to create games. Instead, you just need to perform the typical setup any user would do for C# development then install the MonoGame C# templates.  Since you're setting up a typical C# development environment, this also means you can use Windows, macOS, or Linux for development, though there is a slight setup difference depending on which you are using.
+Unlike game engines such as Godot, Unity, and Unreal, MonoGame takes a different approach to game development.  It does not come as a standalone program with a graphical user interface that you download, install, and use to create games.  Instead, MonoGame integrates into the standard C# development workflow, offering a code-first approach to game development.  This approach offers several advantages:
+
+- **Flexibility**: Developers are not locked into using a specific editor or interface, allowing them to use the their preferred C# development tools.
+- **Integration**: As a .NET library itself, MonOGame can easily integrate with other .NET libraries and tools.
+- **Cross-platform development**: Since C# is cross-platform, and MonoGame is cross-platform, developers can develop MonoGame projects on Windows, macOS, or Linux, with only slight differences in the setup process for each operating system.
+- **Version control friendly**: The code-first approach makes it easier to use version control systems like Git for your game projects.
+
+While the environment setup process is similar to standard C# development, there are some MonoGame-specific steps.  These can vary slightly depending on your operating system and IDE.  In this chapter, we'll provide instructions for setting up your development environment for MonoGame for Windows, macOS, and Linux both with Visual Studio 2022 and Visual Studio Code.
 
 ## Visual Studio 2022 (Windows Only)
 If you're using Windows, you can use Visual Studio 2022 as your development environment.  Visual Studio 2022 is the recommended development environment to use when creating games with MonoGame. To get stared, first download the Visual Studio 2022 Community Edition from https://visualstudio.microsoft.com/.  Once the installer has finished downloading, run it to install Visual Studio 2022.  During the installation, you will be asked to select which workloads you would like to install.  For MonoGame development the only workload required is the **.NET desktop development** workload.  If you plan to develop UWP applications which can be used on the Windows Store and Xbox, ensure that **Universal Windows Platform Development** workload is checked.  Finally, if you are going do mobile development for Android and/or iOS, ensure that the **.NET Multi-platform App UI Development** workload is checked.
