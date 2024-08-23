@@ -1,6 +1,15 @@
 # Chapter 6: The Content Pipeline
 
+- [What Is The Content Pipeline?](#what-is-the-content-pipeline)
+  - [MonoGame Content Builder](#monogame-content-builder)
+  - [MonoGame Content Builder Editor](#monogame-content-builder-editor)
+  - [MonoGame.Content.Builder.Task NuGet](#monogamecontentbuildertask-nuget)
+  - [ContentManager Class](#contentmanager-class)
+- [Why Use The Content Pipeline?](#why-use-the-content-pipeline)
+- [Conclusion](#conclusion)
+
 ---
+
 In [Chapter 3](./03_hello_world_a_crash_course_in_monogame.md) we got a quick look at using the *content pipeline* to add both images and audio assets to our game.  In this chapter, we'll explore the *content pipeline* in more detail, discuss the advantages of using it, and how the entire workflow executes from start to finish.
 
 ## What Is The Content Pipeline?
