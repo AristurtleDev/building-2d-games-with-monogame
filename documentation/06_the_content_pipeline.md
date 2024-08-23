@@ -67,7 +67,7 @@ However, editing this file manually for every asset you want to add to the game 
 ### MonoGame Content Builder Editor
 The *MonoGame Content Builder Editor (MGCB Editor)* is a tool that provides a graphical user interface for managing the assets to add to your game.  We briefly used this in [Chapter 03](./03_hello_world_a_crash_course_in_monogame.md) to add the images and audio content to the prototype game we created.  
 
-![The MonoGame Content Builder Editor (MGCB Editor)](./images/chatper_06/mgcb-editor.png)  
+![The MonoGame Content Builder Editor (MGCB Editor)](./images/chapter_06/mgcb-editor.png)  
 **Figure 6-1:** *The MonoGame Content Builder Editor (MGCB Editor).*
 
 The editor itself has three panels to make note of
