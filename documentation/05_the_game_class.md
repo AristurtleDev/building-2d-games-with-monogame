@@ -125,7 +125,7 @@ protected override void LoadContent()
 
 The default implementation provided in the template instantiates a new instance of the `SpriteBatch` and stores it in the `_spriteBatch` instance member.  When creating a new `SpriteBatch` instance, it requires that an instance of the `GraphicsDevice` object type be given to it.  Here we pass in the one that is provided as a property from the `Game` class inheritance. 
 
-Content loading and managing assets will be discussed in [{TODO ADD CHAPTER}]({TODO ADD CHAPTER LINK}), for now, it's only important to know that his is where you can load your game assets at.
+Content loading and managing assets will be discussed in later chapters, for now, it's only important to know that his is where you can load your game assets at.
 
 ## The Game Loop
 After the initializations and content loading have finished, the framework will enter into the *game loop*.  The *game loop* is where hte framework will call `Update()` and then `Draw()` over and over to run the actual game until it's told to exit.  

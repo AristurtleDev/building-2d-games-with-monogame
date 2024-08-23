@@ -10,15 +10,15 @@
 
 ---
 
-In the [previous chapter](./03_hello_world_a_crash_course_in_monogame.md) we did a crash course in creating a new MonoGame project and writing the initial prototype for our MonoGameSnake game.  While we touched on concepts of MonoGame in code, we did not discuss the actual files that are included by default when you create a new MonoGame project.  After creating a project using one of the MonoGame templates, the project structure will be similar to the following: 
+In the [previous chapter](./03_hello_world.md) we created a new MonoGame project using one of the MonoGame project templates. Using the templates to create a new project automatically generates files and a project structure as a starting point for a new game.  The project structure will be similar to the following: 
 
 ```
-MonoGameSnake
+MyGame
 |   app.manifest
 |   Game1.cs
 |   Icon.bmp
 |   Icon.ico
-|   MonoGameSnake.csproj
+|   MyGame.csproj
 |   Program.cs
 |
 +---.config
@@ -28,7 +28,7 @@ MonoGameSnake
         Content.mgcb
 ```
 
-This is the project structure you would see when creating a MonoGame project targeting desktops.  Projects that target mobile devices such as Android or iOS will contain the same files along with some additional manifest files specific for those devices, which are not covered in this document. Some of these files are standard files you would find in any C# project, such as the *.csproj* C# project file, *app.manifest* application manifest file, and *dotnet-tools.json* tools manifest file.  Discussing these common files in detail is out of scope for this documentation, though we will touch on some brief concepts of them below.  If you would like to learn more about them you can find the official documentation on Microsoft Learn at the following links:
+This is the project structure you would see when creating a MonoGame project targeting desktops.  Projects that target mobile devices such as Android or iOS will contain the same files along with some additional manifest files specific for those devices, which are not covered in this tutorial. Some of these files are standard files you would find in any C# project, such as the *.csproj* C# project file, *app.manifest* application manifest file, and *dotnet-tools.json* tools manifest file.  Discussing these common files in detail is out of scope for this tutorial, though we will touch on the contents of them.  If you would like to learn more about these project files, you can find the official documentation on Microsoft Learn at the following links:
 
 - [Understanding The Project File](https://learn.microsoft.com/en-us/aspnet/web-forms/overview/deployment/web-deployment-in-the-enterprise/understanding-the-project-file)
 - [Application Manifests](https://learn.microsoft.com/en-us/windows/win32/sbscs/application-manifests)
