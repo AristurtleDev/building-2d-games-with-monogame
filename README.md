@@ -17,6 +17,7 @@ The following is a list of chapters for the documentation in this repository.  T
 - [Chapter 03: Hello World - A Crash Course in MonoGame](./documentation/03_hello_world_a_crash_course_in_monogame.md)
 - [Chapter 04: MonoGame Project Overview](./documentation/04_monogame_project_overview.md)
 - [Chapter 05: The `Game` Class](./documentation/05_the_game_class.md)
+- [Chapter 06: The Content Pipeline](./documentation/06_the_content_pipeline.md)
 
 # Acknowledgements
 
