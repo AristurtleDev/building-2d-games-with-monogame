@@ -16,7 +16,7 @@ The following is a list of chapters for the documentation in this repository.  T
   - [1-1: What Is MonoGame](./documentation/chapter-01-getting-started/01-01-what-is-monogame.md)
   - [1-2: Setting Up Your Development Environment](./documentation/chapter-01-getting-started/01-02-setting-up-your-development-environment.md)
   - [1-3: Hello World](./documentation/chapter-01-getting-started/01-03-hello-world.md)
-- [Chapter 2: Behind The Scenes](./documentation/chapter-02-behind-the-scenes/02-00-behind-the-scenes.md)
+- [Chapter 2: Crash Course](./documentation/chapter-02-crash-course/02-00-crash-course.md)
   - [2-1: MonoGame Project Overview](./documentation/chapter-02-behind-the-scenes/02-01-monogame-project-overview.md)
   - [2-2: The Game Class](./documentation/chapter-02-behind-the-scenes/02-02-the-game-class.md)
 - [Chapter 3: The Content Pipeline](./documentation/chapter-03-the-content-pipeline/03-00-the-content-pipeline.md)

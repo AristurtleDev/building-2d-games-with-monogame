@@ -94,6 +94,6 @@ In this chapter, we created a new MonoGame game project and ran it.  In the foll
 
 <div align="right"><table border=1><tr><td>Next Up</td></tr><tr><td>
 
-[Chapter 2: Behind the Scenes](../chapter-02-behind-the-scenes/02-00-behind-the-scenes.md)  
+[Chatper 2: Crash Course](../chapter-02-crash-course/02-00-crash-course.md)
 
 </td></tr></table></div>
