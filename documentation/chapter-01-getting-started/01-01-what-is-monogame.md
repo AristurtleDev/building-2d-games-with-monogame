@@ -3,6 +3,8 @@
 - [What Can MonoGame Do](#what-can-monogame-do)
 - [Programming Languages](#programming-languages)
 - [Conclusion](#conclusion)
+- [See Also](#see-also)
+- [Next Steps](#next-steps)
 
 ---
 
@@ -68,11 +70,8 @@ In this chapter, we've explored the rich history and extensive capabilities of M
 
 In this chapter, we explored MonoGame's evolution from XNA, its key features, and its capabilities as a flexible, cross-platform game development framework.  In the next chapter, we'll begin setting up your development environment to begin creating your own games with MonoGame.
 
+## See Also
+- [About MonoGame](https://monogame.net/about/)
 
----
-
-<div align="right"><table border=1><tr><td>Next Up</td></tr><tr><td>
-
-[1-2: Setting Up Your Development Environment](./01-02-setting-up-your-development-environment.md)  
-
-</td></tr></table></div>
+## Next Steps
+- [1-2: Setting Up Your Development Environment](./01-02-setting-up-your-development-environment.md)
