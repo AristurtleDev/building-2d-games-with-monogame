@@ -35,7 +35,7 @@ To create a new MonoGame project in Visual Studio Code, perform the following:
 2. Expand the *Explorer Panel* by clicking the icon on the left in the *Activity Bar* or by selecting *View > Explorer* from the top menu.
    
 3. In the *Explorer Panel* cLick the *Create .Net Project* button. 
-    > [!TIP]
+    > [!TIP]  
     > The *Create .NET Project button is not a  feature that is available in Visual Studio Code by default.  It's provided through the C# Dev Kit extension we installed when [setting up your development environment](./01-02-setting-up-your-development-environment.md)
 
 4. A new prompt will open in the top center of the Visual Studio Code window showing the available C# project templates to choose from.  Enter `MonoGame` into the prompt to filter the project templates to only show the MonoGame ones.plates.
