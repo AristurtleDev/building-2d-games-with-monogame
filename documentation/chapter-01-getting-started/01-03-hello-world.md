@@ -87,7 +87,7 @@ While there isn't much happening here visually, there is a lot going on behind t
    1. The game is updated.
    2. The game is rendered to the window.
 
-You can exit the game at any time by pressing the `Esc` key on yoru keyboard.
+You can exit the game at any time by pressing the `Esc` key on your keyboard.
 
 If you were to set all of this up manually, it could take hours of research and thousands of lines of code written just to get the window created, graphics initialized and input polling.  Instead, we can take advantage of this base starting point that MonoGame offers us to get started creating our game without having to worry about the lower level implementations like this.
 
@@ -108,4 +108,4 @@ In this chapter, we created a new MonoGame game project and ran it.  In the foll
 - [Creating a New MonoGame Project In JetBrains Rider](https://docs.monogame.net/articles/getting_started/2_choosing_your_ide_visual_studio.html#creating-a-new-monogame-project)
 
 ## Next Steps
-- [Chatper 2: Crash Course](../chapter-02-crash-course/02-00-crash-course.md)
+- [Chapter 2: Crash Course](../chapter-02-crash-course/02-00-crash-course.md)
