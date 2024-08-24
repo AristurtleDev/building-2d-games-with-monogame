@@ -1,10 +1,8 @@
-
-# Chapter 1: What Is MonoGame
+# 1-1: What Is MonoGame
 
 - [What Can MonoGame Do](#what-can-monogame-do)
 - [Programming Languages](#programming-languages)
 - [Conclusion](#conclusion)
-
 
 ---
 
@@ -17,13 +15,13 @@ The official birth of MonoGame occurred in 2011 as an open source version of XNA
 Today, it is a mature cross-platform framework that is built with the spirit of preserving XNA but adopting modern game development practices. Some popular titles created using this platform include [Celeste](https://store.steampowered.com/app/504230/Celeste/), [Stardew Valley](https://store.steampowered.com/app/413150/Stardew_Valley/), and [Streets of Rage 4](https://store.steampowered.com/app/985890/Streets_of_Rage_4/).
 
 
-![celeste-screenshot](./images/chapter_01/celeste.png)  
+![celeste-screenshot](./images/01-01/celeste.png)  
 **Figure 1-1:** *Celeste, developed by Maddy Thorson and Noel Berry.*
 
-![stardew-screenshot](./images/chapter_01/stardew_valley.png)  
+![stardew-screenshot](./images/01-01/stardew-valley.png)  
 **Figure 1-2:** *Stardew Valley, developed by Eric Barone (ConcernedApe).*
 
-![sor4-screenshot](./images/chapter_01/sor4.jpg)  
+![sor4-screenshot](./images/01-01/sor4.jpg)  
 **Figure 1-3:** *Streets of Rage 4, developed by Dotemu, LizardCube, and Guard Crush Games.*
 
 ## What Can MonoGame Do
@@ -70,4 +68,11 @@ In this chapter, we've explored the rich history and extensive capabilities of M
 
 In this chapter, we explored MonoGame's evolution from XNA, its key features, and its capabilities as a flexible, cross-platform game development framework.  In the next chapter, we'll begin setting up your development environment to begin creating your own games with MonoGame.
 
-[Go to Chapter 2: Setting up your Development Environment](./02_setting_up_your_development_environment.md)
+
+---
+
+<div align="right"><table border=1><tr><td>Next Up</td></tr><tr><td>
+
+[1-2: Setting Up Your Development Environment](./01-02-setting-up-your-development-environment.md)  
+
+</td></tr></table></div>

@@ -1,4 +1,4 @@
-# Chapter 4: MonoGame Project Overview
+# 2-1: MonoGame Project Overview
 
 - [The *csproj* C# Project File](#the-csproj-c-project-file)
 - [The *dotnet-tools.json* Tools Manifest File](#the-dotnet-toolsjson-tools-manifest-file)
@@ -13,12 +13,12 @@
 In the [previous chapter](./03_hello_world.md) we created a new MonoGame project using one of the MonoGame project templates. Using the templates to create a new project automatically generates files and a project structure as a starting point for a new game.  The project structure will be similar to the following: 
 
 ```
-MyGame
+MonoGameSnake
 |   app.manifest
 |   Game1.cs
 |   Icon.bmp
 |   Icon.ico
-|   MyGame.csproj
+|   MonoGameSnake.csproj
 |   Program.cs
 |
 +---.config
@@ -139,7 +139,7 @@ These tools are necessary if you are using the *Content Pipeline* to manage and 
 ## The *Icon.ico* and *Icon.bmp* Files
 These are the icon files used when by the application for it's desktop icon, the icon displayed in the window title bar area, and the icon displayed in the task bar on windows or the docs on macOS. By default, these are icons of the MonoGame logo
 
-![The default MonoGame logo icon included in a new MonoGame project](./images/chapter_04/icon.png)  
+![The default MonoGame logo icon included in a new MonoGame project](./images/02-01/icon.png)  
 **Figure 4-1:** *The default MonoGame logo icon included in a new MonoGame project.*
 
 If you want to customize the icons used for your game, you can replace these files. 
@@ -203,7 +203,7 @@ using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
 
-namespace MyGame
+namespace MonoGameSnake
 {
     public class Game1 : Game
     {
@@ -250,4 +250,11 @@ The `Game1` class derives from the `Game` class and is responsible for setting u
 ## Conclusion
 In this chapter we discussed the standard files generated when creating a new MonoGame project, and touched on the important concepts of the content contained within each.  Next, we'll take a look at the *Game1.cs* file in more detail and discuss the order of execution of methods for the `Game1` class.
 
-[Go to Chapter 5: The Game Class](./05_the_game_class.md)
+---
+
+<div align="right"><table border=1><tr><td>Next Up</td></tr><tr><td>
+
+[2-2: The Game Class](./02-02-the-game-class.md)
+
+</td></tr></table></div>
+

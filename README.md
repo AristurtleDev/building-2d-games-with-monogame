@@ -12,12 +12,18 @@ Since we'll be using the MonoGame framework as our tool, this means we'll be usi
 # Chapters
 The following is a list of chapters for the documentation in this repository.  The chapters are meant to be read in order as each chapter will build off of concepts from the previous
 
-- [Chapter 01: What Is MonoGame](./documentation/01_what_is_monogame.md)
-- [Chapter 02: Setting Up Your Development Environment](./documentation/02_setting_up_your_development_environment.md)
-- [Chapter 03: Hello World](./documentation/03_hello_world.md)
-- [Chapter 04: MonoGame Project Overview](./documentation/04_monogame_project_overview.md)
-- [Chapter 05: The `Game` Class](./documentation/05_the_game_class.md)
-- [Chapter 06: The Content Pipeline](./documentation/06_the_content_pipeline.md)
+- [Chapter 1: Getting Started](./documentation/chapter-01-getting-started/01-00-getting-started.md)
+  - [1-1: What Is MonoGame](./documentation/chapter-01-getting-started/01-01-what-is-monogame.md)
+  - [1-2: Setting Up Your Development Environment](./documentation/chapter-01-getting-started/01-02-setting-up-your-development-environment.md)
+  - [1-3: Hello World](./documentation/chapter-01-getting-started/01-03-hello-world.md)
+- [Chapter 2: Behind The Scenes](./documentation/chapter-02-behind-the-scenes/02-00-behind-the-scenes.md)
+  - [2-1: MonoGame Project Overview](./documentation/chapter-02-behind-the-scenes/02-01-monogame-project-overview.md)
+  - [2-2: The Game Class](./documentation/chapter-02-behind-the-scenes/02-02-the-game-class.md)
+- [Chapter 3: The Content Pipeline](./documentation/chapter-03-the-content-pipeline/03-00-the-content-pipeline.md)
+  - [3-1: MonoGame Content Builder](./documentation/chapter-03-the-content-pipeline/03-01-monogame-content-builder.md)
+  - [3-2: MonoGame Content Builder Editor](./documentation/chapter-03-the-content-pipeline/03-02-monogame-content-builder-editor.md)
+  - [3-4: MonoGame.Content.Builder.Tasks](./documentation/chapter-03-the-content-pipeline/03-03-mongoame-content.builder.tasks.md)
+  - [3-4: The ContentManager Class](./documentation/chapter-03-the-content-pipeline/03-04-the-contentmanager-class.md)
 
 # Acknowledgements
 

@@ -1,4 +1,4 @@
-# Chapter 3: Hello World - A Crash Course in MonoGame
+# 1-3: Hello World
 
 - [Creating a New Project](#creating-a-new-project)
   - [Visual Studio 2022](#visual-studio-2022)
@@ -38,12 +38,12 @@ To create a new MonoGame project in Visual Studio 2022:
 2. In the launch window, click the *Create New Project* button.
 3. In the *Project Type* drop-down, choose *MonoGame* to filter the templates to only show MonoGame project templates.
 4. Choose the *MonoGame Cross-Platform Desktop Application* project template, then click the *Next* button.
-5. Enter a name for the project and choose a location to save it
+5. Enter the name `MonoGameSnake` for the project name and choose a location to save it
 6. Click the *Create* button.
 
 After clicking *Create*, a new C# project will be created based on the MonoGame template we picked and opened automatically in Visual Studio 2022.
 
-![New Project Created Visual Studio 2022](./images/chapter_03/vs.png)
+![New Project Created Visual Studio 2022](./images/01-03/vs.png)
 **Figure 3-1:** *A new MonoGame project after being created in Visual Studio 2022.*
 
 ### Visual Studio Code
@@ -55,12 +55,12 @@ To create a new MonoGame project in Visual Studio Code:
 4. In the prompt that opens, type `MonoGame` to filter the project templates.
 5. Choose the *MonoGame Cross-Platform Desktop Application* project template.
 6. In the dialog box that appears, choose the location to save the project.
-7. Enter a name for the project
+7. Enter a the name `MonoGameSnake` the project name.
 8. Select *Create Project*.
 
 After selecting *Create Project*, a new C# project will be created based on the MonoGame template chosen and opened automatically in Visual Studio Code.
 
-![Figure 3-2: A new MonoGame project after being created in Visual Studio Code.](./images/chapter_03/vscode.png)
+![Figure 3-2: A new MonoGame project after being created in Visual Studio Code.](./images/01-03/vscode.png)
 **Figure 3-2:** *A new MonoGame project after being created in Visual Studio Code.*
 
 ### Running The Game For The First Time
@@ -75,7 +75,7 @@ Congratulations, you've just created your very first MonoGame project above. We'
 
 Be amazed, the default MonoGame cornflower blue game window
 
-![Figure 3-3: The default MonoGame cornflower blue game window.](./images/chapter_03/cornflower_blue.png)  
+![Figure 3-3: The default MonoGame cornflower blue game window.](./images/01-03/cornflower-blue.png)  
 **Figure 3-3:** *The default MonoGame cornflower blue game window.*
 
 
@@ -90,4 +90,10 @@ If you were to set all of this up manually, it could take hours of research and 
 ## Conclusion
 In this chapter, we created a new MonoGame game project and ran it.  In the following chapters, we'll discuss the files that are generated when a new MonoGame project is created, dive into the *Game1.cs* file, and discuss the content pipeline.
 
-[Go to Chapter 4: MonoGame Project Overview](./04_monogame_project_overview.md)
+---
+
+<div align="right"><table border=1><tr><td>Next Up</td></tr><tr><td>
+
+[Chapter 2: Behind the Scenes](../chapter-02-behind-the-scenes/02-00-behind-the-scenes.md)  
+
+</td></tr></table></div>

@@ -1,4 +1,4 @@
-# Chapter 5: The `Game` Class
+# 2-2: The Game Class
 
 - [Instance Members](#instance-members)
 - [The `Game1()` Constructor](#the-game1-constructor)
@@ -25,7 +25,7 @@ using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
 
-namespace MyGame
+namespace MonoGameSnake
 {
     public class Game1 : Game
     {
@@ -82,7 +82,12 @@ private GraphicsDeviceManager _graphics;
 private SpriteBatch _spriteBatch;
 ```
 
-Both of these types, the `GraphicsDeviceManager` and `SpriteBatch` will be covered in more detail in a later article.  For now, you only need to understand that the `GraphicsDeviceManager` is responsible for initialization and the configuration of the graphics device and render settings, while the `SpriteBatch` is used to perform 2D graphics rendering.
+The `GraphicsDeviceManager` is responsible for initializing and providing access to the graphics device and other graphic presentation configurations.  It contains a property named `GraphicsDevice` that represents the actual graphics device on the device the game is running on. The `GraphicsDevice` is the interface between your game and the graphics processing unit (GPU) for everything on screen.  It also contains the properties `PreferredBackBufferWidth` and `PreferredBackBufferHeigh` which can be used to set the width and height, in pixels, of the game screen's back buffer.
+
+> [!TIP]
+> The `Game` class also provides a property named `GraphicsDevice` that can be used to access the graphics device object.
+
+The `SpriteBatch` is used to perform 2D graphics rendering of the textures for the game.  A game will consist of multiple textures that are rendered to represent the game visually, and the `SpriteBatch` provides an optimized method of rendering multiple textures in a single batch call to the GPU instead of doing one render at a time.
 
 ## The `Game1()` Constructor
 Next is the `Game1` constructor.  This responsible for creating a new instance of the `Game1` class when `new Game1()` is called.
@@ -200,7 +205,7 @@ Along with the above methods, by deriving from the `Game` class, the `Game1` cla
 ## Order of Execution
 In Figure 5-1 below, a high-level view of hte execution order of events for a MonoGame application is provided.  This follows the events from the initial construction of the `Game1` class, the initializations, the *game loop*, and the game exiting event.
 
-![A high-level view of the execution order of events for a MonoGame application](./images/chapter_05/execution-order.png)  
+![A high-level view of the execution order of events for a MonoGame application](./images/02-02/execution-order.png)  
 **Figure 5-1:** *A high-level view of the execution order of events for a MonoGame application.*
 
 ### Constructor
@@ -224,4 +229,10 @@ In this chapter, we took a deep dive in the `Game` class, discussed the default 
 
 In the next chapter, we'll dive into the Content Pipeline workflow, it's advantages, and how to use it to manage content for your game.
 
-[Go to Chapter 6: The Content Pipeline](./06_the_content_pipeline.md)
+---
+
+<div align="right"><table border=1><tr><td>Next Up</td></tr><tr><td>
+
+[Chapter 3: The Content Pipeline](../chapter-03-the-content-pipeline/03-00-the-content-pipeline.md)
+
+</td></tr></table></div>

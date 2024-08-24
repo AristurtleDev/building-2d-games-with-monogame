@@ -1,4 +1,4 @@
-# Chapter 2: Setting Up Your Development Environment
+# 1-2: Setting Up Your Development Environment
 
 - [Visual Studio 2022 (Windows Only)](#visual-studio-2022-windows-only)
 - [Visual Studio Code](#visual-studio-code)
@@ -23,7 +23,7 @@ While the environment setup process is similar to standard C# development, there
 ## Visual Studio 2022 (Windows Only)
 If you're using Windows, you can use Visual Studio 2022 as your development environment.  Visual Studio 2022 is the recommended development environment to use when creating games with MonoGame. To get stared, first download the Visual Studio 2022 Community Edition from https://visualstudio.microsoft.com/.  Once the installer has finished downloading, run it to install Visual Studio 2022.  During the installation, you will be asked to select which workloads you would like to install.  For MonoGame development the only workload required is the **.NET desktop development** workload.  If you plan to develop UWP applications which can be used on the Windows Store and Xbox, ensure that **Universal Windows Platform Development** workload is checked.  Finally, if you are going do mobile development for Android and/or iOS, ensure that the **.NET Multi-platform App UI Development** workload is checked.
 
-![visual_studio_workloads](./images/chapter_02/vs_workloads.png)
+![visual_studio_workloads](./images/01-02/vs-workloads.png)
 **Figure 2-1:** *Workloads to select in the Visual Studio Installer.*
 
 > [!WARNING]
@@ -129,4 +129,10 @@ After performing these setups, regardless of macOS or Linux, a new directory cal
 ## Conclusion
 Now that you’ve set up your development environment for MonoGame, you’re ready to dive into game development. Whether you’re using Visual Studio 2022 or Visual Studio Code, you’ve got the tools and configurations you need to start coding. With everything in place, you’re well-prepared to begin creating your MonoGame projects. In the next chapter, we’ll walk through the steps for creating a new project and get you started on your first game.
 
-[Go to Chapter 3: Hello World - A Crash Course in MonoGame](./03_hello_world_a_crash_course_in_monogame.md)
+---
+
+<div align="right"><table border=1><tr><td>Next Up</td></tr><tr><td>
+
+[1-3: Hello World](./01-03-hello-world.md)  
+
+</td></tr></table></div>
