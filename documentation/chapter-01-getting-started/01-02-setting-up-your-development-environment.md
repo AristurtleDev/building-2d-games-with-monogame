@@ -156,7 +156,7 @@ To install the C# Dev Kit extension, perform the following:
 Effect (shader) compilation requires access to DirectX. This means it will not work natively on macOS and Linux systems, but it can be used through [WINE](https://www.winehq.org/).  MonoGame provides a setup script that can be executed to setup the WINE environment.  Below you can find the steps based on your operating system. To do this, follow the instructions for your operating system below:
 
 ### macOS
-To setup the WINE environment on macOS for effect compilation, perform teh following:
+To setup the WINE environment on macOS for effect compilation, perform the following:
 
 1. Open a new terminal.
 2. Execute the following command to install prerequisites:
