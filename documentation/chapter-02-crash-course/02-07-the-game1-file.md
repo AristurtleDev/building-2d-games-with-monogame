@@ -17,8 +17,9 @@
 
 ---
 
+At the heart of every MonoGame project is an implementation of the `Game` class.  The `Game` class is responsible for initializing the graphics services, initializing the game, loading content, and updating and rendering our game through the *game loop*.
 
-At the core of every MonoGame project is the implementation of the `Game` class.  In a newly created project, this is provided in the *Game1.cs* file which contains the `Game1` class that derives from the `Game` class. 
+When creating a new MonoGame project, this is provided by the *Game1.cs* code file that defines the class `Game1` which derives from the MonoGame framework `Game` class.  When first generated, it contains the following code:
 
 ```cs
 using Microsoft.Xna.Framework;
@@ -66,6 +67,8 @@ namespace MonoGameSnake
     }
 }
 ```
+
+The MonoGame `Game` class provides `
 
 This class is responsible for initializing the graphics services used by our game, initializing the game itself, loading any content assets from disk, and maintaining the *game loop*.  We implement the logic for our game by overriding the `protected` methods of the base `Game` class. There are also various properties provided by the `Game` class to give us access to the graphics device, window settings, and content manager for our game. 
 

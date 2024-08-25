@@ -1,6 +1,6 @@
-# Chapter 2: Behind the Scenes
+# Chapter 2: Crash Course
 
-{{TODO Write Intro}}
+In this chapter, we'll take a crash course in MonoGame by looking at the files generated when creating a new MonoGame project.  
 
 ---
 
