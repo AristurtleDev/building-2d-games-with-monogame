@@ -27,7 +27,7 @@ In Chapter 2, we'll go over the files that make up a MonoGame project
 
     <summary>Question 2 Answer</summary>
 
-    > The primary language used is C#, which is the same language that the MonoGame framework is developed in.  However, any .NET langauge can be used, such as F# or Visual Basic.
+    > The primary language used is C#, which is the same language that the MonoGame framework is developed in.  However, any .NET language can be used, such as F# or Visual Basic.
     </details><br />
 
 3. What is the color of the game window when you run a MonoGame project for the first time?

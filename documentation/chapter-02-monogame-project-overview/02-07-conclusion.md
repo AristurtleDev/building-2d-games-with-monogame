@@ -31,7 +31,7 @@ In the next chapter, we'll dive into the *content pipeline* and the advantages t
     
     </details><br />
 
-3. What version should be used for the tools listed in the *dotent-tools.json* manifest file?
+3. What version should be used for the tools listed in the *dotnet-tools.json* manifest file?
 
     <details>
 
