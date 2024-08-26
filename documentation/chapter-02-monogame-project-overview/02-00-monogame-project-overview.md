@@ -39,13 +39,13 @@ Regardless of the project template chosen, each project will generate a project 
 | File Name | Description |
 |---|---|
 | *.sln | The solution file used to group one or more projects. |
-| [*.csproj](./02-02-the-csproj-project-file.md) | The C# Project file used to define project-level configurations including the target framework and package references. |
+| [*.csproj](./02-01-the-csproj-project-file.md) | The C# Project file used to define project-level configurations including the target framework and package references. |
 | app.manifest | A .NET manifest file that defines application-level settings and requirements for the application when running on Windows only.  Does not specify any configurations for other operating systems. |
-| [Content.mgcb](./02-03-the-content-file.md) | The MonoGame content project file that defines the assets to build by the content pipeline. |
-| [dotnet-tools.json](./02-04-the-dotnet-tools-manifest-file.md) | A .NET manifest file that defines the dotnet tools used by the project. |
-| [Game1.cs](./02-05-the-game1-file.md) | A C# code file that contains the code for initializing, loading content, updating, and rendering the game.  This is the heart of every MonoGame project. |
-| [Icon.bmp and Icon.ico](./02-06-the-icon-files.md) | Image file used by the MonoGame framework to display an icon in the window title bar and task manager. |
-| [Program.cs](./02-07-the-program-file.md) | A C# code file that defines the main entry point when the application runs. |
+| [Content.mgcb](./02-02-the-content-file.md) | The MonoGame content project file that defines the assets to build by the content pipeline. |
+| [dotnet-tools.json](./02-03-the-dotnet-tools-manifest-file.md) | A .NET manifest file that defines the dotnet tools used by the project. |
+| [Game1.cs](./02-06-the-game1-file.md) | A C# code file that contains the code for initializing, loading content, updating, and rendering the game.  This is the heart of every MonoGame project. |
+| [Icon.bmp and Icon.ico](./02-04-the-icon-files.md) | Image file used by the MonoGame framework to display an icon in the window title bar and task manager. |
+| [Program.cs](./02-05-the-program-file.md) | A C# code file that defines the main entry point when the application runs. |
 
 
 > [!NOTE]
