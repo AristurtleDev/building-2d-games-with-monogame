@@ -19,4 +19,4 @@ If you want to customize the icons used for you game, you only need to replace t
 The MonoGame framework expects the icon files to be named exactly this when they are embedded into the assembly in order to load and display them.
 
 ## Next
-- [2-5 The Program File](./02-05-the-program-file.md)
+- [Chapter 2-5 The Program File](./02-05-the-program-file.md)
