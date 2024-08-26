@@ -1,4 +1,4 @@
-# 2-6: The Program File
+# Chapter 2-6: The Program File
 
 This is the code file that contains the main entry point for the application. All C# application, regardless of being a MonoGame project or not, require a main entry point that specifies where code execution should start when the application runs.  This one provided by the MonoGame template very simple:
 

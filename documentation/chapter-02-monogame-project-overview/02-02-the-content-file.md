@@ -1,10 +1,8 @@
-# 2-3: The Content Project File
+# Chapter 2-2: The Content Project File
 
 - [Global Properties Section](#global-properties-section)
 - [References Section](#references-section)
 - [Content Section](#content-section)
-- [See Also](#see-also)
-- [Next](#next)
 
 ---
 
@@ -26,7 +24,9 @@ The *Content.mgcb* content project file, located in the */Content/* directory in
 #---------------------------------- Content ---------------------------------#
 ```
 
-This is not a file you would typically edit manually.  Instead you would load this file inside the **MonoGame Content Builder Editor**, which provides a visual interface for adding and managing assets which will then write the appropriate configurations to this file for you.  However, it can still be useful to know how to read this file, so we'll cover it briefly below.
+This is not a file you would typically edit manually.  Instead you would load this file inside the **MonoGame Content Builder Editor**, which provides a visual interface for adding and managing assets which will then write the appropriate configurations to this file for you. We'll cover using the **MonoGame Content Builder Editor** in [Chapter 03: The Content Pipeline](../chapter-03-the-content-pipeline/03-00-the-content-pipeline.md).
+
+However, it can still be useful to know how to read this file, so we'll cover it briefly below.
 
 ## Global Properties Section
 The global properties section defines configurations used by the **MonoGame Content Builder** when building the assets defined in the content section of this file.
@@ -91,4 +91,4 @@ This is not a file you would typically edit by hand, [although you can if you wa
 - [MonoGame Content Builder Editor](https://docs.monogame.net/articles/getting_started/tools/mgcb_editor.html)
 
 ## Next
-- [2-4: The dotnet-tools Manifest File](./02-04-the-dotnet-tools-manifest-file.md)
+- [2-3: The dotnet-tools Manifest File](./02-03-the-dotnet-tools-manifest-file.md)

@@ -1,10 +1,7 @@
-# 1-1: What Is MonoGame
+# Chapter 1-1: What Is MonoGame
 
 - [What Can MonoGame Do](#what-can-monogame-do)
 - [Programming Languages](#programming-languages)
-- [Conclusion](#conclusion)
-- [See Also](#see-also)
-- [Next Steps](#next-steps)
 
 ---
 
@@ -65,13 +62,8 @@ Developers should have a foundational understanding of C# and programming concep
   
 For those that are new to programming and/or C#, it's recommended to learn core fundamentals of C# and build a solid foundation before exploring MonoGame.  Microsoft offers free resources for learning C# at https://dotnet.microsoft.com/en-us/learn/csharp
 
-## Conclusion
-In this chapter, we've explored the rich history and extensive capabilities of MonoGame. We've seen how it evolved from Microsoft's XNA Game Studio to become a powerful, open-source framework that preserves XNA's spirit while embracing modern game development practices. 
-
-In this chapter, we explored MonoGame's evolution from XNA, its key features, and its capabilities as a flexible, cross-platform game development framework.  In the next chapter, we'll begin setting up your development environment to begin creating your own games with MonoGame.
-
 ## See Also
 - [About MonoGame](https://monogame.net/about/)
 
-## Next Steps
-- [1-2: Setting Up Your Development Environment](./01-02-setting-up-your-development-environment.md)
+## Next
+- [Chapter 1-2: Setting Up Your Development Environment](./01-02-setting-up-your-development-environment.md)

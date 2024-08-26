@@ -1,3 +1,7 @@
+> [!CAUTION]
+> THIS DOCUMENT IS CURRENTLY BEING REFACTORED
+
+ 
 # 3-2: MonoGame Content Builder Editor
 
 The *MonoGame Content Builder Editor (MGCB Editor)* is a tool that provides a graphical user interface for managing the assets to add to your game.  We briefly used this in [Chapter 03](./03_hello_world_a_crash_course_in_monogame.md) to add the images and audio content to the prototype game we created.  

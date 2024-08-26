@@ -1,3 +1,7 @@
+> [!CAUTION]
+> THIS DOCUMENT IS CURRENTLY BEING REFACTORED
+
+
 # 3-3: MonoGame.Content.Builder.Tasks
 
 When you create a new project using the supplied MonoGame templates, there will be two NuGet package references added. The first will be the platform specific MonoGame Framework package, and the second will be the *MonoGame.Content.Builder.Task* package.

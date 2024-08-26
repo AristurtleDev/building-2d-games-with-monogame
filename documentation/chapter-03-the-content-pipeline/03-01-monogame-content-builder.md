@@ -1,3 +1,7 @@
+> [!CAUTION]
+> THIS DOCUMENT IS CURRENTLY BEING REFACTORED
+
+
 # 3-1: MonoGame Content Builder
 
 The *MonoGame Content Builder* is a tool that compiles the game assets added to your content project into *.xnb* binary encoded files that can then be loaded at runtime in game using the *ContentManager class*.  For it to know which assets to compile, it reads the contents of the *Content.mgcb* file located by default in the */Content/* directory in the game project. The *Content.mgcb* file itself looks similar to the following
