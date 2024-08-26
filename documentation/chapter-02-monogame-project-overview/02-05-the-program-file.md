@@ -1,4 +1,4 @@
-# Chapter 2-6: The Program File
+# Chapter 2-5: The Program File
 
 This is the code file that contains the main entry point for the application. All C# application, regardless of being a MonoGame project or not, require a main entry point that specifies where code execution should start when the application runs.  This one provided by the MonoGame template very simple:
 
@@ -28,4 +28,4 @@ Here, a new instance of the `Game1` class is initialized within a `using` contex
 - [Top-level statements - programs without Main methods](https://learn.microsoft.com/en-us/dotnet/csharp/fundamentals/program-structure/top-level-statements)
 
 ## Next
-- [2-7: The Game1 File](./02-07-the-game1-file.md)
+- [2-6: The Game1 File](./02-06-the-game1-file.md)
