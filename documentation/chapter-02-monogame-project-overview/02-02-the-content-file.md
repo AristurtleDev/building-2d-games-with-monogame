@@ -91,4 +91,4 @@ This is not a file you would typically edit by hand, [although you can if you wa
 - [MonoGame Content Builder Editor](https://docs.monogame.net/articles/getting_started/tools/mgcb_editor.html)
 
 ## Next
-- [2-3: The dotnet-tools Manifest File](./02-03-the-dotnet-tools-manifest-file.md)
+- [Chapter 2-3: The dotnet-tools Manifest File](./02-03-the-dotnet-tools-manifest-file.md)
