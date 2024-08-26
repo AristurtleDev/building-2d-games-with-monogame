@@ -102,4 +102,4 @@ If you were to set all of this up manually, it could take hours of research and 
 - [Creating a New MonoGame Project In JetBrains Rider](https://docs.monogame.net/articles/getting_started/2_choosing_your_ide_visual_studio.html#creating-a-new-monogame-project)
 
 ## Next
-- [Chapter 2: Crash Course](../chapter-02-crash-course/02-00-crash-course.md)
+- [Chapter 1-4: Conclusion](./01-04-conclusion.md)
