@@ -1,10 +1,8 @@
-# 1-3: Hello World
+# Chapter 1-3: Hello World
 
 - [Creating a New MonoGame Project](#creating-a-new-monogame-project)
 - [Running The Game For The First Time](#running-the-game-for-the-first-time)
 - [Conclusion](#conclusion)
-- [See Also](#see-also)
-- [Next Steps](#next-steps)
 
 ---
 
@@ -99,13 +97,9 @@ If you were to set all of this up manually, it could take hours of research and 
 > In games, things are always happening such as objects moving around like the player or particles.  To handle this, games implement a loop structure that runs continuously, first calling the Update method and then the Draw method, until it has been told to exit.
 
 
-## Conclusion
-In this section, you created your first MonoGame project and ran it.  In the next chapter, we'll dive deeper into the files that are generated when a new MonoGame
-In this chapter, we created a new MonoGame game project and ran it.  In the following chapters, we'll discuss the files that are generated when a new MonoGame project is created, dive into the *Game1.cs* file, and discuss the content pipeline.
-
 ## See Also
 - [Creating a New MonoGame Project In Visual Studio 2022](https://docs.monogame.net/articles/getting_started/2_choosing_your_ide_visual_studio.html#creating-a-new-monogame-project)
 - [Creating a New MonoGame Project In JetBrains Rider](https://docs.monogame.net/articles/getting_started/2_choosing_your_ide_visual_studio.html#creating-a-new-monogame-project)
 
-## Next Steps
+## Next
 - [Chapter 2: Crash Course](../chapter-02-crash-course/02-00-crash-course.md)

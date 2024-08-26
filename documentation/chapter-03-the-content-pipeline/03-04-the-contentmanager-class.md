@@ -1,3 +1,7 @@
+> [!CAUTION]
+> THIS DOCUMENT IS CURRENTLY BEING REFACTORED
+
+
 # 3-4: The ContentManager Class
 
 The final part of the content pipeline workflow is the *ContentManager class* used in the game code to load the content at runtime. The `Game` class initializes a new instance of the *ContentManager class* [when the constructor is called](./05_the_game_class.md#the-game1-constructor) and is provided as an inherited property.

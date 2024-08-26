@@ -13,12 +13,22 @@ Since we'll be using the MonoGame framework as our tool, this means we'll be usi
 The following is a list of each chapter and its sections for this tutorial.  The chapters are meant to be read in the order below as each chapter will build off of concepts discussed in the previous one.
 
 - [Chapter 1: Getting Started](./documentation/chapter-01-getting-started/01-00-getting-started.md)
-  - [1-1: What Is MonoGame](./documentation/chapter-01-getting-started/01-01-what-is-monogame.md)
+  - [1-1: What is MonoGame?](./documentation/chapter-01-getting-started/01-01-what-is-monogame.md)
   - [1-2: Setting Up Your Development Environment](./documentation/chapter-01-getting-started/01-02-setting-up-your-development-environment.md)
   - [1-3: Hello World](./documentation/chapter-01-getting-started/01-03-hello-world.md)
-- [Chapter 2: Crash Course](./documentation/chapter-02-crash-course/02-00-crash-course.md)
-  - [2-1: MonoGame Project Overview](./documentation/chapter-02-behind-the-scenes/02-01-monogame-project-overview.md)
-  - [2-2: The Game Class](./documentation/chapter-02-behind-the-scenes/02-02-the-game-class.md)
+  - [1-4: Conclusion](./documentation/chapter-01-getting-started/01-04-conclusion.md)
+- [Chapter 2: MonoGame Project Overview](./documentation/chapter-02-monogame-project-overview/02-00-monogame-project-overview.md)
+  - [2-1: The csproj Project File](./documentation/chapter-02-monogame-project-overview/02-01-the-csproj-project-file.md)
+  - [2-2: The Content File](./documentation/chapter-02-monogame-project-overview/02-02-the-content-file.md)
+  - [2-3: The dotnet-tools Manifest File](./documentation/chapter-02-monogame-project-overview/02-03-the-dotnet-tools-manifest-file.md)
+  - [2-4: The Icon Files](./documentation/chapter-02-monogame-project-overview/02-04-the-icon-files.md)
+  - [2-5: The Program File](./documentation/chapter-02-monogame-project-overview/02-05-the-program-file.md)
+  - [2-6: The Game1 File](./documentation/chapter-02-monogame-project-overview/02-06-the-game1-file.md)
+  - [2-7: Conclusion](./documentation/chapter-02-monogame-project-overview/02-07-conclusion.md)
+
+> [!CAUTION]
+> Chapter 3 is currently being refactored and is not ready for review.
+
 - [Chapter 3: The Content Pipeline](./documentation/chapter-03-the-content-pipeline/03-00-the-content-pipeline.md)
   - [3-1: MonoGame Content Builder](./documentation/chapter-03-the-content-pipeline/03-01-monogame-content-builder.md)
   - [3-2: MonoGame Content Builder Editor](./documentation/chapter-03-the-content-pipeline/03-02-monogame-content-builder-editor.md)

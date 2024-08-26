@@ -4,9 +4,9 @@
 
 | Section | Description |
 |---|---|
-| [1-1: What is MonoGame](./01-01-what-is-monogame.md) | A brief overview of the origins of MonoGame, it's evolution from XNA, and what to expect when using it for game development.. |
-| [1-2: Setting Up Your Development Environment](./01-02-setting-up-your-development-environment.md) | Steps to setup the development environment on your PC so you can start making games with MonoGame. |
-| [1-3: Hello World](./01-03-hello-world.md) | Creating your first game in MonoGame, the classic "Hello World" example. |
+| [Chapter 1-1: What is MonoGame](./01-01-what-is-monogame.md) | A brief overview of the origins of MonoGame, it's evolution from XNA, and what to expect when using it for game development.. |
+| [Chapter 1-2: Setting Up Your Development Environment](./01-02-setting-up-your-development-environment.md) | Steps to setup the development environment on your PC so you can start making games with MonoGame. |
+| [Chapter 1-3: Hello World](./01-03-hello-world.md) | Creating your first game in MonoGame, the classic "Hello World" example. |
 
-## Next Steps
-- [1-1: What Is MonoGame](./01-01-what-is-monogame.md)
+## Next
+- [Chapter 1-1: What Is MonoGame](./01-01-what-is-monogame.md)

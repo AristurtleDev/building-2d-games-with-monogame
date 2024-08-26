@@ -1,4 +1,4 @@
-# 1-2: Setting Up Your Development Environment
+# Chapter 1-2: Setting Up Your Development Environment
 
 - [Install the .NET SDK](#install-the-net-sdk)
   - [Windows](#windows)
@@ -14,9 +14,6 @@
 - [Setup WINE for Effect Compilation (macOS and Linux Only)](#setup-wine-for-effect-compilation-macos-and-linux-only)
   - [macOS](#macos-2)
   - [Linux](#linux-2)
-- [Conclusion](#conclusion)
-- [See Also](#see-also)
-- [Next Steps](#next-steps)
 
 --- 
 
@@ -184,13 +181,10 @@ To setup the WINE environment on Linux for effect compilation, perform the follo
 
 After performing these setups, regardless of macOS or Linux, a new directory called `.winemonogame` will be created in your home directory.  If you ever wish to undo the setup this script performed, you can just simply delete this directory.
 
-## Conclusion
-In this section, we installed the .NET SDK, MonoGame project templates, Visual Studio Code, and the C# Dev Kit extension for Visual Studio Code.  We're now ready to create a new MonoGame project.  In the next chapter, we'll go through the steps of creating your first MonoGame project.
-
 ## See Also
 - [Setting Up Visual Studio on Windows | MonoGame](https://docs.monogame.net/articles/getting_started/2_choosing_your_ide_visual_studio.html)
 - [Setting Up Your Development Environment for VSCode | MonoGame](https://docs.monogame.net/articles/getting_started/2_choosing_your_ide_vscode.html?tabs=windows)
 - [Setting Up Your Development Environment for Rider | MonoGame](https://docs.monogame.net/articles/getting_started/2_choosing_your_ide_rider.html)
 
-## Next Steps
-- [1-3: Hello World](./01-03-hello-world.md)
+## Next
+- [Chapter 1-3: Hello World](./01-03-hello-world.md)

@@ -1,12 +1,8 @@
+> [!CAUTION]
+> THIS DOCUMENT IS CURRENTLY BEING REFACTORED
+
 # Chapter 3: The Content Pipeline
 
-- [What Is The Content Pipeline?](#what-is-the-content-pipeline)
-  - [MonoGame Content Builder](#monogame-content-builder)
-  - [MonoGame Content Builder Editor](#monogame-content-builder-editor)
-  - [MonoGame.Content.Builder.Task NuGet](#monogamecontentbuildertask-nuget)
-  - [ContentManager Class](#contentmanager-class)
-- [Why Use The Content Pipeline?](#why-use-the-content-pipeline)
-- [Conclusion](#conclusion)
 
 ---
 In this chapter, we'll explore the *content pipeline* in more detail, discuss the advantages of using it, and how the entire workflow executes from start to finish.
