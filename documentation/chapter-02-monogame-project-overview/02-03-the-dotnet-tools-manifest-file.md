@@ -63,4 +63,4 @@ These tools are necessary if you are using the **Content Pipeline** to manage an
 - [Updating Versions](https://docs.monogame.net/articles/migration/updating_versions.html)
 
 ## Next
-- [2-4: The Icon Files](./02-04-the-icon-files.md)
+- [Chapter 2-4: The Icon Files](./02-04-the-icon-files.md)
