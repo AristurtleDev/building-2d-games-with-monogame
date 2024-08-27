@@ -125,7 +125,7 @@ One pitfall to organizing content in the MGCB Editor is that you cannot drag and
 
 
 ### Saving Changes
-While working inside the MGCB Editor, changes performed are only saved when you click the **Save** icon in the toolbar or choose *File > Save* from the top menu.  The MGCB Editor does not auto-save for you and will not warn you about saving if you exit without saving first.
+While working inside the MGCB Editor, changes performed are only saved when you click the **Save** icon in the toolbar or choose *File > Save* from the top menu.  The MGCB Editor does not auto-save for you.  If you attempt to close the editor without saving first, you will be prompted to save.
 
 ### Building Content
 To build the content items currently added to the content project, you can click the **Build** icon in the toolbar or select *Build > Build* from the top menu.  Performing this action will perform a build of all content items added to the content project.
