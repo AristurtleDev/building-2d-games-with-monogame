@@ -1,38 +1,31 @@
-> [!CAUTION]
-> THIS DOCUMENT IS CURRENTLY BEING REFACTORED
-
 # Chapter 3: The Content Pipeline
 
+- [Why Use The Content Pipeline?](#why-use-the-content-pipeline)
 
 ---
-In this chapter, we'll explore the *content pipeline* in more detail, discuss the advantages of using it, and how the entire workflow executes from start to finish.
 
-## What Is The Content Pipeline?
-The *content pipeline* is an out-of-the-box workflow provided by the MonoGame framework for managing the various types of assets that go into your game.  These assets can include images uses for textures, audio files used for sound effects and/or songs, fonts, 3D models, and shaders.  However it's not limited to just these asset types.  The MonoGame framework provides projects that developers can use to create extensions for the pipeline for custom asset types not handled by default.  Since the *content pipeline* itself is a workflow, it's made up of different components used at design time, build time, and run time in your game project.  These components include
+What is a game without assets; images file uses for textures, audio files for sound effects and music, fonts for rendering text, 3D models, and shaders.  Without assets, well, we would just have a cornflower blue game window and not much else.  So how do you load assets into the game so the artwork you worked so hard on creating can be used to represent your player, and the music your best friend created can be played throughout the level?  
 
-1. The *MonoGame Content Builder (MGCB)* tool which performs the compilation of the game assets added to the content project
-2. The *MonoGame Content Builder Editor (MGCB Editor)* tool used to edit the content project to add the assets to compile and be included with the game build
-3. The *MonoGame.Content.Builder.Tasks* package reference which is used to automate the building of content when you perform a project build and copying the compiled content to the project output directory
-4. The *ContentManager class* use to load the compiled assets in game at runtime to use.
+The MonoGame framework provides a workflow called **The Content Pipeline**.  The content pipeline is composed of different components that you work with during the development phase of the game, the build phase, and the runtime phase to take those assets and load them into your game.  These components are
+
+1. The **MonoGame Content Builder Editor (MGCB Editor)** tool used to edit the *Content.mgcb* content project file.
+2. The **MonoGame Content Builder (MGCB)** tool which performs the compilation of the assets defined in the *Content.mgcb* content project file
+3. The **MonoGame.Content.Builder.Task** NuGet package reference which contains task to automate building the content and copying the compiled content to your projects output directory
+4. The [**ContentManager class**](https://docs.monogame.net/api/Microsoft.Xna.Framework.Content.ContentManager.html) use to load the compiled assets in game at runtime.
+
+Notice that above I said the MonoGame framework *provides* this workflow.  It is not a requirement to use it, and there are other methods built into the framework to load your assets directly from file.  However, this isn't always the most optimal approach, let's explore why.
 
 ## Why Use The Content Pipeline?
-The content pipeline processes the assets specific for the platform being targeted.  For instance, textures can be compressed using [DXT compression](https://en.wikipedia.org/wiki/S3_Texture_Compression), leaving a smaller memory footprint for graphical resources on the graphics processing unit (GPU).  You can use audio files in the native format you have them such as *.mp3*, *.ogg*, and *.wav*, and they will be converted to a format that is compatible with the target platform. Later in development, if you decide to support additional platforms, the pipeline will handle compiling the assets to target those platforms as well.  
+When using the content pipeline, your assets are compiled into an optimized format for the platform you are targeting.  For instance, when an image is loaded as a texture, the data has to be sent to the  graphical processing unit (GPU) and stored in memory there.  The GPU doesn't know what to do with data formats like PNG, so instead, it has to be decompressed into raw bytes as a format the GPU understands.  For some platforms, like Desktop, this may not seem that big of a deal, but for mobile devices and consoles, you only have so much memory that can be dedicated for the GPU. 
 
-You also get the benefits offered at runtime with the *ContentManager class* mentioned above such as caching loaded assets.  If you were to instead use raw assets, you would need to write the code necessary to cache and manage the cache yourself.  While not a daunting task, it is extra work to create a system that already exists.
+Instead, if you use a workflow like the content pipeline to pre-process the image file, you can compile it into a format that is understood by the GPU.  For instance, for desktop platforms, image data can be compressed using [DXT compression](https://en.wikipedia.org/wiki/S3_Texture_Compression), which is a format that GPUs understand.  Now, when you load the image that was pre-processed, it can send the DXT compressed data to the GPU instead of having to unpack it and send the raw bytes, reducing the memory footprint.
 
-The content pipeline isn't a requirement to develop games with MonoGame; raw assets can be loaded at runtime using methods such as `Texture2D.FromFile()`.  In some cases, especially for really small games or prototypes, development time can be faster to just do this instead of going through the MGCB Editor to add assets and having them be preprocessed.  As the number of assets for the game grows, optimizing the content loaded is going to start becoming a priority.  Learning to use the content pipeline from the start is going to outweigh the benefits of quick development time.
+Another benefit of using the content pipeline is through the [**ContentManager class**](https://docs.monogame.net/api/Microsoft.Xna.Framework.Content.ContentManager.html) in the MonoGame framework.  This class is used to load content that was compiled by the content pipeline at runtime in the game.  The content manager itself will cache the asset the first time it's loaded from disk, so any subsequent calls to load the asset will return the already read cached data instead of having to perform another disk read, decreasing load times within the game.
 
-## The Content Pipeline Workflow
-{{TODO Write Section}}
+In the following sections, we'll explore the different components that make up the content pipeline workflow in MonoGame and how they all work together to provide an out-of-box content management system for your game.
 
+## See Also
+- [Why Use The Content Pipeline? | MonoGame](https://docs.monogame.net/articles/getting_started/content_pipeline/why_content_pipeline.html)
 
-## Conclusion
-In this section, we discussed what the content pipeline is, the components that make up the pipeline, and the workflow of the pipeline.  In the following chapters, we'll discuss each of the components.
-
----
-
-<div align="right"><table border=1><tr><td>Next Up</td></tr><tr><td>
-
-[3-1: MonoGame Content Builder](./03-01-monogame-content-builder.md)
-
-</td></tr></table></div>
+## Next
+- [Chapter 3-1: MonoGame Content Builder Editor](./03-01-monogame-content-builder-editor.md)
