@@ -17,6 +17,7 @@ The following is a list of each chapter and its sections for this tutorial.  The
   - [1-2: Setting Up Your Development Environment](./documentation/chapter-01-getting-started/01-02-setting-up-your-development-environment.md)
   - [1-3: Hello World](./documentation/chapter-01-getting-started/01-03-hello-world.md)
   - [1-4: Conclusion](./documentation/chapter-01-getting-started/01-04-conclusion.md)
+
 - [Chapter 2: MonoGame Project Overview](./documentation/chapter-02-monogame-project-overview/02-00-monogame-project-overview.md)
   - [2-1: The csproj Project File](./documentation/chapter-02-monogame-project-overview/02-01-the-csproj-project-file.md)
   - [2-2: The Content File](./documentation/chapter-02-monogame-project-overview/02-02-the-content-file.md)
@@ -26,14 +27,13 @@ The following is a list of each chapter and its sections for this tutorial.  The
   - [2-6: The Game1 File](./documentation/chapter-02-monogame-project-overview/02-06-the-game1-file.md)
   - [2-7: Conclusion](./documentation/chapter-02-monogame-project-overview/02-07-conclusion.md)
 
-> [!CAUTION]
-> Chapter 3 is currently being refactored and is not ready for review.
-
 - [Chapter 3: The Content Pipeline](./documentation/chapter-03-the-content-pipeline/03-00-the-content-pipeline.md)
   - [3-1: MonoGame Content Builder](./documentation/chapter-03-the-content-pipeline/03-01-monogame-content-builder.md)
   - [3-2: MonoGame Content Builder Editor](./documentation/chapter-03-the-content-pipeline/03-02-monogame-content-builder-editor.md)
   - [3-4: MonoGame.Content.Builder.Tasks](./documentation/chapter-03-the-content-pipeline/03-03-mongoame-content.builder.tasks.md)
   - [3-4: The ContentManager Class](./documentation/chapter-03-the-content-pipeline/03-04-the-contentmanager-class.md)
+
+- Chapter 4 coming next ...
 
 # Acknowledgements
 
