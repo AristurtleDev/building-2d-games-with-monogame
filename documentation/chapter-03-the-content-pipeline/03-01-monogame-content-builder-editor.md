@@ -30,7 +30,7 @@ dotnet mgcb-editor [file_path]
 The `[file_path]` is optional, and when supplied will open the MGCB Editor with the *Content.mgcb* file at the path specified.
 
 > [!TIP]
-> A [third-party extension](https://marketplace.visualstudio.com/items?itemName=r88.monogame) was created by a MonoGame community member r88 that can be used with Visual Studio Code to open the MGCB Editor by simply clicking an icon from within the Visual STudio Code editor.  While not an official extension from the MonoGame foundation, they regularly use it and support it's recommendation.
+> A [third-party extension](https://marketplace.visualstudio.com/items?itemName=r88.monogame) was created by a MonoGame community member r88 that can be used with Visual Studio Code to open the MGCB Editor by simply clicking an icon from within the Visual Studio Code editor.  While not an official extension from the MonoGame foundation, they regularly use it and support it's recommendation.
 >
 > For Visual Studio 2022 users, the official [MonoGame Extension](https://marketplace.visualstudio.com/items?itemName=MonoGame.MonoGame-Templates-VSExtension) can be installed which allows you to open the MGCB Editor by simply double-clicking the *Content.mgcb* file in the **Solution Explorer** panel.
 

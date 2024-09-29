@@ -8,10 +8,10 @@ What is a game without assets; images file uses for textures, audio files for so
 
 The MonoGame framework provides a workflow called **The Content Pipeline**.  The content pipeline is composed of different components that you work with during the development phase of the game, the build phase, and the runtime phase to take those assets and load them into your game.  These components are
 
-1. The **MonoGame Content Builder Editor (MGCB Editor)** tool used to edit the *Content.mgcb* content project file.
-2. The **MonoGame Content Builder (MGCB)** tool which performs the compilation of the assets defined in the *Content.mgcb* content project file
-3. The **MonoGame.Content.Builder.Task** NuGet package reference which contains task to automate building the content and copying the compiled content to your projects output directory
-4. The [**ContentManager class**](https://docs.monogame.net/api/Microsoft.Xna.Framework.Content.ContentManager.html) use to load the compiled assets in game at runtime.
+1. The [**MonoGame Content Builder Editor (MGCB Editor)**](./03-01-monogame-content-builder-editor.md) tool used to edit the *Content.mgcb* content project file.
+2. The [**MonoGame Content Builder (MGCB)**](./03-02-monogame-content-builder.md) tool which performs the compilation of the assets defined in the *Content.mgcb* content project file
+3. The [**MonoGame.Content.Builder.Task**](./03-03-mongoame-content.builder.tasks.md) NuGet package reference which contains task to automate building the content and copying the compiled content to your projects output directory
+4. The [**ContentManager class**](./03-04-the-contentmanager-class.md) use to load the compiled assets in game at runtime.
 
 Notice that above I said the MonoGame framework *provides* this workflow.  It is not a requirement to use it, and there are other methods built into the framework to load your assets directly from file.  However, this isn't always the most optimal approach, let's explore why.
 

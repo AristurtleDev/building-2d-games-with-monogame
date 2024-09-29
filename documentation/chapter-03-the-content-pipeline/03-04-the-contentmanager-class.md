@@ -1,34 +1,53 @@
-> [!CAUTION]
-> THIS DOCUMENT IS CURRENTLY BEING REFACTORED
-
-
 # 3-4: The ContentManager Class
 
-The final part of the content pipeline workflow is the *ContentManager class* used in the game code to load the content at runtime. The `Game` class initializes a new instance of the *ContentManager class* [when the constructor is called](./05_the_game_class.md#the-game1-constructor) and is provided as an inherited property.
+- [Loading Assets](#loading-assets)
+  - [ContentManager Cache](#contentmanager-cache)
+- [Unload Assets](#unload-assets)
+- [See Also](#see-also)
+- [Next](#next)
 
-When loading content, you use the `ContentManager.Load<T>()` method.  The `T` type parameter specifies which type of content you are loading (`Texture2D`, `SpriteFont`, `SoundEffect`, etc).  The method itself takes a single parameter which is the path to the content file to load, minus the extension.  **The path is relative to the `ContentManager.RootDirectory` path which is `/Content/` by default.**  
-   
+---
+
+The final part of the content pipeline is the [*ContentManager class*](https://docs.monogame.net/api/Microsoft.Xna.Framework.Content.ContentManager.html).  This class is used at runtime in your game to load the content that was compiled during the build process.  
+
+The `Game` class initializes a new instance of the *ContentManager class* during its constructor and makes it available as one of the [inherited properties](../chapter-02-monogame-project-overview/02-06-the-game1-file.md#additional-properties).  
+
+## Loading Assets
+To load content using the *Content Manager class*, you use the [`ContentManager.Load<T>()`](https://docs.monogame.net/api/Microsoft.Xna.Framework.Content.ContentManager.html#Microsoft_Xna_Framework_Content_ContentManager_Load__1_System_String_).  The `T` type parameter specifies which type of content you are loading (e.g. `Texture2D`, `SpiteFont`, `SoundEffect`, etc).  Additionally, the method has a single parameter which is the **asset name** of the content to load.  
+
+The **asset name** is the path to the content, minus the extension, relative to the **ContentManager.RootDirectory** path.  In the [`Game1` Constructor](../chapter-02-monogame-project-overview/02-06-the-game1-file.md#the-game1-constructor), you can see that the `ContentManager.RootDirectory` path is set to `"Content"` by default.  So if you had an asset to load that was in the directory */Content/Images/ball.png*, the **asset name** you would provide when loading it would be `Images/ball`.
+
+Below are some examples of loading content using the *ContentManager class*:
+
 ```cs
 Texture2D texture = Content.Load<Texture2D>("Graphics/image");
 Song music = Content.Load<Song>("Music/background_music");
 SoundEffect sfx = Content.Load<SoundEffect>("Audio/pickup_sfx");
 ```
 
-After an asset is loaded for the first time, the *ContentManager class* will cache it internally.  By caching the asset, any subsequent calls to load that asset will serve the cached version instead of doing a full disk read again to load it directly from the *.xnb* file.  However, this also means that all content loaded is cached and using memory.  Depending on the size and number of assets loaded, over time the memory usage can become large.
+### ContentManager Cache
 
-To help with this, the *ContentManager class* also has the `ContentManager.Unload()` method.  Calling this method without providing a parameter will unload all cached content that has been loaded. You can also pass in the same path value you used to load the content as a parameter to unload only that specific asset.
+When you load an asset for the first time using the `ContentManager`, it will cache the asset internally.  By caching the asset, any subsequent calls to load that same asset later will return the cached version instead of perform a full disk read and deserialization of the content.  
+
+## Unload Assets
+
+There may be times when you want to unload assets that were previously loaded by the `ContentManager`.  For instance, a common scenario is to have a `ContentManager` instance that is used to load global assets, and a separate instance used in a scene in your game that only loads assets used by that scene.  When that scene ends, you may want to unload the assets that were loaded during it since they will no longer be used, reducing your memory footprint.
+
+To unload assets, the `ContentManager` provides three methods
 
 ```cs
-//  Unloads all cached assets
+//  Unloads a single asset with the asset name provided
+Content.UnloadAsset(assetName);
+
+//  Unloads multiple assets using the collection of asset names provided
+Content.UnloadAssets(new List<string>() { asset1, asset2, asset3 });
+
+//  Unloads all assets
 Content.Unload();
-
-//  Unloads a specific asset
-Content.Unload("Graphics/image");
 ```
----
 
-<div align="right"><table border=1><tr><td>Next Up</td></tr><tr><td>
+## See Also
+- [Adding the content in your game | MonoGame](https://docs.monogame.net/articles/getting_started/4_adding_content.html#adding-the-content-in-your-game)
 
-[Chapter 4]()
-
-</td></tr></table></div>
+## Next
+- [Chapter 3-5: Conclusion](./03-04-the-contentmanager-class.md)
