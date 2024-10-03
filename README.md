@@ -33,7 +33,7 @@ The following is a list of each chapter and its sections for this tutorial.  The
   - [3-4: MonoGame.Content.Builder.Tasks](./documentation/chapter-03-the-content-pipeline/03-03-mongoame-content.builder.tasks.md)
   - [3-4: The ContentManager Class](./documentation/chapter-03-the-content-pipeline/03-04-the-contentmanager-class.md)
 
-- [Chapter 4: Designing the Game](./documentation/chatper-04-designing-the-game/04-00-designing-the-game.md)
+- [Chapter 4: Designing the Game](./documentation/chapter-04-designing-the-game/04-00-designing-the-game.md)
 
 - Chapter 5 coming next ...
 
