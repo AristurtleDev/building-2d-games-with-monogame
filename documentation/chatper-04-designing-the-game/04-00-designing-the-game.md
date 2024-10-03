@@ -4,13 +4,14 @@
 - [Inspiration](#inspiration)
 - [Target Systems](#target-systems)
 - [Resolution](#resolution)
-- [Game Flow](#game-flow)
+- [User Interface Flow](#user-interface-flow)
   - [1. Splash Screen](#1-splash-screen)
   - [2. Title Screen](#2-title-screen)
   - [3. Options Screen](#3-options-screen)
   - [4. Gameplay Screen](#4-gameplay-screen)
   - [5. Pause Screen](#5-pause-screen)
   - [6. Game Over Screen](#6-game-over-screen)
+- [Game Play Overview](#game-play-overview)
 - [Controls](#controls)
 - [See Also](#see-also)
 - [Next](#next)
@@ -40,7 +41,7 @@ The game will be developed to target Windows, MacOS, and Linux
 ## Resolution
 According to the [Steam Hardware Survey](https://store.steampowered.com/hwsurvey/Steam-Hardware-Software-Survey), as of September 2024, the most common display resolution is 1920 x 1080.  Given this is the most common display resolution, the game will target a resolution of 1920 x 1080
 
-## Game Flow
+## User Interface Flow
 The following defines the flow of the game and user interaction starting from the point of the initial launch of the game application.
 
 ![Figure 4-0-2: Game Flow.](./images/04-01/game-flow.png)  
@@ -86,6 +87,9 @@ When the player presses the input to pause the game, the pause screen will appea
 **Figure 4-0-7:** *Game Over Screen Sketch.*
 
 When the player meets the conditions for a game over, then the game over screen is shown. When this is shown, similar to the pause screen, the gameplay area is hidden and the menu is shown instead, with two buttons; one to retry and another to quit
+
+## Game Play Overview
+The snake itself will continuously move on a fixed timer in the direction input by the player, one grid space at a time.  The player's goal is to navigate the snake toward the item to increase their score, while avoiding colliding with the snake's body.  Each time the item is acquired, the snake's body will increase in length by 1 and a new item spawned at a random location within the game play grid.
 
 ## Controls
 The game will be controllable with both keyboard and gamepad.
