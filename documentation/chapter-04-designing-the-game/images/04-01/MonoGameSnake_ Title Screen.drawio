@@ -1,23 +1,23 @@
 <mxfile host="app.diagrams.net" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:130.0) Gecko/20100101 Firefox/130.0" version="24.7.17">
   <diagram name="Page-1" id="03018318-947c-dd8e-b7a3-06fadd420f32">
-    <mxGraphModel dx="1434" dy="754" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1100" pageHeight="850" background="none" math="0" shadow="0">
+    <mxGraphModel dx="2868" dy="1412" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1920" pageHeight="1080" background="none" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
         <mxCell id="677b7b8949515195-1" value="" style="whiteSpace=wrap;html=1;rounded=0;shadow=0;labelBackgroundColor=none;strokeColor=#000000;strokeWidth=1;fillColor=#e0dbcd;fontFamily=Verdana;fontSize=12;fontColor=#000000;align=center;comic=1;glass=0;sketch=1;curveFitting=1;jiggle=2;" parent="1" vertex="1">
-          <mxGeometry x="20" y="20" width="1060" height="810" as="geometry" />
+          <mxGeometry width="1920" height="1080" as="geometry" />
         </mxCell>
         <mxCell id="677b7b8949515195-2" value="&lt;font style=&quot;font-size: 64px;&quot;&gt;LOGO&lt;/font&gt;" style="whiteSpace=wrap;html=1;rounded=0;shadow=0;labelBackgroundColor=none;strokeWidth=1;fontFamily=Cabin Sketch;fontSize=128;align=center;comic=1;fillColor=#a89f94;sketch=1;curveFitting=1;jiggle=2;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DCabin%2BSketch;" parent="1" vertex="1">
-          <mxGeometry x="160" y="70" width="780" height="290" as="geometry" />
+          <mxGeometry x="240" y="60" width="1440" height="470" as="geometry" />
         </mxCell>
-        <mxCell id="zoR_4AAuzc3p54MubUYO-1" value="Play Game" style="strokeWidth=1;shadow=0;dashed=0;align=center;html=1;shape=mxgraph.mockup.buttons.button;strokeColor=#666666;fontColor=#000000;mainText=;buttonStyle=round;fontSize=17;fontStyle=1;fillColor=#a89f94;whiteSpace=wrap;sketch=1;hachureGap=4;jiggle=2;curveFitting=1;fontFamily=Cabin Sketch;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DCabin%2BSketch;" vertex="1" parent="1">
-          <mxGeometry x="400" y="460" width="300" height="50" as="geometry" />
+        <mxCell id="zoR_4AAuzc3p54MubUYO-1" value="Play Game" style="strokeWidth=1;shadow=0;dashed=0;align=center;html=1;shape=mxgraph.mockup.buttons.button;strokeColor=#666666;fontColor=#000000;mainText=;buttonStyle=round;fontSize=17;fontStyle=1;fillColor=#a89f94;whiteSpace=wrap;sketch=1;hachureGap=4;jiggle=2;curveFitting=1;fontFamily=Cabin Sketch;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DCabin%2BSketch;" parent="1" vertex="1">
+          <mxGeometry x="810" y="640" width="300" height="70" as="geometry" />
         </mxCell>
-        <mxCell id="zoR_4AAuzc3p54MubUYO-2" value="Options" style="strokeWidth=1;shadow=0;dashed=0;align=center;html=1;shape=mxgraph.mockup.buttons.button;strokeColor=#666666;fontColor=#000000;mainText=;buttonStyle=round;fontSize=17;fontStyle=1;fillColor=#a89f94;whiteSpace=wrap;sketch=1;hachureGap=4;jiggle=2;curveFitting=1;fontFamily=Cabin Sketch;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DCabin%2BSketch;" vertex="1" parent="1">
-          <mxGeometry x="400" y="540" width="300" height="50" as="geometry" />
+        <mxCell id="zoR_4AAuzc3p54MubUYO-2" value="Options" style="strokeWidth=1;shadow=0;dashed=0;align=center;html=1;shape=mxgraph.mockup.buttons.button;strokeColor=#666666;fontColor=#000000;mainText=;buttonStyle=round;fontSize=17;fontStyle=1;fillColor=#a89f94;whiteSpace=wrap;sketch=1;hachureGap=4;jiggle=2;curveFitting=1;fontFamily=Cabin Sketch;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DCabin%2BSketch;" parent="1" vertex="1">
+          <mxGeometry x="810" y="760" width="300" height="70" as="geometry" />
         </mxCell>
-        <mxCell id="zoR_4AAuzc3p54MubUYO-3" value="Quit Game" style="strokeWidth=1;shadow=0;dashed=0;align=center;html=1;shape=mxgraph.mockup.buttons.button;strokeColor=#666666;fontColor=#000000;mainText=;buttonStyle=round;fontSize=17;fontStyle=1;fillColor=#a89f94;whiteSpace=wrap;sketch=1;hachureGap=4;jiggle=2;curveFitting=1;fontFamily=Cabin Sketch;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DCabin%2BSketch;" vertex="1" parent="1">
-          <mxGeometry x="400" y="620" width="300" height="50" as="geometry" />
+        <mxCell id="zoR_4AAuzc3p54MubUYO-3" value="Quit Game" style="strokeWidth=1;shadow=0;dashed=0;align=center;html=1;shape=mxgraph.mockup.buttons.button;strokeColor=#666666;fontColor=#000000;mainText=;buttonStyle=round;fontSize=17;fontStyle=1;fillColor=#a89f94;whiteSpace=wrap;sketch=1;hachureGap=4;jiggle=2;curveFitting=1;fontFamily=Cabin Sketch;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DCabin%2BSketch;" parent="1" vertex="1">
+          <mxGeometry x="810" y="880" width="300" height="70" as="geometry" />
         </mxCell>
       </root>
     </mxGraphModel>
