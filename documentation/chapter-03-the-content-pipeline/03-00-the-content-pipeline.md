@@ -13,7 +13,8 @@ The MonoGame framework provides a workflow called **The Content Pipeline**.  The
 3. The [**MonoGame.Content.Builder.Task**](./03-03-mongoame-content.builder.tasks.md) NuGet package reference which contains task to automate building the content and copying the compiled content to your projects output directory
 4. The [**ContentManager class**](./03-04-the-contentmanager-class.md) use to load the compiled assets in game at runtime.
 
-Notice that above I said the MonoGame framework *provides* this workflow.  It is not a requirement to use it, and there are other methods built into the framework to load your assets directly from file.  However, this isn't always the most optimal approach, let's explore why.
+> [!TIP]
+> Notice that above I said the MonoGame framework *provides* this workflow.  It is not a requirement to use it, and there are other methods built into the framework to load your assets directly from file.  However, this isn't always the most optimal approach, which is explored below.
 
 ## Why Use The Content Pipeline?
 When using the content pipeline, your assets are compiled into an optimized format for the platform you are targeting.  For instance, when an image is loaded as a texture, the data has to be sent to the  graphical processing unit (GPU) and stored in memory there.  The GPU doesn't know what to do with data formats like PNG, so instead, it has to be decompressed into raw bytes as a format the GPU understands.  For some platforms, like Desktop, this may not seem that big of a deal, but for mobile devices and consoles, you only have so much memory that can be dedicated for the GPU. 
