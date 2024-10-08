@@ -28,7 +28,11 @@ This documentation will introduce game development concepts using the MonoGame f
 
 The first part of this documentation will walk the reader through an introduction to MonoGame and creating your first Hello World game.
 
-- [TODO: Add chapter list when finished]
+| Chapter | Summary | 
+|---|---|
+| [*Chapter 01: What is MonoGame?*](./01-what-is-monogame.md) | Gives a brief history of MonoGame and takes the reader through the features and advantages of using MonoGame for game development. | 
+| [*Chapter 02: Getting Started*](./02-getting-started.md) | Walks the reader through setting up their development environment for MonoGame development and creating their first MonoGame game application. |
+
 
 In the second part of this documentation, we'll begin to develop our 2D game and creating a reusuable library for common tasks that can be used for future projects.
 
@@ -51,4 +55,4 @@ public void Foo() { }
 Code blocks are used to show code examples with syntax highlighting
 
 ## Next
-[Chapter 01: Getting Started](./01-getting-started.md)
+[Chapter 01: What is MonoGame?](./01-what-is-monogame.md)
