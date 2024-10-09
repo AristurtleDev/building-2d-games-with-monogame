@@ -146,7 +146,7 @@ Let's review what you accomplished in this chapter:
 - You installed VSCode and the necessary extension to develop C# applications with VSCode
 - You created and ran your first MonoGame project.
 
-Now that your development environment is setup and ready to go, you can dive in and start building your first game.  
+Now that your development environment is setup and ready to go, you can dive in and start building your first game.  In the next chapter, we'll go over the files included in the MonoGame project when created.
 
 ## Test Your Knowledge
 
