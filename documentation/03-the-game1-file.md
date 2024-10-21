@@ -76,7 +76,12 @@ Next is the `LoadContent` method.  Like with `Initialize` this method is only ca
 
 After initializations and content loading are performed, the game will enter into a *game loop*.  A *game loop*  is a series of methods that are called in sequence over and over until the game is told to exit.  In a MonoGame project, these methods are first the `Update` method and then the `Draw` method.  The `Update` method is where you will perform all of the logic that affects game play, such as input handling, physics, and collisions.  The `Draw` method is where you will perform the logic to render the game.
 
-Notice that both the `Update` and the `Draw` methods receive a parameter of type `GameTime`.  The `GameTime` parameter provides a snapshot of the time that has passed in the game, including the total amount of time since the game started and the amount of time between frames.  
+Notice that both the `Update` and the `Draw` methods receive a parameter of type `GameTime`.  The `GameTime` parameter provides a snapshot of the time that has passed in the game, including the total amount of time since the game started and the amount of time between frames. This is commonly referred to as *delta time* and allows you to track time accurately for things such as animations based on the *game time* and not the speed of the processor (CPU) on the machine.
+
+
+![Figure 3-1: Lifecycle of a MonoGame game.](./images/03-the-game1-file/monogame-lifecycle.png)  
+**Figure 3-1:** *Lifecycle of a MonoGame game.*
+
 
 
 
