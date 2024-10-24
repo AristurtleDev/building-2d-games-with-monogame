@@ -110,7 +110,7 @@ The first line is executing the `Clear` method of the `GraphicsDevice` property 
 ![Figure 3-2: Windows XP Solitaire Win Screen.](./images/03-the-game1-file/solitaire.webp)  
 **Figure 3-2:** *Windows XP Solitaire Win Screen.*
 
-While this can make for a neat effect, it's not something you want all the time. So, the screen is cleared and refilled with a solid color.  You can test this yourself by modifying the code to use a different color, such as `Color.MonoGameOrange` (yes, there is a MonoGame Orange color).
+While this can make for a neat effect, it's not something you want all the time. So, the screen is cleared and refilled with a solid color.  You can test this yourself by modifying the code to use a different color, such as `Color.MonoGameOrange`, then running the game. (yes, there is a MonoGame Orange color).
 
 Each time the game loops completes and the game is drawn to the screen, we call this a *frame*.  So if MonoGame is running the game loop at 60 frames per second, that means it is performing and update and a render of each frame in 16ms. Notice that both the `Update` and the `Draw` methods both receive a parameter of the type `GameTime`.  The `GameTime` parameter provides a snapshot of the timing values for the game, including the amount of time that it took for the previous frame to execute.  This is commonly referred to as the *delta time*.  
 
