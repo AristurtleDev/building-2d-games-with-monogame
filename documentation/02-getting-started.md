@@ -77,6 +77,15 @@ To install the C# Dev Kit extension, perform the following:
 > When you search `C#` in the *Extension Panel* you may notice there is the C# Dev Kit extension and a base standard C# extension.  When installing the C# Dev Kit extension, the base extension will also be installed as a requirement.
 
 
+### Installing the "MonoGame for VSCode" Extension
+Throughout this tutorial, we'll be using the MonoGame Content Builder (MGCB) Editor to add content to the game. MonoGame offers an official extension for Visual Studio 2022 that allows you to double-click the *Content.mgcb* file to automatically open it in the MGCB Editor.  While there is no official tool for VSCode, there is a an extension developed by community member r88 to provide similar functionality and is regularly used by the MonoGame developers themselves. We'll be using that extension throughout this tutorial.
+
+To install it, with VSCode open:
+
+1. Open the *Extensions Panel* by clicking the icon in the *Activity Bar* on the left or choosing *View > Extensions* from the top menu.
+2. Enter `MonoGame for VSCode` as in the *Search Box*
+3. Click install for the *MonoGame for VSCode* extension by r88.  
+
 ## Setup WINE for Effect Compilation (macOS and Linux Only)
 *Effect* (shader) compilation requires access to DirectX. This means it will not work natively on macOS and Linux systems, but it can be used through [WINE](https://www.winehq.org/).  MonoGame provides a setup script that can be executed to setup the WINE environment.  Below you can find the steps based on your operating system. To do this, follow the instructions for your operating system below:
 

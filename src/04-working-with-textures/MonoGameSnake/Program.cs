@@ -1,2 +1,2 @@
-﻿using var game = new MonoGameSnake.Game1();
+﻿using var game = new Chapter04.Game1();
 game.Run();
