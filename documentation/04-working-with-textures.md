@@ -70,10 +70,6 @@ These lines of code tell the `SpriteBatch` to draw the logo texture you loaded i
 
 
 
-Notice, however, that the edges of the image has artifacts, particularly noticeable around the MonoGame fist bump logo. 
-
-
-
 ## Creating a Texture In Code
 One method to get a texture in your game is to create it manually in code.  This is not something you would do often, but it's still beneficial to learn and understand the process and why it can be useful.
 
