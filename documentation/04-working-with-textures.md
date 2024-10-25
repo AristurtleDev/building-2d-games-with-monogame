@@ -271,3 +271,5 @@ In the code above, we have adjust the *origin* parameter to use the center point
 ![Figure 4-11: The MonoGame logo drawn rotated 90° and centered on the game window.](./images/04-working-with-textures/logo-rotated-centered.png)  
 **Figure 4-11:** *The MonoGame logo drawn rotated 90° and centered on the game window.*
 
+## Drawing Texture Regions
+Above, we saw the full parameter list for drawing a texture using `SpriteBatch.Draw`.  One of those parameters was called *sourceRectangle*.  So far, we've just set this parameter to `null`, which specifies that the full texture should be rendered.  However, we can make use of the *sourceRectangle* parameter to specify a region within the texture itself to draw instead of drawing the full texture.
