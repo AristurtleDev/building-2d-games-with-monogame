@@ -3,7 +3,7 @@ using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
 
-namespace Chapter04;
+namespace MonoGameSnake;
 
 public class Game1 : Game
 {
@@ -28,11 +28,7 @@ public class Game1 : Game
     protected override void LoadContent()
     {
         _spriteBatch = new SpriteBatch(GraphicsDevice);
-        _logo = Texture2D.FromFile(GraphicsDevice, "Content/images/logo.png");
-        using(Stream stream = File.Create("logo.png"))
-        {
-            _logo.SaveAsPng(stream, _logo.Width, _logo.Height);
-        }
+        _logo = Content.Load<Texture2D>("images/logo");
     }
 
     protected override void Update(GameTime gameTime)
@@ -48,7 +44,15 @@ public class Game1 : Game
         GraphicsDevice.Clear(Color.CornflowerBlue);
 
         _spriteBatch.Begin();
-        _spriteBatch.Draw(_logo, Vector2.Zero, Color.White);
+_spriteBatch.Draw(_logo,
+  new Vector2(Window.ClientBounds.Width, Window.ClientBounds.Height) * 0.5f,
+  null,
+  Color.White,
+  MathHelper.ToRadians(90),
+  new Vector2(_logo.Width, _logo.Height) * 0.5f,
+  1.0f,
+  SpriteEffects.None,
+  0.0f);
         _spriteBatch.End();
 
         base.Draw(gameTime);

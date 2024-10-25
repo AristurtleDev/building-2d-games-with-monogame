@@ -31,9 +31,6 @@
         <Exec Command="dotnet tool restore" />
     </Target>
     <ItemGroup>
-        <Content Include="Content\**\*"
-                 Exclude="Content\bin\**\*;Content\obj\**\*;Content\**\*.mgcb">
-            <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-        </Content>
+        <Content Include="Content\images\logo.png" CopyToOutputDirectory="PreserveNewest" />
     </ItemGroup>
 </Project>
