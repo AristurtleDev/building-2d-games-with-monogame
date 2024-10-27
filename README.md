@@ -1,6 +1,16 @@
 > [!CAUTION]
 > This is currently a work in progress and is not finished.  Please come back later once finished.
 
+
+# MonoGame Communities
+If you ever have questions about MonoGame or would like to talk with other developers to share ideas or just hang out with us, you can find us in the various MonoGame communities below
+
+- [Discord](https://discord.gg/monogame)
+- [GitHub Discussions Forum](https://github.com/MonoGame/MonoGame/discussions)
+- [Community Forums (deprecated)](https://community.monogame.net/)
+- [Reddit](https://www.reddit.com/r/monogame/)
+- [Facebook](https://www.facebook.com/monogamecommunity)
+
 # Acknowledgements
 
 # Copyright and License
