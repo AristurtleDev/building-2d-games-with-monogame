@@ -169,5 +169,5 @@ This chapter briefly touched on the *Game1.cs* file and the `Game` class.  For a
     </details><br />
 
 
-# Next
-- [Chapter 04: Working With Textures]()
+## Next
+- [Chapter 04: Working With Textures](04-working-with-textures.md)

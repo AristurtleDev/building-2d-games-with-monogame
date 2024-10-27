@@ -1,5 +1,16 @@
 # Chapter 04: Working with Textures
 
+- [Loading a Texture](#loading-a-texture)
+  - [Loading From File](#loading-from-file)
+  - [Loading From Content Pipeline](#loading-from-content-pipeline)
+- [Drawing a Texture](#drawing-a-texture)
+- [Drawing Texture Regions](#drawing-texture-regions)
+- [Conclusion](#conclusion)
+- [See Also](#see-also)
+- [Test Your Knowledge](#test-your-knowledge)
+- [Next](#next)
+
+
 ---
 
 Textures are images that you use in your game to represent the visual graphics to the player.  In order to use them, you need to either create the texture in code or load an existing one from a file and then draw the texture using the `SpriteBatch`.  
@@ -72,7 +83,7 @@ To use the *content pipeline* to load our image, we first need to open the *Mono
 Clicking this icon will open the MGCB Editor with the *Content.mgcb* file in the current project loaded.
 
 > [!NOTE]
-> If you did not install the *MonoGame for VSCode* extension or prefer to not use it, you can use the CLI commands to open the MGCB Editor instead.   Do do this:
+> If you did not install the *MonoGame for VSCode* extension or prefer to not use it, you can use the CLI commands to open the MGCB Editor instead.   To do this:
 > 
 > 1. Open the terminal in VSCode pressing `` CTRL+` ``or choosing *View > Terminal* from the top menu
 > 2. If the terminal directory is not in the project root directory (the one with the .csproj file), then use the `cd` command to navigate to that directory. 
@@ -273,3 +284,57 @@ In the code above, we have adjust the *origin* parameter to use the center point
 
 ## Drawing Texture Regions
 Above, we saw the full parameter list for drawing a texture using `SpriteBatch.Draw`.  One of those parameters was called *sourceRectangle*.  So far, we've just set this parameter to `null`, which specifies that the full texture should be rendered.  However, we can make use of the *sourceRectangle* parameter to specify a region within the texture itself to draw instead of drawing the full texture.
+
+For instance, take the logo image we've been using. We can break it down into two distinct regions; the logo and the MonoGame wordmark.  
+
+![Figure 4-12: The MonoGame logo broken down into texture regions.](./images/04-working-with-textures/logo-texture-regions.png)  
+**Figure 4-12:** *The MonoGame logo broken down into texture regions.*
+
+We can see from this image that the actual logo starts at position (0, 0) and is 128px wide and 128px tall.  Likewise, the MonoGame wordmark starts at position (150, 34) and is 458px wide and 58px tall.  Knowing the starting position and the width and height of the region gives us a defined rectangle that we can use as the *sourceRectangle*. 
+
+Let's see this in action by only drawing the MonoGame logo icon part of the texture.  First, after the call to the `Clear` method, add the following variable:
+
+```cs
+Rectangle iconSourceRect = new Rectangle(0, 0, 128, 128);
+```
+
+Next, update the `_spriteBatch.Draw` method call to the following
+
+```cs
+_spriteBatch.Draw(_logo,
+    new Vector2(Window.ClientBounds.Width, Window.ClientBounds.Height) * 0.5f,
+    iconSourceRect,
+    Color.White,
+    0.0f,
+    new Vector2(iconSourceRect.Width, iconSourceRect.Height) * 0.5f,
+    1.0f,
+    SpriteEffects.None,
+    0.0f);
+```
+
+The changes you just made first added a new `Rectangle` value called `iconSourceRect` that represents the dimensions of the MonoGame logo icon region within the texture.  Then the *sourceRectangle* parameter of the `_spriteBatch.Draw` was updated to use the new `iconSourceRect` value.  Notice that we are still telling it to draw the `_logo` for the *texture*, we've just supplied it with a source rectangle this time.  Finally, the *origin* parameter was updated to use the width and height of the `iconSourceRect`.  Since the overall dimensions of what we'll be rendering has changed due to supplying a source rectangle, the origin needs to be adjusted to those dimensions as well.
+
+If you run the game now, you should see the following:
+
+![Figure 4-13: The MonoGame logo icon only, from the logo texture, centered in the game window.](./images/04-working-with-textures/logo-only-centered.png)  
+**Figure 4-13:** *The MonoGame logo icon only, from the logo texture, centered in the game window.*
+
+As an exercise for yourself, see if you can adjust the code to draw only the MonoGame word mark from the logo texture the same way we just did the MonoGame logo icon.
+
+## Conclusion
+In this chapter we
+- Learned how to load textures directly from file as well as using the content pipeline.
+- Discussed the advantages of using the content pipeline.
+- Briefly discussed the overall content pipeline workflow.
+- Used the `SpritBatch` to draw the texture that was loaded.
+- Discussed the different parameters available when using the `SpriteBatch.Draw` method and the importance of the *origin* parameter in relation to the *position*, *rotation*, and *scale* parameters.
+- Learned how to draw only a specific sub region within a texture by using the *sourceRectangle* parameter.
+
+In the next chapter, we'll take what we've learned here about drawing textures and apply object-oriented programming concepts to start building a game library that you will use throughout this tutorial and can take to use in future game projects after.
+
+## See Also
+The content pipeline was briefly discussed in this chapter, and only touched on adding the image asset file and loading it.  As we move through the different chapters, we'll touch on more and more of the content pipeline overtime.  However, if you would like to take a deep dive into before, you can view the information in [Appendix 03: The Content Pipeline](./appendix03-the-content-pipeline.md)
+
+## Test Your Knowledge
+
+## Next

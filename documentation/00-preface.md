@@ -26,17 +26,21 @@ This documentation is meant to be an introduction to game development and MonoGa
 ## How This Documentation Is Organized
 This documentation will introduce game development concepts using the MonoGame framework while walking the reader through the development of a Snake clone.  The documentation is organized such that each chapter should be read sequentially, with each introducing new concepts and building off of the previous chapters.  
 
-The first part of this documentation will walk the reader through an introduction to MonoGame and creating your first Hello World game.
-
 | Chapter | Summary | 
 |---|---|
 | [*Chapter 01: What is MonoGame?*](./01-what-is-monogame.md) | Gives a brief history of MonoGame and takes the reader through the features and advantages of using MonoGame for game development. | 
 | [*Chapter 02: Getting Started*](./02-getting-started.md) | Walks the reader through setting up their development environment for MonoGame development and creating their first MonoGame game application. |
+| [*Chapter 02: The Game1 File*](./03-the-game1-file.md) | Gives an overview of the *Game1.cs* file that is generated when creating a new MonoGame project. |
+| [*Chapter 04: Working With Textures*](./04-working-with-textures.md) | Walks the read through loading textures in MonoGame both directly from file and using the content pipeline.  Then go through methods of drawing the texture, including drawing subregions within a single texture. |
+| *Chapter 05* | (Coming soon ...) |
 
+In additional to the chapter documentation, supplemental documentation is also provided to give a more in-depth look at different topics with MonoGame.  These are provided through the Appendix documentation below:
 
-In the second part of this documentation, we'll begin to develop our 2D game and creating a reusuable library for common tasks that can be used for future projects.
-
-- [TODO: Add chapter list when finished]
+| Appendix | Summary |
+| --- | --- |
+| [*Appendix 01: MonoGame Project Templates*](./appendix-01-monogame-project-templates.md) | Shows the different MonoGame project templates available and what each one is used for. |
+| [*Appendix 02: MonoGame Project Overview*](./appendix-02-monogame-project-overview.md) | An in-depth overview of the standard MonoGame project created from a MonoGame project templates, including all files and the default contents generated for the files. |
+| [*Appendix 03: The Content Pipeline*](./appendix-03-the-content-pipeline.md) | An in-depth overview of the content pipeline workflow provided by the MonoGame framework and the individual components that make up the overall workflow. |
 
 ## Conventions Used in This Documentation
 The following conventions are used in this documentation

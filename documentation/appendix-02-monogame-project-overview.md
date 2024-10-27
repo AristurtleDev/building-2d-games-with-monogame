@@ -1,5 +1,30 @@
 # Appendix 02: MonoGame Project Overview
 
+- [The *.csproj* Project File](#the-csproj-project-file)
+- [The *Content* Directory](#the-content-directory)
+  - [The *Content.mgcb* Content Project File](#the-contentmgcb-content-project-file)
+    - [Global Properties Section](#global-properties-section)
+    - [References Section](#references-section)
+    - [Content Section](#content-section)
+- [The *.config* Directory](#the-config-directory)
+  - [The *dotnet-tools.json* Tools Manifest File](#the-dotnet-toolsjson-tools-manifest-file)
+- [The Icon Files](#the-icon-files)
+- [The *Program.cs* File](#the-programcs-file)
+- [The *Game1.cs* File](#the-game1cs-file)
+  - [Namespace Imports](#namespace-imports)
+  - [Class Declaration](#class-declaration)
+  - [Instance Members](#instance-members)
+  - [The Game1 Constructor](#the-game1-constructor)
+  - [The Initialize Method](#the-initialize-method)
+  - [The LoadContent Method](#the-loadcontent-method)
+  - [The Update Method](#the-update-method)
+  - [The Draw Method](#the-draw-method)
+  - [Additional Methods](#additional-methods)
+  - [Additional Properties](#additional-properties)
+  - [Order of Execution](#order-of-execution)
+
+---
+
 Regardless of the [MonoGame project template](./appendix-01-monogame-project-templates.md) used to create a new MonoGame application, each template will generate a structure similar to the following
 
 ```
