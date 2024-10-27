@@ -1,0 +1,33 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.5.002.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{7728FA07-7815-40CB-8CCE-B16992A20062}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "02-getting-started", "02-getting-started", "{5A0F7EDB-C60F-4CD3-BF21-78A04FA93432}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MonoGameSnake", "src\02-getting-started\MonoGameSnake\MonoGameSnake.csproj", "{B57476FB-E02B-44CA-97B3-B2C210DDD64A}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{B57476FB-E02B-44CA-97B3-B2C210DDD64A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B57476FB-E02B-44CA-97B3-B2C210DDD64A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B57476FB-E02B-44CA-97B3-B2C210DDD64A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B57476FB-E02B-44CA-97B3-B2C210DDD64A}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{5A0F7EDB-C60F-4CD3-BF21-78A04FA93432} = {7728FA07-7815-40CB-8CCE-B16992A20062}
+		{B57476FB-E02B-44CA-97B3-B2C210DDD64A} = {5A0F7EDB-C60F-4CD3-BF21-78A04FA93432}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {F8290B2B-C11B-48F9-9F0F-3E613ED2EBCD}
+	EndGlobalSection
+EndGlobal
