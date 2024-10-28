@@ -28,7 +28,7 @@ Let's go over both methods of loading a texture, and then we can discuss the pro
 2. Create a new folder inside the _Content_ directory called _images_.
 3. Right-click the following image of the MonoGame logo and save it in the _Content/images_ directory you just created with the filename _logo.png_
 
-<figure><img src="images/04-working-with-textures/logo.png" alt="Figure 4-1: MonoGame Horizontal Logo"><figcaption><p><strong>Figure 4-1: MonoGame Horizontal Logo</strong></p></figcaption></figure>
+<figure><img src="../images/04-working-with-textures/logo.png" alt="Figure 4-1: MonoGame Horizontal Logo"><figcaption><p><strong>Figure 4-1: MonoGame Horizontal Logo</strong></p></figcaption></figure>
 
 ### Loading From File
 
@@ -77,7 +77,7 @@ The _content pipeline_ is not a requirement to use; assets can be loaded at runt
 
 To use the _content pipeline_ to load our image, we first need to open the _MonoGame Content Builder Editor (MGCB Editor)_. Since we are using VSCode for this tutorial, you should have installed the _MonoGame for VSCode_ extension in [Chapter 02](02-getting-started.md#installing-the-monogame-for-vscode-extension). With this extension installed, when you have a code file open, you will see the MonoGame logo in the top-right of the code window like below:
 
-<figure><img src="images/04-working-with-textures/mgcb-editor-icon.png" alt="Figure 4-2: MonoGame for VSCode extension icon"><figcaption><p><strong>Figure 4-2: MonoGame for VSCode extension icon</strong></p></figcaption></figure>
+<figure><img src="../images/04-working-with-textures/mgcb-editor-icon.png" alt="Figure 4-2: MonoGame for VSCode extension icon"><figcaption><p><strong>Figure 4-2: MonoGame for VSCode extension icon</strong></p></figcaption></figure>
 
 \
 **Figure 4-2:** _MonoGame for VSCode Extension Icon._
@@ -90,7 +90,7 @@ Clicking this icon will open the MGCB Editor with the _Content.mgcb_ file in the
 > 2. If the terminal directory is not in the project root directory (the one with the .csproj file), then use the `cd` command to navigate to that directory.
 > 3. Enter the command `dotnet mgcb-editor ./Content/Content.mgcb` to open the MGCB Editor using the _Content.mgcb_ file from the project.
 
-<figure><img src="images/04-working-with-textures/mgcb-editor.png" alt="Figure 4-3: MonoGame Content Builder Editor (MGCB Editor) Window"><figcaption><p><strong>Figure 4-3: MonoGame Content Builder Editor (MGCB Editor) Window</strong></p></figcaption></figure>
+<figure><img src="../images/04-working-with-textures/mgcb-editor.png" alt="Figure 4-3: MonoGame Content Builder Editor (MGCB Editor) Window"><figcaption><p><strong>Figure 4-3: MonoGame Content Builder Editor (MGCB Editor) Window</strong></p></figcaption></figure>
 
 With the MGCB Editor now open, perform the following
 
@@ -103,7 +103,7 @@ With the MGCB Editor now open, perform the following
 
 After adding an existing file, you will be prompted with a pop-up asking if you would like to _Copy the file_ or _Add a link_. Since the file is already in our _Content/images_ directory, the copy option is greyed out, so choose the _Add a link_ option, then click the _Add_ button.
 
-<figure><img src="images/04-working-with-textures/add-file-popup.png" alt="Figure 4-4: Add Existing File Popup"><figcaption><p><strong>Figure 4-4: Add Existing File Popup</strong></p></figcaption></figure>
+<figure><img src="../images/04-working-with-textures/add-file-popup.png" alt="Figure 4-4: Add Existing File Popup"><figcaption><p><strong>Figure 4-4: Add Existing File Popup</strong></p></figcaption></figure>
 
 > \[!CAUTION] When adding existing files in the future, the choice between copying the file and adding a link can make a big difference. When you choose to copy the file, it makes a literal copy of the current file and puts that copy inside the Content directory in your project. This means any changes to the original source file will not be reflected in the copy.
 >
@@ -111,7 +111,7 @@ After adding an existing file, you will be prompted with a pop-up asking if you 
 
 After adding the _logo.png_ file, you're project node should look similar to the following:
 
-<figure><img src="images/04-working-with-textures/mgcb-logo-added.png" alt="Figure 4-5: Logo image added to the MGCB Editor"><figcaption><p><strong>Figure 4-5: Logo image added to the MGCB Editor</strong></p></figcaption></figure>
+<figure><img src="../images/04-working-with-textures/mgcb-logo-added.png" alt="Figure 4-5: Logo image added to the MGCB Editor"><figcaption><p><strong>Figure 4-5: Logo image added to the MGCB Editor</strong></p></figcaption></figure>
 
 Save the changes by pressing `CTRL+S`, or by clicking the _Save_ icon in the top tool bar, or by choosing _File > Save_ from the top menu. When you save the changes made, the MGCB Editor will write updates to the _Content.mgcb_ file in your project to reflect the changes made. After saving, you can close the MGCB Editor.
 
@@ -135,7 +135,7 @@ If you run the game now, you'll get the same result as before when we loaded the
 
 The following image illustrates this workflow:
 
-<figure><img src="images/04-working-with-textures/content-pipeline-workflow-full.png" alt="Figure 4-6: MonoGame Content Pipeline Workflow"><figcaption><p><strong>Figure 4-6: MonoGame Content Pipeline Workflow</strong></p></figcaption></figure>
+<figure><img src="../images/04-working-with-textures/content-pipeline-workflow-full.png" alt="Figure 4-6: MonoGame Content Pipeline Workflow"><figcaption><p><strong>Figure 4-6: MonoGame Content Pipeline Workflow</strong></p></figcaption></figure>
 
 While doing all of this may have seemed like more work than just loading from file, it doesn't actually add more work on you as the developer.
 
@@ -157,7 +157,7 @@ _spriteBatch.End();
 
 These lines of code tell the `SpriteBatch` to draw the logo texture you loaded in the top-left corner of the game window. Run the game and you should see something similar to the following:
 
-<figure><img src="images/04-working-with-textures/logo-from-file.png" alt="Figure 4-7: The MonoGame logo drawn to the game window."><figcaption><p><strong>Figure 4-7: The MonoGame logo drawn to the game window.</strong></p></figcaption></figure>
+<figure><img src="../images/04-working-with-textures/logo-from-file.png" alt="Figure 4-7: The MonoGame logo drawn to the game window."><figcaption><p><strong>Figure 4-7: The MonoGame logo drawn to the game window.</strong></p></figcaption></figure>
 
 When drawing with MonoGame, the graphics device needs to be prepared and told that it is going to receive data to pass to the GPU to render. When using the `SpriteBatch` for rendering, we do this by using the `SpriteBatch.Begin` method. We can't use the `SpriteBatch.Draw` method without first using the `SpriteBatch.Begin` so the graphics device is set to a state ready to draw.
 
@@ -183,7 +183,7 @@ _spriteBatch.Draw(_logo, new Vector2(Window.ClientBounds.Width, Window.ClientBou
 
 We're now telling the position to be a half the width and height of the client bounds. If we run the game now, the logo should be drawn at the center of the game window correct? Well, not exactly. If you run the game now, it will look similar to the following:
 
-<figure><img src="images/04-working-with-textures/logo-off-center.png" alt="Figure 4-8: Attempting to draw the MonoGame logo centered on the game window."><figcaption><p><strong>Figure 4-8: Attempting to draw the MonoGame logo centered on the game window.</strong></p></figcaption></figure>
+<figure><img src="../images/04-working-with-textures/logo-off-center.png" alt="Figure 4-8: Attempting to draw the MonoGame logo centered on the game window."><figcaption><p><strong>Figure 4-8: Attempting to draw the MonoGame logo centered on the game window.</strong></p></figcaption></figure>
 
 So what happened here? Recall from the table above that the _position_ parameter is the xy-coordinate position to draw the texture at, with the texture's origin being the top-left corner of the texture. This means, that the image will be drawn at that position starting with the top-left corner of the image. So while we are drawing the image at the center of the game window, the image itself is not centered.
 
@@ -199,7 +199,7 @@ _spriteBatch.Draw(_logo,
 
 This offsets the position so that it correctly centers the image to the game window.
 
-<figure><img src="images/04-working-with-textures/logo-centered.png" alt="Figure 4-9: The MonoGame logo drawn centered on the game window."><figcaption><p><strong>Figure 4-9: The MonoGame logo drawn centered on the game window.</strong></p></figcaption></figure>
+<figure><img src="../images/04-working-with-textures/logo-centered.png" alt="Figure 4-9: The MonoGame logo drawn centered on the game window."><figcaption><p><strong>Figure 4-9: The MonoGame logo drawn centered on the game window.</strong></p></figcaption></figure>
 
 While this works, this may not be the best way to do it. Let's explore why. The `SpriteBatch.Draw` method contains other overloads that accept more parameters. Let's change the `SpriteBatch.Draw` method call to use the one with all parameters. Adjust the code to the following:
 
@@ -249,7 +249,7 @@ _spriteBatch.Draw(_logo,
 
 The image should now be drawn centered on the game window and rotated so that it's vertical instead of horizontal right? Let's run it and find out.
 
-<figure><img src="images/04-working-with-textures/logo-rotated-offcenter.png" alt="Figure 4-10: Attempting to draw the MonoGame logo rotated 90° and centered on the game window."><figcaption><p><strong>Figure 4-10: Attempting to draw the MonoGame logo rotated 90° and centered on the game window.</strong></p></figcaption></figure>
+<figure><img src="../images/04-working-with-textures/logo-rotated-offcenter.png" alt="Figure 4-10: Attempting to draw the MonoGame logo rotated 90° and centered on the game window."><figcaption><p><strong>Figure 4-10: Attempting to draw the MonoGame logo rotated 90° and centered on the game window.</strong></p></figcaption></figure>
 
 What happened here? We told it to draw it at the center position of the game window like before and to rotate it by 90°, which it did, but not exactly how we expected. So why did this happen? Recall from the parameters table above that the _origin_ parameter specifies the point of origin in the texture where it is not only rendered from but also the point at which it's rotated from. In the code sample above, we used `Vector2.Zero` as the origin, which is the default origin point, or the top-left corner of the image. So when we told it to rotate 90°, it did so from the top-left corner of the image. Let's fix the code so that the origin is now in the center of the image.
 
@@ -267,7 +267,7 @@ _spriteBatch.Draw(_logo,
 
 In the code above, we have adjust the _origin_ parameter to use the center point of the texture. This will be the origin point at which it will now rotate from. It is also the origin point at which it is rendered from, so we no longer need to subtract half the logo width and height from the _position_ parameter. After making this change, if we run the game now, we'll see it drawn correctly rotated 90° and centered on the game window.
 
-<figure><img src="images/04-working-with-textures/logo-rotated-centered.png" alt="Figure 4-11: The MonoGame logo drawn rotated 90° and centered on the game window."><figcaption><p><strong>Figure 4-11: The MonoGame logo drawn rotated 90° and centered on the game window.</strong></p></figcaption></figure>
+<figure><img src="../images/04-working-with-textures/logo-rotated-centered.png" alt="Figure 4-11: The MonoGame logo drawn rotated 90° and centered on the game window."><figcaption><p><strong>Figure 4-11: The MonoGame logo drawn rotated 90° and centered on the game window.</strong></p></figcaption></figure>
 
 ## Drawing Texture Regions
 
@@ -275,7 +275,7 @@ Above, we saw the full parameter list for drawing a texture using `SpriteBatch.D
 
 For instance, take the logo image we've been using. We can break it down into two distinct regions; the logo and the MonoGame wordmark.
 
-<figure><img src="images/04-working-with-textures/logo-texture-regions.png" alt="Figure 4-12: The MonoGame logo broken down into texture regions."><figcaption><p><strong>Figure 4-12: The MonoGame logo broken down into texture regions.</strong></p></figcaption></figure>
+<figure><img src="../images/04-working-with-textures/logo-texture-regions.png" alt="Figure 4-12: The MonoGame logo broken down into texture regions."><figcaption><p><strong>Figure 4-12: The MonoGame logo broken down into texture regions.</strong></p></figcaption></figure>
 
 We can see from this image that the actual logo starts at position (0, 0) and is 128px wide and 128px tall. Likewise, the MonoGame wordmark starts at position (150, 34) and is 458px wide and 58px tall. Knowing the starting position and the width and height of the region gives us a defined rectangle that we can use as the _sourceRectangle_.
 
@@ -303,7 +303,7 @@ The changes you just made first added a new `Rectangle` value called `iconSource
 
 If you run the game now, you should see the following:
 
-<figure><img src="images/04-working-with-textures/logo-only-centered.png" alt="Figure 4-13: The MonoGame logo icon only, from the logo texture, centered in the game window"><figcaption><p><strong>Figure 4-13: The MonoGame logo icon only, from the logo texture, centered in the game window</strong></p></figcaption></figure>
+<figure><img src="../images/04-working-with-textures/logo-only-centered.png" alt="Figure 4-13: The MonoGame logo icon only, from the logo texture, centered in the game window"><figcaption><p><strong>Figure 4-13: The MonoGame logo icon only, from the logo texture, centered in the game window</strong></p></figcaption></figure>
 
 As an exercise for yourself, see if you can adjust the code to draw only the MonoGame word mark from the logo texture the same way we just did the MonoGame logo icon.
 

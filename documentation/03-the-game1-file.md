@@ -86,7 +86,7 @@ After initializations and content loading are performed, the game will enter int
 
 The figure below shows the lifecycle of a MonoGame game including the `Update` and `Draw` methods that make up the *game loop*.
 
-![Figure 3-1: Lifecycle of a MonoGame game.](./images/03-the-game1-file/monogame-lifecycle.png)  
+![Figure 3-1: Lifecycle of a MonoGame game.](../images/03-the-game1-file/monogame-lifecycle.png)  
 **Figure 3-1:** *Lifecycle of a MonoGame game.*
 
 ## The Game Loop
@@ -107,7 +107,7 @@ protected override void Draw(GameTime gameTime)
 
 The first line is executing the `Clear` method of the `GraphicsDevice` property using the color `CornflowerBlue`.  Recall that the `GraphicsDevice` object is your direct interface between the game and what is rendered to the screen.  Every time the `Draw` method is called, this line of code of erasing the contents of the game window and refilling it with the color specified.  Without clearing the contents of the screen first, every draw call would draw the new frame render overtop of the previous render, and you'd end up with something like the old solitaire win screen
 
-![Figure 3-2: Windows XP Solitaire Win Screen.](./images/03-the-game1-file/solitaire.webp)  
+![Figure 3-2: Windows XP Solitaire Win Screen.](../images/03-the-game1-file/solitaire.webp)  
 **Figure 3-2:** *Windows XP Solitaire Win Screen.*
 
 While this can make for a neat effect, it's not something you want all the time. So, the screen is cleared and refilled with a solid color.  You can test this yourself by modifying the code to use a different color, such as `Color.MonoGameOrange`, then running the game. (yes, there is a MonoGame Orange color).

@@ -257,7 +257,7 @@ In the project root directory are the *Icon.bmp* and *Icon.ico* icon files.  The
 
 When a new MonoGame project is created, the icons by default are of the MonoGame logo.
 
-![The default MonoGame logo icon included in a new MonoGame project](./images/appendix-02-monogame-project-overview/icon.png)  
+![The default MonoGame logo icon included in a new MonoGame project](../images/appendix-02-monogame-project-overview/icon.png)  
 *The default MonoGame logo icon included in a new MonoGame project.*
 
 If you want to customize the icons used for you game, you only need to replace these files in the project directory.  
@@ -505,7 +505,7 @@ Knowing the methods available isn't enough.  We can know that the [`Initialize()
 
 Figure 3-2 below provides a high-level view of the execution order of events for a MonoGame application.  This follows the events from the initial construction of the `Game1` class, to the initializations, the game loop, and finally the game exiting events.
 
-![A high-level view of the execution order of events for a MonoGame application](./images/03-monogame-project-overview/execution-order.png)  
+![A high-level view of the execution order of events for a MonoGame application](../images/03-monogame-project-overview/execution-order.png)  
 **Figure 3-2:** *A high-level view of the execution order of events for a MonoGame application.*
 
 1. Initial execution begins at the [constructor](#constructor) which is called in [the Program.cs file](../chapter-02-monogame-project-overview/02-05-the-program-file.md).

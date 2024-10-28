@@ -17,7 +17,7 @@ In this chapter, we'll explore the history of MonoGame, what features it provide
 
 In 2006, Microsoft released a game development framework named _XNA Game Studio_ to facilitate game development for Windows PC and the Xbox 360 console. It revolutionized game development for indie creators by bringing a simplified approach to building games and offering a set of tools that lowered the entry barrier for aspiring game developers. Out of XNA Game Studio came critically acclaimed titles such as [Bastion](https://www.supergiantgames.com/games/bastion/) and [Terraria](https://terraria.org/). In 2008, XNA was expanded to support development for both the Zune and Windows Phone.
 
-> \[!NOTE] Fun fact, provided by community member stromkos, The release of XNA 3.0 in 2008, which added the support for Windows Phone, is also the release that specified the default window resolution of 800x600 for new projects as this was the preferred resolution on Windows Phone. It is still the default resolution used in MonoGame projects today.
+> [!NOTE] Fun fact, provided by community member stromkos, The release of XNA 3.0 in 2008, which added the support for Windows Phone, is also the release that specified the default window resolution of 800x600 for new projects as this was the preferred resolution on Windows Phone. It is still the default resolution used in MonoGame projects today.
 
 As XNA become more popular, the need for cross-platform development started to grow. In 2009, [José Antonio Leal de Farias](https://github.com/jalf) introduced _XNA Touch_, an open-source project that aimed to make games with XNA playable on iOS devices. This marked the beginning of what would later become MonoGame. [Dominique Louis](https://github.com/CartBlanche) came on board in 2009 and soon took over as full-time project lead, driving its initial development and expansion. The project attracted other developers such as [Tom Spilman](https://github.com/tomspilman) who were interested in expanding the scope of the project as well as its reach.
 
@@ -25,11 +25,11 @@ The official first release of MonoGame occurred in 2011, as an open source versi
 
 Today, it is a mature, cross-platform framework, that is built with the spirit of preserving XNA but adopting modern game development practices. Some popular titles created using MonoGame include [Celeste](https://store.steampowered.com/app/504230/Celeste/), [Stardew Valley](https://store.steampowered.com/app/413150/Stardew\_Valley/), and [Streets of Rage 4](https://store.steampowered.com/app/985890/Streets\_of\_Rage\_4/).
 
-<figure><img src="images/01-what-is-monogame/celeste.png" alt="Figure 1-1: Celeste, developed by Maddy Thorson and Noel Berry"><figcaption><p><strong>Figure 1-1: Celeste, developed by Maddy Thorson and Noel Berry</strong></p></figcaption></figure>
+<figure><img src="../images/01-what-is-monogame/celeste.png" alt="Figure 1-1: Celeste, developed by Maddy Thorson and Noel Berry"><figcaption><p><strong>Figure 1-1: Celeste, developed by Maddy Thorson and Noel Berry</strong></p></figcaption></figure>
 
-<figure><img src="images/01-what-is-monogame/stardew-valley.png" alt="Figure 1-2: Stardew Valley, developed by Eric Barone (ConcernedApe)."><figcaption><p><strong>Figure 1-2: Stardew Valley, developed by Eric Barone (ConcernedApe).</strong></p></figcaption></figure>
+<figure><img src="../images/01-what-is-monogame/stardew-valley.png" alt="Figure 1-2: Stardew Valley, developed by Eric Barone (ConcernedApe)."><figcaption><p><strong>Figure 1-2: Stardew Valley, developed by Eric Barone (ConcernedApe).</strong></p></figcaption></figure>
 
-<figure><img src="images/01-what-is-monogame/sor4.jpg" alt="Figure 1-3: Streets of Rage 4, developed by Dotemu, LizardCube, and Guard Crush Games."><figcaption><p><strong>Figure 1-3: Streets of Rage 4, developed by Dotemu, LizardCube, and Guard Crush Games.</strong></p></figcaption></figure>
+<figure><img src="../images/01-what-is-monogame/sor4.jpg" alt="Figure 1-3: Streets of Rage 4, developed by Dotemu, LizardCube, and Guard Crush Games."><figcaption><p><strong>Figure 1-3: Streets of Rage 4, developed by Dotemu, LizardCube, and Guard Crush Games.</strong></p></figcaption></figure>
 
 ## Features
 
