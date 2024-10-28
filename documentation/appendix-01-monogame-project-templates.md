@@ -22,7 +22,7 @@ The following table lists the different templates available and what they are us
 | *MonoGame Shared Library Project* | `mgshared` | A MonoGame project template that creates a shared C# project that can be used to share code and content with other projects. |
 | *MonoGame Windows Desktop Application* | `mgwindowsdx` | A MonoGame project template targeting Windows only using DirectX. |
 
-> [!NOTE]
+> NOTE
 > The *Short Name* of a templates is the name you would use when creating a new MonoGame project using the dotnet CLI command.  For example, if creating a new *MonoGame Cross-Platform Desktop Application* using the dotnet CLI, you would execute the following command using the `mgdesktopgl` short name:
 >
 > ```sh

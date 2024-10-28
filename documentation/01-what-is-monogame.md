@@ -17,7 +17,8 @@ In this chapter, we'll explore the history of MonoGame, what features it provide
 
 In 2006, Microsoft released a game development framework named _XNA Game Studio_ to facilitate game development for Windows PC and the Xbox 360 console. It revolutionized game development for indie creators by bringing a simplified approach to building games and offering a set of tools that lowered the entry barrier for aspiring game developers. Out of XNA Game Studio came critically acclaimed titles such as [Bastion](https://www.supergiantgames.com/games/bastion/) and [Terraria](https://terraria.org/). In 2008, XNA was expanded to support development for both the Zune and Windows Phone.
 
-> [!NOTE] Fun fact, provided by community member stromkos, The release of XNA 3.0 in 2008, which added the support for Windows Phone, is also the release that specified the default window resolution of 800x600 for new projects as this was the preferred resolution on Windows Phone. It is still the default resolution used in MonoGame projects today.
+> NOTE
+> Fun fact, provided by community member stromkos, The release of XNA 3.0 in 2008, which added the support for Windows Phone, is also the release that specified the default window resolution of 800x600 for new projects as this was the preferred resolution on Windows Phone. It is still the default resolution used in MonoGame projects today.
 
 As XNA become more popular, the need for cross-platform development started to grow. In 2009, [José Antonio Leal de Farias](https://github.com/jalf) introduced _XNA Touch_, an open-source project that aimed to make games with XNA playable on iOS devices. This marked the beginning of what would later become MonoGame. [Dominique Louis](https://github.com/CartBlanche) came on board in 2009 and soon took over as full-time project lead, driving its initial development and expansion. The project attracted other developers such as [Tom Spilman](https://github.com/tomspilman) who were interested in expanding the scope of the project as well as its reach.
 
@@ -59,7 +60,8 @@ By providing cross-platform support, developers can target multiple platforms fr
 
 MonoGame is designed and build in C#. It is the official programming language supported in documentation, samples, and community discussion. However, MonOGame is not exclusively tied to C#. As a .NET lirary, MonoGame can be used with any .NET-compatible language including Visual Basic and F#.
 
-> \[!CAUTION] While the alternative .NET languages can be used, community support may be limited outside the scope of C#.
+> CAUTION
+> While the alternative .NET languages can be used, community support may be limited outside the scope of C#.
 
 Regardless of which .NET language used, developers should have a foundational understanding of the language and programming concepts such as:
 
@@ -72,11 +74,7 @@ Regardless of which .NET language used, developers should have a foundational un
 
 1.  Name one of the advantages of using the MonoGame framework to develop games.
 
-    \
-
 2.  What programming languages can be used when creating a game with MonoGame?
-
-    \
 
 
 ## See Also

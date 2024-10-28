@@ -79,7 +79,8 @@ To install the C# Dev Kit extension, perform the following:
 3. Enter `C#` in the _Search Box_
 4. Click install for the _C# Dev Kit_ extension.
 
-> \[!NOTE] When you search `C#` in the _Extension Panel_ you may notice there is the C# Dev Kit extension and a base standard C# extension. When installing the C# Dev Kit extension, the base extension will also be installed as a requirement.
+> NOTE
+> When you search `C#` in the _Extension Panel_ you may notice there is the C# Dev Kit extension and a base standard C# extension. When installing the C# Dev Kit extension, the base extension will also be installed as a requirement.
 
 ### Installing the "MonoGame for VSCode" Extension
 
@@ -143,7 +144,8 @@ Be amazed, the default MonoGame Cornflower Blue game window. You have just creat
 
 You can exit the game at any time by pressing the `Esc` key on your keyboard.
 
-> \[!NOTE] Above, I mentioned that a loop is entered. This is commonly referred to as the _game loop_, which we'll discuss in more detail in the next chapter. The reason the application enters this loop is because game applications work differently than a traditional desktop application like your web browser.
+> NOTE
+> Above, I mentioned that a loop is entered. This is commonly referred to as the _game loop_, which we'll discuss in more detail in the next chapter. The reason the application enters this loop is because game applications work differently than a traditional desktop application like your web browser.
 >
 > Desktop application are event based, meaning once loaded, the do not do much at all while waiting for input from the user, and then it response to that input event and redraws the window if needed based on the interaction.
 >
@@ -164,12 +166,6 @@ Now that your development environment is setup and ready to go, you can dive in 
 
 1.  What version of the .NET SDK is currently targeted by MonoGame applications?
 
-    \
-
 2.  What is the current version of MonoGame?
 
-    \
-
 3.  What is the color of the game window when you run a MonoGame project for the first time?
-
-    \

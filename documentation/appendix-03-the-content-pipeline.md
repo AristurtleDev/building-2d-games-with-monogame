@@ -409,19 +409,12 @@ Here, we have discussed
 
 1.  When choosing to exclude an asset in the MGCB Editor, is the file deleted from your computer?
 
-    \\
 2.  Does the MGCB Editor auto save as you add and/or remove assets in the interface
 
-    \\
 3.  What is the purpose of the MGCB tool?
 
-    \\
 4.  Do you need to copy the compiled assets from the content project output directory to your game project output directory?
 
-    \\
 5.  In my Content folder, I have a directory named _images_. Inside this directory, I have an image file of a ball named _ball.png_. I have added this file to my content project in the MGCB Editor and now want to load it in the game using the _ContentManager_ class. When loading it, what value would I need to give for the _asset name_ parameter to load the _ball.png_ image.
 
-    \\
 6.  In this scenario, I need to unload two assets that were previously loaded using the _ContentManager_ class. The _asset name_ for these assets are `images/ball` and `audio/sfx/bounce`. Given this information, how can I unload these assets?
-
-    \\

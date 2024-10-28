@@ -79,12 +79,10 @@ To use the _content pipeline_ to load our image, we first need to open the _Mono
 
 <figure><img src="../images/04-working-with-textures/mgcb-editor-icon.png" alt="Figure 4-2: MonoGame for VSCode extension icon"><figcaption><p><strong>Figure 4-2: MonoGame for VSCode extension icon</strong></p></figcaption></figure>
 
-\
-**Figure 4-2:** _MonoGame for VSCode Extension Icon._
-
 Clicking this icon will open the MGCB Editor with the _Content.mgcb_ file in the current project loaded.
 
-> \[!NOTE] If you did not install the _MonoGame for VSCode_ extension or prefer to not use it, you can use the CLI commands to open the MGCB Editor instead. To do this:
+> NOTE
+> If you did not install the _MonoGame for VSCode_ extension or prefer to not use it, you can use the CLI commands to open the MGCB Editor instead. To do this:
 >
 > 1. Open the terminal in VSCode pressing `` CTRL+` ``or choosing _View > Terminal_ from the top menu
 > 2. If the terminal directory is not in the project root directory (the one with the .csproj file), then use the `cd` command to navigate to that directory.
@@ -105,7 +103,8 @@ After adding an existing file, you will be prompted with a pop-up asking if you 
 
 <figure><img src="../images/04-working-with-textures/add-file-popup.png" alt="Figure 4-4: Add Existing File Popup"><figcaption><p><strong>Figure 4-4: Add Existing File Popup</strong></p></figcaption></figure>
 
-> \[!CAUTION] When adding existing files in the future, the choice between copying the file and adding a link can make a big difference. When you choose to copy the file, it makes a literal copy of the current file and puts that copy inside the Content directory in your project. This means any changes to the original source file will not be reflected in the copy.
+> CAUTION
+> When adding existing files in the future, the choice between copying the file and adding a link can make a big difference. When you choose to copy the file, it makes a literal copy of the current file and puts that copy inside the Content directory in your project. This means any changes to the original source file will not be reflected in the copy.
 >
 > By adding as a link, it will instead reference the source file without making a copy. This means changes made in the source file will be reflected, however the link is stored as a relative link, relative to the _Content.mgcb_ file. So if the source file moves, or you move the project, then you'll need to re-add the link.
 
@@ -179,7 +178,8 @@ In MonoGame, the xy-coordinate space on the screen begins at (0, 0) in the top l
 _spriteBatch.Draw(_logo, new Vector2(Window.ClientBounds.Width, Window.ClientBounds.Height) * 0.5f, Color.White);
 ```
 
-> \[!TIP] In the example above, we multiply the `Vector2` created by `0.5f` to half the value instead of dividing it by `2.0f`. If you're not used to seeing this, it might seem strange at first, but it's actually an optimization technique. CPUs are able to perform multiplication operations much faster than division operations and reading `* 0.5f` is easily understood to be the same thing as `/ 2.0f` when reading.
+> TIP
+> In the example above, we multiply the `Vector2` created by `0.5f` to half the value instead of dividing it by `2.0f`. If you're not used to seeing this, it might seem strange at first, but it's actually an optimization technique. CPUs are able to perform multiplication operations much faster than division operations and reading `* 0.5f` is easily understood to be the same thing as `/ 2.0f` when reading.
 
 We're now telling the position to be a half the width and height of the client bounds. If we run the game now, the logo should be drawn at the center of the game window correct? Well, not exactly. If you run the game now, it will look similar to the following:
 
