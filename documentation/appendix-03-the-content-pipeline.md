@@ -51,7 +51,7 @@ Another benefit of using the content pipeline is the _ContentManager_ class prov
 
 The _MonoGame Content Builder Editor (MGCB Editor)_ is a tool provided by the MonoGame framework with a graphical user interface (GUI) for managing the assets to add to your game.
 
-![Figure A3-1: The MonoGame Content Builder Editor (MGCB Editor).](images/appendix-03-the-content-pipeline/mgcb-editor.png)\
+![Figure A3-1: The MonoGame Content Builder Editor (MGCB Editor).](../images/appendix-03-the-content-pipeline/mgcb-editor.png)\
 **Figure A3-1:** _The MonoGame Content Builder Editor (MGCB Editor)._
 
 WHen changes are made in the MGCB Editor and then saved, those changes are written to the _Content.mgcb_ content project file that is part of your MonoGame project.
@@ -74,32 +74,32 @@ To use the MGCB Editor, you first need to launch the tool application. There are
 
 The toolbar is located at the top of the editor window and contains shortcut icons that can be used to perform different tasks.
 
-![Figure A3-2: The MonoGame Content Builder Editor (MGCB Editor) Toolbar.](images/appendix-03-the-content-pipeline/mgcb-editor-toolbar.png)\
+![Figure A3-2: The MonoGame Content Builder Editor (MGCB Editor) Toolbar.](../images/appendix-03-the-content-pipeline/mgcb-editor-toolbar.png)\
 **Figure A3-2:** _The MonoGame Content Builder Editor (MGCB Editor) Toolbar._
 
 From left-to-right, the icons on the tool bar are:
 
-| Icon                                                                                              | Name                      | Description                                                                                                                                  |
-| ------------------------------------------------------------------------------------------------- | ------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------- |
-| ![Create New Project Icon](images/appendix-03-the-content-pipeline/new-icon.png)                  | _Create New Project_      | Creates a new _Content.mgcb_ content project                                                                                                 |
-| ![Open Existing Project Icon](images/appendix-03-the-content-pipeline/open-existing-icon.png)     | _Open Existing Project_   | Opens an existing _Content.mgcb_ content project file.                                                                                       |
-| ![Save Current Project Icon](images/appendix-03-the-content-pipeline/save-icon.png)               | _Save Current Project_    | Saves the current project, writing ot the _Content.mgcb_ content project file that is open in the editor.                                    |
-| ![Undo Last Action Icon](images/appendix-03-the-content-pipeline/undo-icon.png)                   | _Undo Last Action_        | Performs an undo on the last action performed.                                                                                               |
-| ![Redo Action Icon](images/appendix-03-the-content-pipeline/redo-icon.png)                        | _Redo Action_             | Performs a redo of the last undo action performed.                                                                                           |
-| ![Add New Item Icon](images/appendix-03-the-content-pipeline/add-new-item-icon.png)               | _Add New Item_            | Open the _Add New Item_ dialog to create and add a new item to the current selected node in the **Project Panel**.                           |
-| ![Add Existing Item Icon](images/appendix-03-the-content-pipeline/add-existing-item-icon.png)     | _Add Existing Item_       | Adds an existing item to the current selected node in the _Project Panel_.                                                                   |
-| ![Add New Folder Icon](images/appendix-03-the-content-pipeline/add-new-folder-icon.png)           | _Add New Folder_          | Adds a new folder to the current selected node in the _Project Panel_.                                                                       |
-| ![Add Existing Folder Icon](images/appendix-03-the-content-pipeline/add-existing-folder-icon.png) | _Add Existing Folder_     | Adds an existing folder, and all files within that folder, to the current selected node in the **Project Panel**.                            |
-| ![Build Content Project Icon](images/appendix-03-the-content-pipeline/build-icon.png)             | _Build Content Project_   | Performs a build of the current content project. Will only build content that hasn't already been built if a build was previously performed. |
-| ![Rebuild Content Project Icon](images/appendix-03-the-content-pipeline/rebuild-icon.png)         | _Rebuild Content Project_ | Performs a rebuild of the current content project which first cleans all previous built content then performs a full build of all content.   |
-| ![Clean Content Project Icon](images/appendix-03-the-content-pipeline/clean-icon.png)             | _Clean Content Project_   | Cleans all previously built content.                                                                                                         |
-| ![Cancel Build Icon](images/appendix-03-the-content-pipeline/cancel-build-icon.png)               | _Cancel Build_            | Stops the current build in progress. Only available if a build is currently being performed.                                                 |
+| Icon                                                                                                 | Name                      | Description                                                                                                                                  |
+| ---------------------------------------------------------------------------------------------------- | ------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------- |
+| ![Create New Project Icon](../images/appendix-03-the-content-pipeline/new-icon.png)                  | _Create New Project_      | Creates a new _Content.mgcb_ content project                                                                                                 |
+| ![Open Existing Project Icon](../images/appendix-03-the-content-pipeline/open-existing-icon.png)     | _Open Existing Project_   | Opens an existing _Content.mgcb_ content project file.                                                                                       |
+| ![Save Current Project Icon](../images/appendix-03-the-content-pipeline/save-icon.png)               | _Save Current Project_    | Saves the current project, writing ot the _Content.mgcb_ content project file that is open in the editor.                                    |
+| ![Undo Last Action Icon](../images/appendix-03-the-content-pipeline/undo-icon.png)                   | _Undo Last Action_        | Performs an undo on the last action performed.                                                                                               |
+| ![Redo Action Icon](../images/appendix-03-the-content-pipeline/redo-icon.png)                        | _Redo Action_             | Performs a redo of the last undo action performed.                                                                                           |
+| ![Add New Item Icon](../images/appendix-03-the-content-pipeline/add-new-item-icon.png)               | _Add New Item_            | Open the _Add New Item_ dialog to create and add a new item to the current selected node in the **Project Panel**.                           |
+| ![Add Existing Item Icon](../images/appendix-03-the-content-pipeline/add-existing-item-icon.png)     | _Add Existing Item_       | Adds an existing item to the current selected node in the _Project Panel_.                                                                   |
+| ![Add New Folder Icon](../images/appendix-03-the-content-pipeline/add-new-folder-icon.png)           | _Add New Folder_          | Adds a new folder to the current selected node in the _Project Panel_.                                                                       |
+| ![Add Existing Folder Icon](../images/appendix-03-the-content-pipeline/add-existing-folder-icon.png) | _Add Existing Folder_     | Adds an existing folder, and all files within that folder, to the current selected node in the **Project Panel**.                            |
+| ![Build Content Project Icon](../images/appendix-03-the-content-pipeline/build-icon.png)             | _Build Content Project_   | Performs a build of the current content project. Will only build content that hasn't already been built if a build was previously performed. |
+| ![Rebuild Content Project Icon](../images/appendix-03-the-content-pipeline/rebuild-icon.png)         | _Rebuild Content Project_ | Performs a rebuild of the current content project which first cleans all previous built content then performs a full build of all content.   |
+| ![Clean Content Project Icon](../images/appendix-03-the-content-pipeline/clean-icon.png)             | _Clean Content Project_   | Cleans all previously built content.                                                                                                         |
+| ![Cancel Build Icon](../images/appendix-03-the-content-pipeline/cancel-build-icon.png)               | _Cancel Build_            | Stops the current build in progress. Only available if a build is currently being performed.                                                 |
 
 #### Project Panel
 
 Below the toolbar on the left side of the MGCB Editor window is the _Project Panel_.
 
-![Figure A3-3The MonoGame Content Builder Editor (MGCB Editor) Project Panel](images/appendix-03-the-content-pipeline/project-panel.png)\
+![Figure A3-3The MonoGame Content Builder Editor (MGCB Editor) Project Panel](../images/appendix-03-the-content-pipeline/project-panel.png)\
 **Figure A3-3:** _The MonoGame Content Builder Editor (MGCB Editor) Project Panel._
 
 The _Project Panel_ provides a tree node view of all assets added to the content project. The top node, _Content_, represents the content project itself. Right-clicking on a node will open a context menu that is specific to that node type; content project, folder, or file. When selecting any node from the Project Panel, the properties available for that node node item will appear in the _Properties Panel_ below it.
@@ -108,7 +108,7 @@ The _Project Panel_ provides a tree node view of all assets added to the content
 
 Below the _Project Panel_ on the left side of the MGCB Editor window is the _Properties Panel_.
 
-![Figure A3-4: The MonoGame Content Builder Editor (MGCB Editor) Properties Panel](images/appendix-03-the-content-pipeline/properties-panel.png)\
+![Figure A3-4: The MonoGame Content Builder Editor (MGCB Editor) Properties Panel](../images/appendix-03-the-content-pipeline/properties-panel.png)\
 **Figure A3-4:** _The MonoGame Content Builder Editor (MGCB Editor) Properties Panel._
 
 THe _Properties Panel_ contains configurable properties for the current selected node in the _Project Panel_. The available properties will differ depending on the node item type selected and which _Processor_ is selected for that node item. In Figure A3-2 above, the _image.png_ file node is selected, so we see the properties available for an image file.
@@ -119,7 +119,7 @@ To view all available properties based on the node item type and processor selec
 
 The _Build Output Panel_ is located on the right side of the MGCB Editor window.
 
-![Figure A3-5: The MonoGame Content Builder Editor (MGCB Editor) Build Output Panel](images/appendix-03-the-content-pipeline/build-panel.png)\
+![Figure A3-5: The MonoGame Content Builder Editor (MGCB Editor) Build Output Panel](../images/appendix-03-the-content-pipeline/build-panel.png)\
 **Figure A3-5:** _The MonoGame Content Builder Editor (MGCB Editor) Build Output Panel._
 
 The _Build Output Panel_ displays the results of building the assets currently added to the content project. If there are any issues building assets, you can view the error message here to determine the cause and how to resolve it. For example, in Figure A3-5 above, there was an exception thrown when attempting to build the _image.png_ asset file.
@@ -128,7 +128,7 @@ The _Build Output Panel_ displays the results of building the assets currently a
 
 To add new content items to the content project, select a node in the _Project Panel_ and click the _Add New Item_ icon from the toolbar. Alternatively, you can also right-click the node and choose _Add > New Item..._ from the context menu. Doing these will open the _New File_ dialog box.
 
-![Figure A3-6: The MonoGame Content Builder Editor (MGCB Editor) Build New File Dialog](images/appendix-03-the-content-pipeline/new-file-dialog.png)\
+![Figure A3-6: The MonoGame Content Builder Editor (MGCB Editor) Build New File Dialog](../images/appendix-03-the-content-pipeline/new-file-dialog.png)\
 **Figure A3-6:** _The MonoGame Content Builder Editor (MGCB Editor) New File Dialog._
 
 As shown in Figure A3-6 above, this will display the built-in content item types that can be added. Select the item type you wish to add, give it a name, then click the _Create_ button to create the content item and add it to the content project.
@@ -141,7 +141,7 @@ To add existing content items to the content project, select a node in the _Proj
 
 Once you have selected the item, you will be presented with the _Add File Dialog_ containing the following options:
 
-![Figure A3-7: The MonoGame Content Builder Editor (MGCB Editor) Build Add File Dialog](images/appendix-03-the-content-pipeline/add-file-dialog.png)\
+![Figure A3-7: The MonoGame Content Builder Editor (MGCB Editor) Build Add File Dialog](../images/appendix-03-the-content-pipeline/add-file-dialog.png)\
 **Figure A3-7:** _The MonoGame Content Builder Editor (MGCB Editor) Add File Dialog._
 
 * _Copy the file to the directory_: This will create a copy of the file you selected and place that copy inside the content directory. Changes to the original file will not be reflected in the copy made.
@@ -416,24 +416,19 @@ Here, we have discussed
 
 1.  When choosing to exclude an asset in the MGCB Editor, is the file deleted from your computer?
 
-    \
-
+    \\
 2.  Does the MGCB Editor auto save as you add and/or remove assets in the interface
 
-    \
-
+    \\
 3.  What is the purpose of the MGCB tool?
 
-    \
-
+    \\
 4.  Do you need to copy the compiled assets from the content project output directory to your game project output directory?
 
-    \
-
+    \\
 5.  In my Content folder, I have a directory named _images_. Inside this directory, I have an image file of a ball named _ball.png_. I have added this file to my content project in the MGCB Editor and now want to load it in the game using the _ContentManager_ class. When loading it, what value would I need to give for the _asset name_ parameter to load the _ball.png_ image.
 
-    \
-
+    \\
 6.  In this scenario, I need to unload two assets that were previously loaded using the _ContentManager_ class. The _asset name_ for these assets are `images/ball` and `audio/sfx/bounce`. Given this information, how can I unload these assets?
 
-    \
+    \\
