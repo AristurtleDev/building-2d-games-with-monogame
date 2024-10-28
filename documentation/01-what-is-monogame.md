@@ -1,4 +1,4 @@
-# Chapter 1: What is MonoGame
+# Chapter 01: What is MonoGame
 
 * [A Brief History](01-what-is-monogame.md#a-brief-history)
 * [Features](01-what-is-monogame.md#features)
