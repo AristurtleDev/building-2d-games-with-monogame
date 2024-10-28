@@ -1,17 +1,5 @@
 # Preface
 
-- [Who This Is For](#who-this-is-for)
-- [How This Documentation Is Organized](#how-this-documentation-is-organized)
-- [Conventions Used in This Documentation](#conventions-used-in-this-documentation)
-  - [Italics](#italics)
-  - [Inline Code Blocks](#inline-code-blocks)
-  - [Code Blocks](#code-blocks)
-- [MonoGame](#monogame)
-- [Acknowledgements](#acknowledgements)
-- [Copyright and License](#copyright-and-license)
-
-***
-
 I have been using MonoGame for the past several years (since 2017). It was a time in my game development journey where I was looking for something that I had more control over. I didn't want to spend the time to write a full game engine, but I also wanted to have more control than what the current engines at the time (i.e. Unity) offered. At that time, there was a vast amount of resources available for getting started, but none of them felt like they fit a good beginner series. Even now, the resources available still seem this way. They either require the reader to have a great understanding of game development and programming, or they assume the reader has none and instead focuses on teaching programming more than teaching MonoGame. Even still, some relied too heavily on third party libraries, others were simply very bare bones asking the reader to just copy and paste code without explaining the _what_ of it all.
 
 Since then, I have written various small self contained tutorials on different topics for MonoGame to try and give back to the community for those getting started. I also participate regularly in the community discussion channels, answering questions and offering technical advice, so I'm very familiar with the topics and pain points that users get hung up on when first starting out.
