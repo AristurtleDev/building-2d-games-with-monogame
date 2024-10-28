@@ -20,13 +20,15 @@ My hopes with this documentation is to take the lessons I've learned, and what I
 
 This documentation is meant to be an introduction to game development and MonoGame. Readers should have a foundational understanding of C# and be comfortable with concepts such as classes and objects.
 
-> \[!NOTE] If you are just getting started with C# for the first time, I would recommend following the official [Learn C#](https://dotnet.microsoft.com/en-us/learn/csharp) tutorials provided by Microsoft. These are free tutorials that teach you programming concepts as well as the C# languages. Once you feel you have a good foundation with that, come back and continue here.
+> NOTE
+> If you are just getting started with C# for the first time, I would recommend following the official [Learn C#](https://dotnet.microsoft.com/en-us/learn/csharp) tutorials provided by Microsoft. These are free tutorials that teach you programming concepts as well as the C# languages. Once you feel you have a good foundation with that, come back and continue here.
 
 ## How This Documentation Is Organized
 
 This documentation will introduce game development concepts using the MonoGame framework while walking the reader through the development of a Snake clone. The documentation is organized such that each chapter should be read sequentially, with each introducing new concepts and building off of the previous chapters.
 
-> \[!CAUTION] This is currently a work in progress and is not finished.
+> CAUTION
+> This is currently a work in progress and is not finished.
 
 | Chapter                                                            | Summary                                                                                                                                                                                                           |
 | ------------------------------------------------------------------ | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
