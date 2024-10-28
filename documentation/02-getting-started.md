@@ -35,7 +35,8 @@ The first thing we need to do is install the .NET _Software Development Kit_ (SD
   1. Open a web browser and navigate to https://dotnet.microsoft.com/en-us/download.
   2.  Click the _Download .NET SDK x64 (Intel)_ button start the download of the .NET SDK Installer
 
-      > \[!NOTE] For the time being, MonoGame requires that you install the **Intel** version even if you are using an Apple Silicon (M1/M2) Mac. For Apple Silicon Macs, it also requires that [Rosetta](https://support.apple.com/en-us/HT211861) is enabled.
+      > [!NOTE]  
+      > For the time being, MonoGame requires that you install the **Intel** version even if you are using an Apple Silicon (M1/M2) Mac. For Apple Silicon Macs, it also requires that [Rosetta](https://support.apple.com/en-us/HT211861) is enabled.
   3. Once the download finishes, run the installer
 * Linux
   * Open a new _Terminal_ window
@@ -93,7 +94,8 @@ To install the C# Dev Kit extension, perform the following:
 3. Enter `C#` in the _Search Box_
 4. Click install for the _C# Dev Kit_ extension.
 
-> NOTE When you search `C#` in the _Extension Panel_ you may notice there is the C# Dev Kit extension and a base standard C# extension. When installing the C# Dev Kit extension, the base extension will also be installed as a requirement.
+> [!NOTE]  
+> When you search `C#` in the _Extension Panel_ you may notice there is the C# Dev Kit extension and a base standard C# extension. When installing the C# Dev Kit extension, the base extension will also be installed as a requirement.
 
 ### Installing the "MonoGame for VSCode" Extension
 
