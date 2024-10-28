@@ -79,4 +79,4 @@ Regardless of which .NET language used, developers should have a foundational un
 
 ## Next
 
-* [Chapter 02: Getting Started](01-what-is-monogame.md)
+* [Chapter 02: Getting Started](02-getting-started.md)
