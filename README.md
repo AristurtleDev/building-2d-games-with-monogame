@@ -10,7 +10,7 @@ My hopes with this documentation is to take the lessons I've learned, and what I
 
 This documentation is meant to be an introduction to game development and MonoGame. Readers should have a foundational understanding of C# and be comfortable with concepts such as classes and objects.
 
-> NOTE
+> [!NOTE]
 > If you are just getting started with C# for the first time, I would recommend following the official [Learn C#](https://dotnet.microsoft.com/en-us/learn/csharp) tutorials provided by Microsoft. These are free tutorials that teach you programming concepts as well as the C# languages. Once you feel you have a good foundation with that, come back and continue here.
 
 ## How This Documentation Is Organized
