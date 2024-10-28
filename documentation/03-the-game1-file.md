@@ -115,11 +115,11 @@ _Delta time_ allows you to track time accurately for things such as animations a
 
 ## Conclusion
 
-In this chapter we
+Let's review what you accomplished in this chapter:
 
-* Discussed the default code provided in a _Game1.cs_ file created by a MonoGame template
-* Discussed the lifecycle of a MonoGame game.
-* Discussed what a game loop is and how it is implemented in MonoGame.
+- You read through the default code provided in a _Game1.cs_ file created by a MonoGame template.
+- You learned about the lifecycle of a MonoGame game project.
+- You learned what a game loop is and how it is implemented in MonoGame.
 
 In the next chapter, you'll start working with sprites and learn how to load and render them.
 

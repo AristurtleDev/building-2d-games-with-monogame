@@ -1,8 +1,3 @@
----
-description: >-
-
----
-
 # Chapter 04: Working with Textures
 In this chapter, we'll compare loading a texture from file versus pre-processing it using the content pipeline and how to render the textures as visuals in your game.
 
@@ -83,6 +78,7 @@ To use the _content pipeline_ to load our image, we first need to open the _Mono
 
 Clicking this icon will open the MGCB Editor with the _Content.mgcb_ file in the current project loaded.
 
+> [!NOTE]  
 > If you did not install the _MonoGame for VSCode_ extension or prefer to not use it, you can use the CLI commands to open the MGCB Editor instead. To do this:
 >
 > 1. Open the terminal in VSCode pressing `` CTRL+` ``or choosing _View > Terminal_ from the top menu
@@ -104,6 +100,7 @@ After adding an existing file, you will be prompted with a pop-up asking if you 
 
 <figure><img src="../images/04-working-with-textures/add-file-popup.png" alt="Figure 4-4: Add Existing File Popup"><figcaption><p><strong>Figure 4-4: Add Existing File Popup</strong></p></figcaption></figure>
 
+> [!CAUTION]  
 > When adding existing files in the future, the choice between copying the file and adding a link can make a big difference. When you choose to copy the file, it makes a literal copy of the current file and puts that copy inside the Content directory in your project. This means any changes to the original source file will not be reflected in the copy.
 >
 > By adding as a link, it will instead reference the source file without making a copy. This means changes made in the source file will be reflected, however the link is stored as a relative link, relative to the _Content.mgcb_ file. So if the source file moves, or you move the project, then you'll need to re-add the link.
@@ -164,9 +161,9 @@ In the above example, we use the `SpriteBatch.Draw` method with the following pa
 
 | Parameter | Type        | Description                                                                                                       |
 | --------- | ----------- | ----------------------------------------------------------------------------------------------------------------- |
-| texture   | `Texture2D` | The `Texture2D` to draw                                                                                           |
-| position  | `Vector2`   | The xy-coordinate position to draw the texture at. The origin point being the top-left corner of the image.       |
-| color     | `Color`     | The color mask (tint) to apply to the image drawn. Specifying `Color.White` will render the texture with no tint. |
+| _texture_   | `Texture2D` | The `Texture2D` to draw                                                                                           |
+| _position_  | `Vector2`   | The xy-coordinate position to draw the texture at. The origin point being the top-left corner of the image.       |
+| _color_     | `Color`     | The color mask (tint) to apply to the image drawn. Specifying `Color.White` will render the texture with no tint. |
 
 Try adjusting the position and color parameters to see how they can affect the image being drawn.
 
@@ -308,14 +305,15 @@ As an exercise for yourself, see if you can adjust the code to draw only the Mon
 
 ## Conclusion
 
-In this chapter we
+Let's review what you accomplished in this chapter:
 
-* Learned how to load textures directly from file as well as using the content pipeline.
-* Discussed the advantages of using the content pipeline.
-* Briefly discussed the overall content pipeline workflow.
-* Used the `SpriteBatch` to draw the texture that was loaded.
-* Discussed the different parameters available when using the `SpriteBatch.Draw` method and the importance of the _origin_ parameter in relation to the _position_, _rotation_, and _scale_ parameters.
-* Learned how to draw only a specific sub region within a texture by using the _sourceRectangle_ parameter.
+- You loaded an image as a texture directly from file.
+- You loaded the same image as a texture using the content pipeline.
+- You learned about the content pipeline workflow and how MonoGame automates the process for you.
+- You used the `SpriteBatch` class to draw a texture.
+- You learned the different parameters available when using the `SpriteBatch.Draw` method.
+- You learned the importance of the _origin_ parameter in relation to the _position_, _rotation_, and _scale_ parameters when rendering a texture.
+- You learned how to draw a specific sub region within a texture by using the _sourceRectangle_ parameter.
 
 In the next chapter, we'll take what we've learned here about drawing textures and apply object-oriented programming concepts to start building a game library that you will use throughout this tutorial and can take to use in future game projects after.
 
