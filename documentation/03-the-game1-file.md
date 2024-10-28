@@ -74,7 +74,7 @@ The first thing you'll notice inside the `Game1` class are two instance member f
 
 The second instance member, `SpriteBatch`, is used to perform 2D graphics rendering of _sprites_ for the game. A _sprite_ is term used to represent a 2D image. The visuals for a 2D game are made by rendering multiple sprites on screen, and the `SpriteBatch` provides an optimized method of rendering multiple sprites in a single batch call.
 
-Following the two instance member fields is the `Game1` constructor. This is called when a new instance of `Game1` is created inside the _Program.cs_ code file. When first called, the base `Game` class constructor is executed first where instances of internal components needed are created and platform specific initializations occur. The `GraphicsDeviceManager` instance is then created, followed by setting the `Content.RootDirectory` property value to the _Content_ directory, and finally setting the mouse to be visible when it is positioned over the game window.
+Following the two instance member fields is the `Game1` constructor. This is called when a new instance of `Game1` is created inside the _Program.cs_ code file. When first called, the base `Game` class constructor is executed first where instances of internal components needed are created and platform specific initialization occur. The `GraphicsDeviceManager` instance is then created, followed by setting the `Content.RootDirectory` property value to the _Content_ directory, and finally setting the mouse to be visible when it is positioned over the game window.
 
 After the constructor is the `Initialize` method. This method is called after the constructor is executed and is only called once during the lifetime of the game. Here is where you initialize variables and objects used in the game. While the default code isn't much, the `base.Initialize()` call is actually very important in terms of what you can do before and after it. When the base method is called, this is when the graphics device object is instantiated. During the base method call is also when the `LoadContent` method is called. So any initializations that need to be performed that rely on either the graphics device object or content loaded should be done _after_ the base method call and not before it.
 
@@ -84,8 +84,7 @@ After initializations and content loading are performed, the game will enter int
 
 The figure below shows the lifecycle of a MonoGame game including the `Update` and `Draw` methods that make up the _game loop_.
 
-![Figure 3-1: Lifecycle of a MonoGame game.](../images/03-the-game1-file/monogame-lifecycle.png)\
-**Figure 3-1:** _Lifecycle of a MonoGame game._
+<figure><img src="../images/03-the-game1-file/monogame-lifecycle.png" alt="Figure 3-1: Lifecycle of a MonoGame game."><figcaption><p><strong>Figure 3-1: Lifecycle of a MonoGame game.</strong></p></figcaption></figure>
 
 ## The Game Loop
 
@@ -104,10 +103,9 @@ protected override void Draw(GameTime gameTime)
 }
 ```
 
-The first line is executing the `Clear` method of the `GraphicsDevice` property using the color `CornflowerBlue`. Recall that the `GraphicsDevice` object is your direct interface between the game and what is rendered to the screen. Every time the `Draw` method is called, this line of code of erasing the contents of the game window and refilling it with the color specified. Without clearing the contents of the screen first, every draw call would draw the new frame render overtop of the previous render, and you'd end up with something like the old solitaire win screen
+The first line is executing the `Clear` method of the `GraphicsDevice` property using the color `CornflowerBlue`. Recall that the `GraphicsDevice` object is your direct interface between the game and what is rendered to the screen. Every time the `Draw` method is called, this line of code of erasing the contents of the game window and refilling it with the color specified. Without clearing the contents of the screen first, every draw call would draw the new frame render over top of the previous render, and you'd end up with something like the old solitaire win screen
 
-![Figure 3-2: Windows XP Solitaire Win Screen.](../images/03-the-game1-file/solitaire.webp)\
-**Figure 3-2:** _Windows XP Solitaire Win Screen._
+<figure><img src="../images/03-the-game1-file/solitaire.webp" alt="Figure 3-2: Windows XP Solitaire Win Screen."><figcaption><p><strong>Figure 3-2: Windows XP Solitaire Win Screen.</strong></p></figcaption></figure>
 
 While this can make for a neat effect, it's not something you want all the time. So, the screen is cleared and refilled with a solid color. You can test this yourself by modifying the code to use a different color, such as `Color.MonoGameOrange`, then running the game. (yes, there is a MonoGame Orange color).
 
