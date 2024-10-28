@@ -1,10 +1,6 @@
----
-description: >-
-  This appendix contains information on the C# project templates offered by
-  MonoGame and what each is used for.
----
-
 # Appendix 01: MonoGame Project Templates
+
+This appendix contains information on the C# project templates offered by MonoGame and what each is used for.
 
 MonoGame offers several templates to create a new project based on the platform(s) you are targeting and ancillary project templates for extensions and libraries.
 

@@ -1,21 +1,18 @@
----
-description: >-
-  In this chapter, you'll get setup with MonoGame by preparing your environment
-  for dotnet development and setting up Visual Studio Code as your IDE.
-layout:
-  title:
-    visible: true
-  description:
-    visible: true
-  tableOfContents:
-    visible: true
-  outline:
-    visible: true
-  pagination:
-    visible: true
----
-
 # Chapter 02: Getting Started
+
+In this chapter, you'll get setup with MonoGame by preparing your environment for dotnet development and setting up Visual Studio Code as your IDE.
+
+- [Installing the .NET SDK](#installing-the-net-sdk)
+  - [Install Additional Workloads (Optional)](#install-additional-workloads-optional)
+- [Install MonoGame Project Templates](#install-monogame-project-templates)
+- [Installing Visual Studio Code](#installing-visual-studio-code)
+  - [Install the C# Dev Kit Extension](#install-the-c-dev-kit-extension)
+  - [Installing the "MonoGame for VSCode" Extension](#installing-the-monogame-for-vscode-extension)
+- [Setup WINE for Effect Compilation (macOS and Linux Only)](#setup-wine-for-effect-compilation-macos-and-linux-only)
+- [Creating Your First MonoGame Application](#creating-your-first-monogame-application)
+- [Conclusion](#conclusion)
+- [Test Your Knowledge](#test-your-knowledge)
+
 
 Unlike game engines, MonoGame is a _framework_. This means it does not come as a standalone program that you download an install with a graphical user interface used to create games. Instead, MonoGame integrates into the standard .NET development workflow, offering a code-first approach to game development. This approach offers several advantages
 
@@ -160,7 +157,8 @@ Be amazed, the default MonoGame Cornflower Blue game window. You have just creat
 
 You can exit the game at any time by pressing the `Esc` key on your keyboard.
 
-> NOTE Above, I mentioned that a loop is entered. This is commonly referred to as the _game loop_, which we'll discuss in more detail in the next chapter. The reason the application enters this loop is because game applications work differently than a traditional desktop application like your web browser.
+> [!NOTE]  
+> Above, I mentioned that a loop is entered. This is commonly referred to as the _game loop_, which we'll discuss in more detail in the next chapter. The reason the application enters this loop is because game applications work differently than a traditional desktop application like your web browser.
 >
 > Desktop application are event based, meaning once loaded, the do not do much at all while waiting for input from the user, and then it response to that input event and redraws the window if needed based on the interaction.
 >
@@ -182,3 +180,7 @@ Now that your development environment is setup and ready to go, you can dive in 
 1. What version of the .NET SDK is currently targeted by MonoGame applications?
 2. What is the current version of MonoGame?
 3. What is the color of the game window when you run a MonoGame project for the first time?
+
+## Next
+
+* [Chapter 03: The Game1 File](03-the-game1-file.md)

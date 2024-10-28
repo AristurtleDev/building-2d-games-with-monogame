@@ -6,6 +6,15 @@ description: >-
 
 # Chapter 03: The Game1.cs File
 
+In this chapter, we'll explore the contents of the Game1.cs file generated when creating a new MonoGame game project.
+
+- [Looking at the Code](#looking-at-the-code)
+- [The Game Loop](#the-game-loop)
+- [Conclusion](#conclusion)
+- [See Also](#see-also)
+- [Test Your Knowledge](#test-your-knowledge)
+- [Next](#next)
+
 In the previous chapter, you created a new MonoGame project using the _MonoGame Cross-Platform Desktop Application_ project template. Using the templates to create a new project will automatically generate files and a project structure as a starting point for a new MonoGame game application. While MonoGame offers different templates to create a new project based on target platform, all projects will contain the _Game1.cs_ file.
 
 > For an in-depth look at all files created in a MonoGame project when using the MonoGame templates, refer to [Appendix 02: MonoGame Project Overview](appendix-02-monogame-project-overview.md).

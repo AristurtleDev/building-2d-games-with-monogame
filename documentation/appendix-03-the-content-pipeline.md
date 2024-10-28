@@ -6,6 +6,33 @@ description: >-
 ---
 
 # Appendix 03: The Content Pipeline
+This appendix takes a deep dive into the content pipeline workflow provided by the MonoGame framework and discusses each utility and tool that is part of the workflow and how to use them.
+
+- [Why Use The Content Pipeline?](#why-use-the-content-pipeline)
+- [MonoGame Content Builder Editor (MGCB Editor)](#monogame-content-builder-editor-mgcb-editor)
+  - [Using the MGCB Editor](#using-the-mgcb-editor)
+    - [Toolbar](#toolbar)
+    - [Project Panel](#project-panel)
+    - [Properties Panel](#properties-panel)
+    - [Build Output Panel](#build-output-panel)
+    - [Adding New Content Items](#adding-new-content-items)
+    - [Adding Existing Content Items](#adding-existing-content-items)
+    - [Excluding Content Items](#excluding-content-items)
+    - [Organizing Content](#organizing-content)
+    - [Saving Changes](#saving-changes)
+    - [Building Content](#building-content)
+- [MonoGame Content Builder Tool (MGCB Tool)](#monogame-content-builder-tool-mgcb-tool)
+- [MonoGame.Content.Builder.Tasks](#monogamecontentbuildertasks)
+  - [1. CollectContentReferences Task](#1-collectcontentreferences-task)
+  - [2. PrepareContentBuilder Task](#2-preparecontentbuilder-task)
+  - [3. RunContentBuilder Task](#3-runcontentbuilder-task)
+  - [4. IncludeContent Task](#4-includecontent-task)
+- [ContentManager Class](#contentmanager-class)
+  - [Loading Assets](#loading-assets)
+  - [ContentManager Cache](#contentmanager-cache)
+  - [Unload Assets](#unload-assets)
+- [Conclusion](#conclusion)
+- [Test Your Knowledge](#test-your-knowledge)
 
 The MonoGame framework provides an out-of-box workflow for managing game assets, preprocessing them, and loading them in game. This workflow is commonly referred to as the _content pipeline_. The content pipeline is not a single thing, instead it is composed of a set of tools and utilities that create the workflow. This workflow provides the following:
 
@@ -110,6 +137,7 @@ As shown in Figure A3-6 above, this will display the built-in content item types
 
 To add existing content items to the content project, select a node in the _Project Panel_ and click the _Add Existing Item_ icon from the toolbar. Alternatively, you can also right-click the node and choose _Add > Existing Item..._ from the context menu. Doing these will open a file dialog chooser window where you can navigate to the existing item you want to add and select it.
 
+> [!TIP]  
 > You can select multiple files to add in one go.
 
 Once you have selected the item, you will be presented with the _Add File Dialog_ containing the following options:
@@ -126,6 +154,7 @@ Choose the option that best fits your development environment and click the _Add
 
 If there is a content item that has been added to the content project that no longer needs to be there, you can exclude it. To do this, right-click the item node in the _Project Panel_ and choose _Exclude From Project_ in the context menu.
 
+> [!NOTE]  
 > When excluding an item from the content project, it removes it from the content project itself. It does not delete the actual file on your hard drive.
 
 #### Organizing Content

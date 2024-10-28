@@ -1,11 +1,20 @@
 ---
 description: >-
-  In this chapter, we'll compare loading a texture from file versus
-  pre-processing it using the content pipeline and how to render the textures as
-  visuals in your game.
+
 ---
 
 # Chapter 04: Working with Textures
+In this chapter, we'll compare loading a texture from file versus pre-processing it using the content pipeline and how to render the textures as visuals in your game.
+
+- [Loading a Texture](#loading-a-texture)
+  - [Loading From File](#loading-from-file)
+  - [Loading From Content Pipeline](#loading-from-content-pipeline)
+- [Drawing a Texture](#drawing-a-texture)
+- [Drawing Texture Regions](#drawing-texture-regions)
+- [Conclusion](#conclusion)
+- [See Also](#see-also)
+- [Test Your Knowledge](#test-your-knowledge)
+- [Next](#next)
 
 Textures are images that you use in your game to represent the visual graphics to the player. In order to use them, you need to either create the texture in code or load an existing one from a file and then draw the texture using the `SpriteBatch`.
 

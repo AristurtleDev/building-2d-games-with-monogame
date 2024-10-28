@@ -1,10 +1,29 @@
----
-description: >-
-  This appendix is a deep-dive into the common files that are generated when
-  creating a new MonoGame game project from a MonoGame C# templates.
----
-
 # Appendix 02: MonoGame Project Overview
+
+This appendix is a deep-dive into the common files that are generated when creating a new MonoGame game project from a MonoGame C# project template.
+
+- [The _.csproj_ Project File](#the-csproj-project-file)
+- [The _Content_ Directory](#the-content-directory)
+  - [The _Content.mgcb_ Content Project File](#the-contentmgcb-content-project-file)
+    - [Global Properties Section](#global-properties-section)
+    - [References Section](#references-section)
+    - [Content Section](#content-section)
+- [The _.config_ Directory](#the-config-directory)
+  - [The _dotnet-tools.json_ Tools Manifest File](#the-dotnet-toolsjson-tools-manifest-file)
+- [The Icon Files](#the-icon-files)
+- [The _Program.cs_ File](#the-programcs-file)
+- [The _Game1.cs_ File](#the-game1cs-file)
+  - [Namespace Imports](#namespace-imports)
+  - [Class Declaration](#class-declaration)
+  - [Instance Members](#instance-members)
+  - [The Game1 Constructor](#the-game1-constructor)
+  - [The Initialize Method](#the-initialize-method)
+  - [The LoadContent Method](#the-loadcontent-method)
+  - [The Update Method](#the-update-method)
+  - [The Draw Method](#the-draw-method)
+  - [Additional Methods](#additional-methods)
+  - [Additional Properties](#additional-properties)
+  - [Order of Execution](#order-of-execution)
 
 Regardless of the [MonoGame project template](appendix-01-monogame-project-templates.md) used to create a new MonoGame application, each template will generate a structure similar to the following
 
@@ -103,6 +122,7 @@ The _Content.mgcb_ content project file, located in the _/Content/_ directory in
 #---------------------------------- Content ---------------------------------#
 ```
 
+> [!CAUTION]  
 > This is not a file you would typically edit by hand. Instead you would load this file inside the _MonoGame Content Builder Editor (MGCB Editor)_, which provides a visual interface for managing assets that will write the appropriate configurations to this file for you. We'll cover using the MGCB Editor throughout this documentation.
 >
 > However, it can still be useful to know how to read this file if there is ever a need, so it's covered below.
@@ -124,7 +144,8 @@ The global properties section defines configurations used by the _MGCB_ tool whe
   * `WindowsStoreApp`
   * `XBoxOne`
 
-> NOTE Support for the `PlayStation4`, `PlayStation5`, `Switch`, and `XBoxOne` platforms is only available for licensed console developers.
+> [!NOTE]  
+> Support for the `PlayStation4`, `PlayStation5`, `Switch`, and `XBoxOne` platforms is only available for licensed console developers.
 
 * `/config` is an optional flag that can be used to specify a build configuration name. This value is sometimes used as a hint in content processors.
 * `/profile` specifies the target graphics profile to build for. Available values are
@@ -212,7 +233,8 @@ The _dotnet-tools.mgcb_ tools manifest file defines the tools used by the projec
 }
 ```
 
-> CAUTION This is not a file you would normally need to edit by hand. You add, remove, and update tools for a project by using the dotnet CLI.
+> [!CAUTION]  
+> This is not a file you would normally need to edit by hand. You add, remove, and update tools for a project by using the dotnet CLI.
 
 The table below contains a brief overview of what each of these tools are used for
 
@@ -304,10 +326,12 @@ namespace MonoGameSnake
 }
 ```
 
+> [!TIP]  
 > By default, the MonoGame project templates will name this class `Game1`. This is not a hard requirement and you can change the name of this class to anything else that may make more sense for your project. Regardless, it will be referred to as `Game1` throughout the documentation in this tutorial.
 
 The base MonoGame [`Game`](https://docs.monogame.net/api/Microsoft.Xna.Framework.Game.html) class provides [virtual methods](https://learn.microsoft.com/en-us/dotnet/csharp/language-reference/keywords/virtual) that can be overridden in our `Game1` implementation to provide the logic for our game.
 
+> [!CAUTION]  
 > When overriding one of the virtual methods from the base [`Game`](https://docs.monogame.net/api/Microsoft.Xna.Framework.Game.html) class, it is important that you keep the `base` method call. Many of the base [`Game`](https://docs.monogame.net/api/Microsoft.Xna.Framework.Game.html) class methods have logic for initialization, updating, and rendering that still need to be called even though we are overwriting the implementation.
 
 Let's break this file down into individual sections to better understand it.
@@ -324,6 +348,7 @@ using Microsoft.Xna.Framework.Input;
 
 These import the most common used namespaces in a MonoGame project, including the base framework, graphics, and input.
 
+> [!NOTE]  
 > You may be wondering why the types within MonoGame exist with `Microsoft.Xna.Framework.*` namespaces. If you recall from the [Chapter 01: What Is MonoGame](01-what-is-monogame.md#a-brief-history), MonoGame is an open source re-implementation of Microsoft's XNA Framework. To ensure compatibility with XNA projects, MonoGame implements the same namespaces that XNA did.
 
 ### Class Declaration
@@ -379,6 +404,7 @@ protected override void Initialize()
 }
 ```
 
+> [!NOTE]  
 > This method is called only once by the MonoGame framework and is called immediately after the constructor is called.
 
 You might be wondering why we have an [`Initialize()`](https://docs.monogame.net/api/Microsoft.Xna.Framework.Game.html#Microsoft\_Xna\_Framework\_Game\_Initialize) method instead of performing all of our initialization within the constructor. It's [advised to not call overridable methods from within a constructor](https://learn.microsoft.com/en-us/dotnet/fundamentals/code-analysis/quality-rules/ca2214) as this can lead to unexpected states in object construction when called. Additionally, the constructor itself is initially called in [the Program.cs file](02-05-the-program-file.md) when a new instance of the class is created. As mentioned above in, when the constructor is called, the base constructor is executed first which instantiates properties and services that maybe needed later for our game initialization.

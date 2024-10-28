@@ -1,12 +1,14 @@
 # Preface
 
-* [Who This Is For](./#who-this-is-for)
-* [How This Documentation Is Organized](./#how-this-documentation-is-organized)
-* [Conventions Used in This Documentation](./#conventions-used-in-this-documentation)
-  * [Italics](./#italics)
-  * [Inline Code Blocks](./#inline-code-blocks)
-  * [Code Blocks](./#code-blocks)
-* [Next](./#next)
+- [Who This Is For](#who-this-is-for)
+- [How This Documentation Is Organized](#how-this-documentation-is-organized)
+- [Conventions Used in This Documentation](#conventions-used-in-this-documentation)
+  - [Italics](#italics)
+  - [Inline Code Blocks](#inline-code-blocks)
+  - [Code Blocks](#code-blocks)
+- [MonoGame](#monogame)
+- [Acknowledgements](#acknowledgements)
+- [Copyright and License](#copyright-and-license)
 
 ***
 
