@@ -1,29 +1,10 @@
+---
+description: >-
+  This appendix is a deep-dive into the common files that are generated when
+  creating a new MonoGame game project from a MonoGame C# templates.
+---
+
 # Appendix 02: MonoGame Project Overview
-
-* [The _.csproj_ Project File](appendix-02-monogame-project-overview.md#the-csproj-project-file)
-* [The _Content_ Directory](appendix-02-monogame-project-overview.md#the-content-directory)
-  * [The _Content.mgcb_ Content Project File](appendix-02-monogame-project-overview.md#the-contentmgcb-content-project-file)
-    * [Global Properties Section](appendix-02-monogame-project-overview.md#global-properties-section)
-    * [References Section](appendix-02-monogame-project-overview.md#references-section)
-    * [Content Section](appendix-02-monogame-project-overview.md#content-section)
-* [The _.config_ Directory](appendix-02-monogame-project-overview.md#the-config-directory)
-  * [The _dotnet-tools.json_ Tools Manifest File](appendix-02-monogame-project-overview.md#the-dotnet-toolsjson-tools-manifest-file)
-* [The Icon Files](appendix-02-monogame-project-overview.md#the-icon-files)
-* [The _Program.cs_ File](appendix-02-monogame-project-overview.md#the-programcs-file)
-* [The _Game1.cs_ File](appendix-02-monogame-project-overview.md#the-game1cs-file)
-  * [Namespace Imports](appendix-02-monogame-project-overview.md#namespace-imports)
-  * [Class Declaration](appendix-02-monogame-project-overview.md#class-declaration)
-  * [Instance Members](appendix-02-monogame-project-overview.md#instance-members)
-  * [The Game1 Constructor](appendix-02-monogame-project-overview.md#the-game1-constructor)
-  * [The Initialize Method](appendix-02-monogame-project-overview.md#the-initialize-method)
-  * [The LoadContent Method](appendix-02-monogame-project-overview.md#the-loadcontent-method)
-  * [The Update Method](appendix-02-monogame-project-overview.md#the-update-method)
-  * [The Draw Method](appendix-02-monogame-project-overview.md#the-draw-method)
-  * [Additional Methods](appendix-02-monogame-project-overview.md#additional-methods)
-  * [Additional Properties](appendix-02-monogame-project-overview.md#additional-properties)
-  * [Order of Execution](appendix-02-monogame-project-overview.md#order-of-execution)
-
-***
 
 Regardless of the [MonoGame project template](appendix-01-monogame-project-templates.md) used to create a new MonoGame application, each template will generate a structure similar to the following
 
@@ -45,8 +26,7 @@ Regardless of the [MonoGame project template](appendix-01-monogame-project-templ
     |       Content.mgcb
 ```
 
-> NOTE
->  Project templates that target mobile devices such as Android and iOS may contain additional manifest files specific for those devices, which are not covered here.
+> Project templates that target mobile devices such as Android and iOS may contain additional manifest files specific for those devices, which are not covered here.
 
 * The _\*.sln_ file is the Solution File that organizes and references the project files.
 * The _\*.csproj_ project file defines the project level configurations for the application
@@ -123,7 +103,6 @@ The _Content.mgcb_ content project file, located in the _/Content/_ directory in
 #---------------------------------- Content ---------------------------------#
 ```
 
-> CAUTION
 > This is not a file you would typically edit by hand. Instead you would load this file inside the _MonoGame Content Builder Editor (MGCB Editor)_, which provides a visual interface for managing assets that will write the appropriate configurations to this file for you. We'll cover using the MGCB Editor throughout this documentation.
 >
 > However, it can still be useful to know how to read this file if there is ever a need, so it's covered below.
@@ -145,8 +124,7 @@ The global properties section defines configurations used by the _MGCB_ tool whe
   * `WindowsStoreApp`
   * `XBoxOne`
 
-> NOTE
-> Support for the `PlayStation4`, `PlayStation5`, `Switch`, and `XBoxOne` platforms is only available for licensed console developers.
+> NOTE Support for the `PlayStation4`, `PlayStation5`, `Switch`, and `XBoxOne` platforms is only available for licensed console developers.
 
 * `/config` is an optional flag that can be used to specify a build configuration name. This value is sometimes used as a hint in content processors.
 * `/profile` specifies the target graphics profile to build for. Available values are
@@ -234,8 +212,7 @@ The _dotnet-tools.mgcb_ tools manifest file defines the tools used by the projec
 }
 ```
 
-> CAUTION
-> This is not a file you would normally need to edit by hand. You add, remove, and update tools for a project by using the dotnet CLI.
+> CAUTION This is not a file you would normally need to edit by hand. You add, remove, and update tools for a project by using the dotnet CLI.
 
 The table below contains a brief overview of what each of these tools are used for
 
@@ -249,12 +226,11 @@ The table below contains a brief overview of what each of these tools are used f
 
 These tools are necessary if you are using the _Content Pipeline_ to manage and load assets in your game. These tools are also expected to be part of the project for the _MonoGame.Content.Builder.Task_ NuGet package mentioned earlier in the C# project file.
 
-> NOTE
 > It may seem wasted to include the _MonoGame Content Builder Editor_ launchers for all three operating system types, especially if you are only developing on one operating system. However, by including all three, it makes it easier if you ever need to switch to a different operating system for your project, or when working on a team where the code is shared using a git repository and team members have different operating system.
 
 ## The Icon Files
 
-In the project root directory are the _Icon.bmp_ and _Icon.ico_ icon files. These are the icon files used to display the icon for the executable on the PC, the window title bar area, and the icon displayed in the task bar on Windows or docs on macOs.
+In the project root directory are the _Icon.bmp_ and _Icon.ico_ icon files. These are the icon files used to display the icon for the executable on the PC, the window title bar area, and the icon displayed in the task bar on Windows or docs on macOS.
 
 When a new MonoGame project is created, the icons by default are of the MonoGame logo.
 
@@ -262,7 +238,6 @@ When a new MonoGame project is created, the icons by default are of the MonoGame
 
 If you want to customize the icons used for you game, you only need to replace these files in the project directory.
 
-> WARNING
 > When replacing the icon files with a custom icon, ensure that you replace them with files with the exact same names. This is because the icon files are embedded into the assembly when built and the MonoGame framework will load them from the assembly using those specific file names.
 
 ## The _Program.cs_ File
@@ -329,12 +304,10 @@ namespace MonoGameSnake
 }
 ```
 
-> TIP
 > By default, the MonoGame project templates will name this class `Game1`. This is not a hard requirement and you can change the name of this class to anything else that may make more sense for your project. Regardless, it will be referred to as `Game1` throughout the documentation in this tutorial.
 
 The base MonoGame [`Game`](https://docs.monogame.net/api/Microsoft.Xna.Framework.Game.html) class provides [virtual methods](https://learn.microsoft.com/en-us/dotnet/csharp/language-reference/keywords/virtual) that can be overridden in our `Game1` implementation to provide the logic for our game.
 
-> CAUTION
 > When overriding one of the virtual methods from the base [`Game`](https://docs.monogame.net/api/Microsoft.Xna.Framework.Game.html) class, it is important that you keep the `base` method call. Many of the base [`Game`](https://docs.monogame.net/api/Microsoft.Xna.Framework.Game.html) class methods have logic for initialization, updating, and rendering that still need to be called even though we are overwriting the implementation.
 
 Let's break this file down into individual sections to better understand it.
@@ -351,7 +324,6 @@ using Microsoft.Xna.Framework.Input;
 
 These import the most common used namespaces in a MonoGame project, including the base framework, graphics, and input.
 
-> NOTE
 > You may be wondering why the types within MonoGame exist with `Microsoft.Xna.Framework.*` namespaces. If you recall from the [Chapter 01: What Is MonoGame](01-what-is-monogame.md#a-brief-history), MonoGame is an open source re-implementation of Microsoft's XNA Framework. To ensure compatibility with XNA projects, MonoGame implements the same namespaces that XNA did.
 
 ### Class Declaration
@@ -398,7 +370,7 @@ When this constructor is called
 
 ### The Initialize Method
 
-Below the constructor is the override of the [`Initialize()`](https://docs.monogame.net/api/Microsoft.Xna.Framework.Game.html#Microsoft\_Xna\_Framework\_Game\_Initialize) method. This method is where we can do any initializations for our game.
+Below the constructor is the override of the [`Initialize()`](https://docs.monogame.net/api/Microsoft.Xna.Framework.Game.html#Microsoft\_Xna\_Framework\_Game\_Initialize) method. This method is where we can do any initialization for our game.
 
 ```cs
 protected override void Initialize()
@@ -407,12 +379,10 @@ protected override void Initialize()
 }
 ```
 
-> NOTE
 > This method is called only once by the MonoGame framework and is called immediately after the constructor is called.
 
 You might be wondering why we have an [`Initialize()`](https://docs.monogame.net/api/Microsoft.Xna.Framework.Game.html#Microsoft\_Xna\_Framework\_Game\_Initialize) method instead of performing all of our initialization within the constructor. It's [advised to not call overridable methods from within a constructor](https://learn.microsoft.com/en-us/dotnet/fundamentals/code-analysis/quality-rules/ca2214) as this can lead to unexpected states in object construction when called. Additionally, the constructor itself is initially called in [the Program.cs file](02-05-the-program-file.md) when a new instance of the class is created. As mentioned above in, when the constructor is called, the base constructor is executed first which instantiates properties and services that maybe needed later for our game initialization.
 
-> CAUTION
 > When `base.Initialize()` is called, the last thing it does before returning back is making a call to the [`LoadContent()`](https://docs.monogame.net/api/Microsoft.Xna.Framework.Game.html#Microsoft\_Xna\_Framework\_Game\_LoadContent) method. This means that if anything you are initializing requires assets loaded from the [`LoadContent()`](https://docs.monogame.net/api/Microsoft.Xna.Framework.Game.html#Microsoft\_Xna\_Framework\_Game\_LoadContent) method, it should be done **after** the `base.Initialize()` call, not **before** it.
 
 ### The LoadContent Method
@@ -426,12 +396,10 @@ protected override void LoadContent()
 }
 ```
 
-> NOTE
 > This method will only be called once by the MonoGame framework and it is called _during_ the execution of the `base.Initialize()` call within the [`Initialize()`](https://docs.monogame.net/api/Microsoft.Xna.Framework.Game.html#Microsoft\_Xna\_Framework\_Game\_Initialize) method.
 
 The default implementation provided in the template instantiates a new instance of the [`SpriteBatch`](https://docs.monogame.net/api/Microsoft.Xna.Framework.Graphics.SpriteBatch.html) and stores it in the `_spriteBatch` instance member. When creating a new [`SpriteBatch`](https://docs.monogame.net/api/Microsoft.Xna.Framework.Graphics.SpriteBatch.html) instance, it requires that an instance of the [`GraphicsDevice`](https://docs.monogame.net/api/Microsoft.Xna.Framework.Graphics.GraphicsDevice.html) object type be given to it. Here we pass in the one that is provided as a property from the [`Game`](https://docs.monogame.net/api/Microsoft.Xna.Framework.Game.html) class inheritance.
 
-> NOTE
 > The [`GraphicsDevice`](https://docs.monogame.net/api/Microsoft.Xna.Framework.Graphics.GraphicsDevice.html) object provided as a property from the inheritance of the [`Game`](https://docs.monogame.net/api/Microsoft.Xna.Framework.Game.html) class? Yep! The [`Game`](https://docs.monogame.net/api/Microsoft.Xna.Framework.Game.html) class provides a property for accessing the [`GraphicsDevice`](https://docs.monogame.net/api/Microsoft.Xna.Framework.Graphics.GraphicsDevice.html) object without having to go through the [`GraphicsDeviceManager`](https://docs.monogame.net/api/Microsoft.Xna.Framework.GraphicsDeviceManager.html) to get it. Not that this is not a `static` property and is only available at the class instance scope of the [`Game`](https://docs.monogame.net/api/Microsoft.Xna.Framework.Game.html) class.
 
 ### The Update Method
@@ -515,7 +483,7 @@ Figure A2-2 below provides a high-level view of the execution order of events fo
 <figure><img src="../images/03-monogame-project-overview/execution-order.png" alt="Figure A2-2: A high-level view of the execution order of events for a MonoGame application."><figcaption><p><strong>Figure A2-2: A high-level view of the execution order of events for a MonoGame application.</strong></p></figcaption></figure>
 
 1. Initial execution begins at the [constructor](appendix-02-monogame-project-overview.md#constructor) which is called in [the Program.cs file](../chapter-02-monogame-project-overview/02-05-the-program-file.md).
-   1. The base [`Game`](https://docs.monogame.net/api/Microsoft.Xna.Framework.Game.html) constructor is executed where the [`GameServicesContainer`](https://docs.monogame.net/api/Microsoft.Xna.Framework.GameServiceContainer.html), [`GameComponentCollection`](https://docs.monogame.net/api/Microsoft.Xna.Framework.GameComponentCollection.html), adn the [`ContentManager`](https://docs.monogame.net/api/Microsoft.Xna.Framework.Content.ContentManager.html) are initialized, followed by any platform specific initialization
+   1. The base [`Game`](https://docs.monogame.net/api/Microsoft.Xna.Framework.Game.html) constructor is executed where the [`GameServicesContainer`](https://docs.monogame.net/api/Microsoft.Xna.Framework.GameServiceContainer.html), [`GameComponentCollection`](https://docs.monogame.net/api/Microsoft.Xna.Framework.GameComponentCollection.html), and the [`ContentManager`](https://docs.monogame.net/api/Microsoft.Xna.Framework.Content.ContentManager.html) are initialized, followed by any platform specific initialization
    2. Next the logic of the `Game1` constructor is executed
 2. After the constructor finishes, [`Game.Run()`](https://docs.monogame.net/api/Microsoft.Xna.Framework.Game.html#Microsoft\_Xna\_Framework\_Game\_Run) is called in [the Program.cs file](../chapter-02-monogame-project-overview/02-05-the-program-file.md)
    1. During the execution of the [`Game.Run()`](https://docs.monogame.net/api/Microsoft.Xna.Framework.Game.html#Microsoft\_Xna\_Framework\_Game\_Run) method, the [`Initialize()`](https://docs.monogame.net/api/Microsoft.Xna.Framework.Game.html#Microsoft\_Xna\_Framework\_Game\_Initialize) method is called first. During the call to [`Initialize()`](https://docs.monogame.net/api/Microsoft.Xna.Framework.Game.html#Microsoft\_Xna\_Framework\_Game\_Initialize) is when [`LoadContent()`](https://docs.monogame.net/api/Microsoft.Xna.Framework.Game.html#Microsoft\_Xna\_Framework\_Game\_LoadContent) is called

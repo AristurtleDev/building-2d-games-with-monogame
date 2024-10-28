@@ -1,20 +1,13 @@
+---
+description: >-
+  In this chapter, we'll compare loading a texture from file versus
+  pre-processing it using the content pipeline and how to render the textures as
+  visuals in your game.
+---
+
 # Chapter 04: Working with Textures
 
-* [Loading a Texture](04-working-with-textures.md#loading-a-texture)
-  * [Loading From File](04-working-with-textures.md#loading-from-file)
-  * [Loading From Content Pipeline](04-working-with-textures.md#loading-from-content-pipeline)
-* [Drawing a Texture](04-working-with-textures.md#drawing-a-texture)
-* [Drawing Texture Regions](04-working-with-textures.md#drawing-texture-regions)
-* [Conclusion](04-working-with-textures.md#conclusion)
-* [See Also](04-working-with-textures.md#see-also)
-* [Test Your Knowledge](04-working-with-textures.md#test-your-knowledge)
-* [Next](04-working-with-textures.md#next)
-
-***
-
 Textures are images that you use in your game to represent the visual graphics to the player. In order to use them, you need to either create the texture in code or load an existing one from a file and then draw the texture using the `SpriteBatch`.
-
-In this chapter, we'll cover loading a texture from file vs pre-processing it using the _content pipeline_ and rendering textures.
 
 ## Loading a Texture
 
@@ -63,7 +56,7 @@ Your path may be different, but you'll get the same exception. This is because e
 
 This will inform the build process that when the project builds, it should include the _Content\images\logo.png_ file as part of the build and copy it to the build output directory.
 
-After adding the above, if you run the game now, it will launch with no exception, but with just the default cornflower blue screen. The texture is being loaded from file, but we haven't told the game to draw it just yet. We'll draw it in a moment, but for now, let's look at doing hte same process of loading the texture, but using the _content pipeline_.
+After adding the above, if you run the game now, it will launch with no exception, but with just the default cornflower blue screen. The texture is being loaded from file, but we haven't told the game to draw it just yet. We'll draw it in a moment, but for now, let's look at doing the same process of loading the texture, but using the _content pipeline_.
 
 ### Loading From Content Pipeline
 
@@ -81,7 +74,6 @@ To use the _content pipeline_ to load our image, we first need to open the _Mono
 
 Clicking this icon will open the MGCB Editor with the _Content.mgcb_ file in the current project loaded.
 
-> NOTE
 > If you did not install the _MonoGame for VSCode_ extension or prefer to not use it, you can use the CLI commands to open the MGCB Editor instead. To do this:
 >
 > 1. Open the terminal in VSCode pressing `` CTRL+` ``or choosing _View > Terminal_ from the top menu
@@ -103,7 +95,6 @@ After adding an existing file, you will be prompted with a pop-up asking if you 
 
 <figure><img src="../images/04-working-with-textures/add-file-popup.png" alt="Figure 4-4: Add Existing File Popup"><figcaption><p><strong>Figure 4-4: Add Existing File Popup</strong></p></figcaption></figure>
 
-> CAUTION
 > When adding existing files in the future, the choice between copying the file and adding a link can make a big difference. When you choose to copy the file, it makes a literal copy of the current file and puts that copy inside the Content directory in your project. This means any changes to the original source file will not be reflected in the copy.
 >
 > By adding as a link, it will instead reference the source file without making a copy. This means changes made in the source file will be reflected, however the link is stored as a relative link, relative to the _Content.mgcb_ file. So if the source file moves, or you move the project, then you'll need to re-add the link.
@@ -178,8 +169,7 @@ In MonoGame, the xy-coordinate space on the screen begins at (0, 0) in the top l
 _spriteBatch.Draw(_logo, new Vector2(Window.ClientBounds.Width, Window.ClientBounds.Height) * 0.5f, Color.White);
 ```
 
-> TIP
-> In the example above, we multiply the `Vector2` created by `0.5f` to half the value instead of dividing it by `2.0f`. If you're not used to seeing this, it might seem strange at first, but it's actually an optimization technique. CPUs are able to perform multiplication operations much faster than division operations and reading `* 0.5f` is easily understood to be the same thing as `/ 2.0f` when reading.
+> TIP In the example above, we multiply the `Vector2` created by `0.5f` to half the value instead of dividing it by `2.0f`. If you're not used to seeing this, it might seem strange at first, but it's actually an optimization technique. CPUs are able to perform multiplication operations much faster than division operations and reading `* 0.5f` is easily understood to be the same thing as `/ 2.0f` when reading.
 
 We're now telling the position to be a half the width and height of the client bounds. If we run the game now, the logo should be drawn at the center of the game window correct? Well, not exactly. If you run the game now, it will look similar to the following:
 
@@ -219,17 +209,17 @@ _spriteBatch.Draw(_logo,
 
 Changing the `SpriteBatch.Draw` method call to this overload will render it the same as before, centered on the game window, only now we can see all of the parameters available. The parameters for this `SpriteBatch.Draw` overload are
 
-| Parameter       | Type            | Description                                                                                                                                                                                                                                                                                          |
-| --------------- | --------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| texture         | `Texture2D`     | The `Texture2D` to draw                                                                                                                                                                                                                                                                              |
-| position        | `Vector2`       | The xy-coordinate position to draw the texture at. The origin point being the top-left corner of the image.                                                                                                                                                                                          |
-| sourceRectangle | `Rectangle`     | An optional region within the texture to be rendered in order to draw only a portion of the texture. Specifying `null` will render the entire texture.                                                                                                                                               |
-| color           | `Color`         | The color mask (tint) to apply to the image drawn. Specifying `Color.White` will render the texture with no tint.                                                                                                                                                                                    |
-| rotation        | `float`         | The amount of rotation, in radians, to apply to the texture when rendering. Specifying `0.0f` will render the image with no rotation.                                                                                                                                                                |
-| origin          | `Vector2`       | The xy-coordinate origin point of the texture when rendering. This will affect the offset of the texture when rendered as well being the origin in which the texture is rotated around and scaled from.                                                                                              |
-| scale           | `float`         | The amount to scale the image across the x- and y-axes. Specifying `1.0f` will render the image at its default size with no scaling.                                                                                                                                                                 |
-| effects         | `SpriteEffects` | A `SpriteEffects` enum value to that specifies if the texture should be rendered flipped across the horizontal axis, the vertical axis, or both axes.                                                                                                                                                |
-| layerDepth      | `float`         | Specifies the depth at which the texture is rendered. Textures with a higher layer depth value are drawn on top of those with a lower layer depth value. **Note: This value will only apply when using `SpriteSortMode.FrontToBack` or \`SpriteSortMode.BackToFront. We'll cover this in a moment.** |
+| Parameter         | Type            | Description                                                                                                                                                                                                                                                                                          |
+| ----------------- | --------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| _texture_         | `Texture2D`     | The `Texture2D` to draw                                                                                                                                                                                                                                                                              |
+| _position_        | `Vector2`       | The xy-coordinate position to draw the texture at. The origin point being the top-left corner of the image.                                                                                                                                                                                          |
+| _sourceRectangle_ | `Rectangle`     | An optional region within the texture to be rendered in order to draw only a portion of the texture. Specifying `null` will render the entire texture.                                                                                                                                               |
+| _color_           | `Color`         | The color mask (tint) to apply to the image drawn. Specifying `Color.White` will render the texture with no tint.                                                                                                                                                                                    |
+| _rotation_        | `float`         | The amount of rotation, in radians, to apply to the texture when rendering. Specifying `0.0f` will render the image with no rotation.                                                                                                                                                                |
+| _origin_          | `Vector2`       | The xy-coordinate origin point of the texture when rendering. This will affect the offset of the texture when rendered as well being the origin in which the texture is rotated around and scaled from.                                                                                              |
+| _scale_           | `float`         | The amount to scale the image across the x- and y-axes. Specifying `1.0f` will render the image at its default size with no scaling.                                                                                                                                                                 |
+| _effects_         | `SpriteEffects` | A `SpriteEffects` enum value to that specifies if the texture should be rendered flipped across the horizontal axis, the vertical axis, or both axes.                                                                                                                                                |
+| _layerDepth_      | `float`         | Specifies the depth at which the texture is rendered. Textures with a higher layer depth value are drawn on top of those with a lower layer depth value. **Note: This value will only apply when using `SpriteSortMode.FrontToBack` or \`SpriteSortMode.BackToFront. We'll cover this in a moment.** |
 
 Let's adjust the rotation of the texture when it draws so that it is rotation 90°, making it vertical instead of horizontal. Rotation, however, has to be specified in radians, not degrees. We can use the built-in math library in MonoGame to convert from 90° to radians by calling `MathHelper.ToRadians`. Update the code to the following
 
@@ -273,11 +263,11 @@ In the code above, we have adjust the _origin_ parameter to use the center point
 
 Above, we saw the full parameter list for drawing a texture using `SpriteBatch.Draw`. One of those parameters was called _sourceRectangle_. So far, we've just set this parameter to `null`, which specifies that the full texture should be rendered. However, we can make use of the _sourceRectangle_ parameter to specify a region within the texture itself to draw instead of drawing the full texture.
 
-For instance, take the logo image we've been using. We can break it down into two distinct regions; the logo and the MonoGame wordmark.
+For instance, take the logo image we've been using. We can break it down into two distinct regions; the logo and the MonoGame word mark.
 
 <figure><img src="../images/04-working-with-textures/logo-texture-regions.png" alt="Figure 4-12: The MonoGame logo broken down into texture regions."><figcaption><p><strong>Figure 4-12: The MonoGame logo broken down into texture regions.</strong></p></figcaption></figure>
 
-We can see from this image that the actual logo starts at position (0, 0) and is 128px wide and 128px tall. Likewise, the MonoGame wordmark starts at position (150, 34) and is 458px wide and 58px tall. Knowing the starting position and the width and height of the region gives us a defined rectangle that we can use as the _sourceRectangle_.
+We can see from this image that the actual logo starts at position (0, 0) and is 128px wide and 128px tall. Likewise, the MonoGame word mark starts at position (150, 34) and is 458px wide and 58px tall. Knowing the starting position and the width and height of the region gives us a defined rectangle that we can use as the _sourceRectangle_.
 
 Let's see this in action by only drawing the MonoGame logo icon part of the texture. First, after the call to the `Clear` method, add the following variable:
 
@@ -314,7 +304,7 @@ In this chapter we
 * Learned how to load textures directly from file as well as using the content pipeline.
 * Discussed the advantages of using the content pipeline.
 * Briefly discussed the overall content pipeline workflow.
-* Used the `SpritBatch` to draw the texture that was loaded.
+* Used the `SpriteBatch` to draw the texture that was loaded.
 * Discussed the different parameters available when using the `SpriteBatch.Draw` method and the importance of the _origin_ parameter in relation to the _position_, _rotation_, and _scale_ parameters.
 * Learned how to draw only a specific sub region within a texture by using the _sourceRectangle_ parameter.
 

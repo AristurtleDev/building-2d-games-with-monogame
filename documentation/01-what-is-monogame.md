@@ -1,23 +1,17 @@
+---
+description: >-
+  In this chapter, we'll explore the history of MonoGame, what features it
+  provides developers to create games.
+---
+
 # Chapter 01: What is MonoGame
-
-* [A Brief History](01-what-is-monogame.md#a-brief-history)
-* [Features](01-what-is-monogame.md#features)
-  * [API](01-what-is-monogame.md#api)
-  * [Cross Platform](01-what-is-monogame.md#cross-platform)
-  * [Programming Language Support](01-what-is-monogame.md#programming-language-support)
-* [Test Your Knowledge](01-what-is-monogame.md#test-your-knowledge)
-* [See Also](01-what-is-monogame.md#see-also)
-* [Next](01-what-is-monogame.md#next)
-
-***
-
-In this chapter, we'll explore the history of MonoGame, what features it provides developers to create games.
 
 ## A Brief History
 
 In 2006, Microsoft released a game development framework named _XNA Game Studio_ to facilitate game development for Windows PC and the Xbox 360 console. It revolutionized game development for indie creators by bringing a simplified approach to building games and offering a set of tools that lowered the entry barrier for aspiring game developers. Out of XNA Game Studio came critically acclaimed titles such as [Bastion](https://www.supergiantgames.com/games/bastion/) and [Terraria](https://terraria.org/). In 2008, XNA was expanded to support development for both the Zune and Windows Phone.
 
-> NOTE
+> NOTE&#x20;
+>
 > Fun fact, provided by community member stromkos, The release of XNA 3.0 in 2008, which added the support for Windows Phone, is also the release that specified the default window resolution of 800x600 for new projects as this was the preferred resolution on Windows Phone. It is still the default resolution used in MonoGame projects today.
 
 As XNA become more popular, the need for cross-platform development started to grow. In 2009, [José Antonio Leal de Farias](https://github.com/jalf) introduced _XNA Touch_, an open-source project that aimed to make games with XNA playable on iOS devices. This marked the beginning of what would later become MonoGame. [Dominique Louis](https://github.com/CartBlanche) came on board in 2009 and soon took over as full-time project lead, driving its initial development and expansion. The project attracted other developers such as [Tom Spilman](https://github.com/tomspilman) who were interested in expanding the scope of the project as well as its reach.
@@ -52,16 +46,15 @@ One of the main advantages of MonoGame is its cross-platform support. Games buil
 
 * **Desktop**: Windows, macOS, and Linux.
 * **Mobile**: iOS and Android.
-* **Consoles**: Xbox, Playstation, and Nintendo Switch [(with appropriate license)](https://docs.monogame.net/articles/console\_access.html).
+* **Consoles**: Xbox, PlayStation, and Nintendo Switch [(with appropriate license)](https://docs.monogame.net/articles/console\_access.html).
 
-By providing cross-platform support, developers can target multiple platforms from a single codebase, significantly reducing development time and resources needed for porting.
+By providing cross-platform support, developers can target multiple platforms from a single code base, significantly reducing development time and resources needed for porting.
 
 ### Programming Language Support
 
-MonoGame is designed and build in C#. It is the official programming language supported in documentation, samples, and community discussion. However, MonOGame is not exclusively tied to C#. As a .NET lirary, MonoGame can be used with any .NET-compatible language including Visual Basic and F#.
+MonoGame is designed and build in C#. It is the official programming language supported in documentation, samples, and community discussion. However, MonoGame is not exclusively tied to C#. As a .NET library, MonoGame can be used with any .NET-compatible language including Visual Basic and F#.
 
-> CAUTION
-> While the alternative .NET languages can be used, community support may be limited outside the scope of C#.
+> CAUTION While the alternative .NET languages can be used, community support may be limited outside the scope of C#.
 
 Regardless of which .NET language used, developers should have a foundational understanding of the language and programming concepts such as:
 
@@ -72,10 +65,8 @@ Regardless of which .NET language used, developers should have a foundational un
 
 ## Test Your Knowledge
 
-1.  Name one of the advantages of using the MonoGame framework to develop games.
-
-2.  What programming languages can be used when creating a game with MonoGame?
-
+1. Name one of the advantages of using the MonoGame framework to develop games.
+2. What programming languages can be used when creating a game with MonoGame?
 
 ## See Also
 

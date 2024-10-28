@@ -1,7 +1,7 @@
 # Table of contents
 
 * [Preface](README.md)
-* [Chapter 1: What is MonoGame](01-what-is-monogame.md)
+* [Chapter 01: What is MonoGame](01-what-is-monogame.md)
 * [Chapter 02: Getting Started](02-getting-started.md)
 * [Chapter 03: The Game1.cs File](03-the-game1-file.md)
 * [Chapter 04: Working with Textures](04-working-with-textures.md)

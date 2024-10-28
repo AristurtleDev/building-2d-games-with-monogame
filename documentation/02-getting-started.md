@@ -1,13 +1,30 @@
+---
+description: >-
+  In this chapter, you'll get setup with MonoGame by preparing your environment
+  for dotnet development and setting up Visual Studio Code as your IDE.
+layout:
+  title:
+    visible: true
+  description:
+    visible: true
+  tableOfContents:
+    visible: true
+  outline:
+    visible: true
+  pagination:
+    visible: true
+---
+
 # Chapter 02: Getting Started
 
-Unlike game engines, MonoGame is a _framework_. This means it does not come as a standalone program that you download an install with a graphical user interface used to create games. Instead, MonoGame integrates into the standard .NET development workflow, offering a code-first approach to game development. This approach offers serval advantages
+Unlike game engines, MonoGame is a _framework_. This means it does not come as a standalone program that you download an install with a graphical user interface used to create games. Instead, MonoGame integrates into the standard .NET development workflow, offering a code-first approach to game development. This approach offers several advantages
 
 * **Flexibility**: Developers are not locked into using a specific editor or interface, allowing them to use their preferred development tools.
-* **Integration**: As a .NET library itself, MonOGame can easily integrate with other .NET libraries and tools.
+* **Integration**: As a .NET library itself, MonoGame can easily integrate with other .NET libraries and tools.
 * **Cross-platform Development**: Since C# is cross-platform, and MonoGame is cross-platform, developers can develop MonoGame projects on Windows, macOS, or Linux, with only slight differences in the setup process for each operating system.
 * **Version Control Friendly**: The code-first approach makes it easier to use version control systems like Git for you game projects.
 
-While the environment setup process is similar to the standard setup process for C# development, there are some MonoGame-specific steps. These can vary slightly depending on your operating system and the _Integrated Development Environment_ (IDE).
+While the environment setup process is similar to the standard setup process for C# development, there are some MonoGame specific steps. These can vary slightly depending on your operating system and the _Integrated Development Environment_ (IDE).
 
 ## Installing the .NET SDK
 
@@ -65,7 +82,7 @@ To install VSCode, follow the instructions for your operating system below:
   4. Drag-and-drop the _Visual Studio Code.app_ application package into your _Application_ directory to make it available in the macOS _LaunchPad_.
 * Linux
   1. Open a web browser and navigate to https://code.visualstudio.com/.
-  2. Click the _.deb_ download button to download the package for Debian based Linux distributions, or the _.rmp_ download button for Red Hat based Linux distributions.
+  2. Click the _.deb_ download button to download the package for Debian based Linux distributions, or the _.rpm_ download button for Red Hat based Linux distributions.
   3. Once the download finishes, open the package downloaded to install.
 
 ### Install the C# Dev Kit Extension
@@ -79,8 +96,7 @@ To install the C# Dev Kit extension, perform the following:
 3. Enter `C#` in the _Search Box_
 4. Click install for the _C# Dev Kit_ extension.
 
-> NOTE
-> When you search `C#` in the _Extension Panel_ you may notice there is the C# Dev Kit extension and a base standard C# extension. When installing the C# Dev Kit extension, the base extension will also be installed as a requirement.
+> NOTE When you search `C#` in the _Extension Panel_ you may notice there is the C# Dev Kit extension and a base standard C# extension. When installing the C# Dev Kit extension, the base extension will also be installed as a requirement.
 
 ### Installing the "MonoGame for VSCode" Extension
 
@@ -144,8 +160,7 @@ Be amazed, the default MonoGame Cornflower Blue game window. You have just creat
 
 You can exit the game at any time by pressing the `Esc` key on your keyboard.
 
-> NOTE
-> Above, I mentioned that a loop is entered. This is commonly referred to as the _game loop_, which we'll discuss in more detail in the next chapter. The reason the application enters this loop is because game applications work differently than a traditional desktop application like your web browser.
+> NOTE Above, I mentioned that a loop is entered. This is commonly referred to as the _game loop_, which we'll discuss in more detail in the next chapter. The reason the application enters this loop is because game applications work differently than a traditional desktop application like your web browser.
 >
 > Desktop application are event based, meaning once loaded, the do not do much at all while waiting for input from the user, and then it response to that input event and redraws the window if needed based on the interaction.
 >
@@ -164,8 +179,6 @@ Now that your development environment is setup and ready to go, you can dive in 
 
 ## Test Your Knowledge
 
-1.  What version of the .NET SDK is currently targeted by MonoGame applications?
-
-2.  What is the current version of MonoGame?
-
-3.  What is the color of the game window when you run a MonoGame project for the first time?
+1. What version of the .NET SDK is currently targeted by MonoGame applications?
+2. What is the current version of MonoGame?
+3. What is the color of the game window when you run a MonoGame project for the first time?
