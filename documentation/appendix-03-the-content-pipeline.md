@@ -77,11 +77,9 @@ The toolbar is located at the top of the editor window and contains shortcut ico
 
 From left-to-right, the icons on the tool bar are:
 
-<figure><img src="../images/appendix-03-the-content-pipeline/new-icon.png" alt=""><figcaption></figcaption></figure>
-
 | Icon                                                                                                                                | Name                      | Description                                                                                                                                  |
 | ----------------------------------------------------------------------------------------------------------------------------------- | ------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------- |
-|                                                                                                                                     | _Create New Project_      | Creates a new _Content.mgcb_ content project                                                                                                 |
+| <img src="../images/appendix-03-the-content-pipeline/new-icon.png" alt="Create New Project Icon" data-size="line">                  | _Create New Project_      | Creates a new _Content.mgcb_ content project                                                                                                 |
 | <img src="../images/appendix-03-the-content-pipeline/open-existing-icon.png" alt="Open Existing Project Icon" data-size="line">     | _Open Existing Project_   | Opens an existing _Content.mgcb_ content project file.                                                                                       |
 | <img src="../images/appendix-03-the-content-pipeline/save-icon.png" alt="Save Current Project Icon" data-size="line">               | _Save Current Project_    | Saves the current project, writing ot the _Content.mgcb_ content project file that is open in the editor.                                    |
 | <img src="../images/appendix-03-the-content-pipeline/undo-icon.png" alt="Undo Last Action Icon" data-size="line">                   | _Undo Last Action_        | Performs an undo on the last action performed.                                                                                               |
