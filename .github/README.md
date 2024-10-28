@@ -1,1 +1,1 @@
-../00-preface.md
+00-preface.md
