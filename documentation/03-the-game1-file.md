@@ -1,9 +1,3 @@
----
-description: >-
-  In this chapter, we'll explore the contents of the Game1.cs file generated
-  when creating a new MonoGame game project.
----
-
 # Chapter 03: The Game1.cs File
 
 In this chapter, we'll explore the contents of the Game1.cs file generated when creating a new MonoGame game project.
@@ -17,12 +11,14 @@ In this chapter, we'll explore the contents of the Game1.cs file generated when 
 
 In the previous chapter, you created a new MonoGame project using the _MonoGame Cross-Platform Desktop Application_ project template. Using the templates to create a new project will automatically generate files and a project structure as a starting point for a new MonoGame game application. While MonoGame offers different templates to create a new project based on target platform, all projects will contain the _Game1.cs_ file.
 
+> [!TIP]  
 > For an in-depth look at all files created in a MonoGame project when using the MonoGame templates, refer to [Appendix 02: MonoGame Project Overview](appendix-02-monogame-project-overview.md).
 
 ## Looking at the Code
 
 At the hearts of every MonoGame project is an implementation of the `Game` class. This class is responsible for initializing the graphics services, initializing the game, loading content, and finally updating and rendering the game. When creating a new MonoGame project, this is provided by the _Game1.cs_ code file, which defines the `Game1` class that derives from the `Game` class.
 
+> [!TIP]  
 > By default, the MonoGame project templates will name this class `Game1`. This is not a hard requirement and you can change the name of this class to anything else that may make more sense for your project. Regardless, it will be referred to as `Game1` throughout the documentation in this tutorial.
 
 The code for the _Game1.cs_ file will look something like this:
