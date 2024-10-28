@@ -45,6 +45,7 @@ Regardless of the [MonoGame project template](appendix-01-monogame-project-templ
     |       Content.mgcb
 ```
 
+> [!NOTE]  
 > Project templates that target mobile devices such as Android and iOS may contain additional manifest files specific for those devices, which are not covered here.
 
 * The _\*.sln_ file is the Solution File that organizes and references the project files.
@@ -422,7 +423,8 @@ protected override void LoadContent()
 }
 ```
 
-> This method will only be called once by the MonoGame framework and it is called _during_ the execution of the `base.Initialize()` call within the [`Initialize()`](https://docs.monogame.net/api/Microsoft.Xna.Framework.Game.html#Microsoft\_Xna\_Framework\_Game\_Initialize) method.
+> [!NOTE]  
+> ~~This~~ method will only be called once by the MonoGame framework and it is called _during_ the execution of the `base.Initialize()` call within the [`Initialize()`](https://docs.monogame.net/api/Microsoft.Xna.Framework.Game.html#Microsoft\_Xna\_Framework\_Game\_Initialize) method.
 
 The default implementation provided in the template instantiates a new instance of the [`SpriteBatch`](https://docs.monogame.net/api/Microsoft.Xna.Framework.Graphics.SpriteBatch.html) and stores it in the `_spriteBatch` instance member. When creating a new [`SpriteBatch`](https://docs.monogame.net/api/Microsoft.Xna.Framework.Graphics.SpriteBatch.html) instance, it requires that an instance of the [`GraphicsDevice`](https://docs.monogame.net/api/Microsoft.Xna.Framework.Graphics.GraphicsDevice.html) object type be given to it. Here we pass in the one that is provided as a property from the [`Game`](https://docs.monogame.net/api/Microsoft.Xna.Framework.Game.html) class inheritance.
 
