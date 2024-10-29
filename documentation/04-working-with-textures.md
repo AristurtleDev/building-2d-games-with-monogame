@@ -155,7 +155,7 @@ These lines of code tell the `SpriteBatch` to draw the logo texture you loaded i
 
 <figure><img src="../images/04-working-with-textures/logo-from-file.png" alt="Figure 4-7: The MonoGame logo drawn to the game window."><figcaption><p><strong>Figure 4-7: The MonoGame logo drawn to the game window.</strong></p></figcaption></figure>
 
-When drawing with MonoGame, the graphics device needs to be prepared and told that it is going to receive data to pass to the GPU to render. When using the `SpriteBatch` for rendering, we do this by using the `SpriteBatch.Begin` method. We can't use the `SpriteBatch.Draw` method without first using the `SpriteBatch.Begin` so the graphics device is set to a state ready to draw.
+When drawing with MonoGame, the graphics device needs to be prepared and told that it is going to receive data to pass to the GPU to render. When using the `SpriteBatch` for rendering, we do this by using the `SpriteBatch.Begin` method. We can't use the `SpriteBatch.Draw` method without first using the `SpriteBatch.Begin` so the graphics device is set to a state ready to draw.  `SpriteBatch.End()` must always be called when finished rendering with the `SpriteBatch`.  When the `End` method is called, it is at this point that the batched draw calls are submitted to the GPU for rendering.
 
 In the above example, we use the `SpriteBatch.Draw` method with the following parameters
 
