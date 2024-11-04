@@ -40,4 +40,14 @@ public class TextureAtlas
 
     //  Removes all regions from the texture atlas.
     public void RemoveAllRegions() => _regionLookup.Clear();
+
+    //  Creates a new Sprite instance from this texture atlas using the region specified.
+    //  A check is made to ensure the region has been defined in this texture atlas.
+    public Sprite CreateSprite(string regionName)
+    {
+        Debug.Assert(_regionLookup.ContainsKey(regionName));
+
+        Rectangle region = _regionLookup[regionName];
+        return new Sprite(_texture, region);
+    }
 }
