@@ -13,9 +13,10 @@ public class TextureAtlas
     //  A dictionary that provides region lookup by name for regions that have been added to this TextureAtlas.
     private Dictionary<string, Rectangle> _regionLookup;
 
-    //  Creates a new TextureAtlas instance with the given Texture2D as the source texture.
-    //  The source texture is checked to ensure it is not null and that it was not previously disposed before being
-    //  provided to create this TextureAtlas.
+    /// <summary>
+    /// Create a new TextureAtlas instance with the given Texture2D as the source texture.
+    /// </summary>
+    /// <param name="texture">The source texture of the TextureAtlas.</param>
     public TextureAtlas(Texture2D texture)
     {
         Debug.Assert(texture is not null);
@@ -25,9 +26,11 @@ public class TextureAtlas
         _regionLookup = new Dictionary<string, Rectangle>();
     }
 
-    //  Adds a new region to the texture atlas with the specified name at the source rectangle provided.
-    //  The source rectangle is a subregion of the texture atlas, so the bounds of the source rectangle must
-    //  be contained within the bounds of the texture, otherwise, its invalid.
+    /// <summary>
+    /// Adds a new region to this TextureAtlas with the specified name.
+    /// </summary>
+    /// <param name="name">The name of the region to add.</param>
+    /// <param name="source">The bounds of the region within the TextureAtlas.</param>
     public void AddRegion(string name, Rectangle source)
     {
         Debug.Assert(_texture.Bounds.Contains(source));
@@ -35,14 +38,22 @@ public class TextureAtlas
         _regionLookup.Add(name, source);
     }
 
-    //  Removes the region with the specified name from the texture atlas.
+    /// <summary>
+    /// Removes the region with the specified name from this TextureAtlas.
+    /// </summary>
+    /// <param name="name">The name of the region to remove.</param>
     public void RemoveRegion(string name) => _regionLookup.Remove(name);
 
-    //  Removes all regions from the texture atlas.
+    /// <summary>
+    /// Removes all regions from this TextureAtlas.
+    /// </summary>
     public void RemoveAllRegions() => _regionLookup.Clear();
 
-    //  Creates a new Sprite instance from this texture atlas using the region specified.
-    //  A check is made to ensure the region has been defined in this texture atlas.
+    /// <summary>
+    /// Creates a new Sprite instance from this texture atlas using the region specified.
+    /// </summary>
+    /// <param name="regionName">The name of the region.</param>
+    /// <returns>The Sprite created by this method.</returns>
     public Sprite CreateSprite(string regionName)
     {
         Debug.Assert(_regionLookup.ContainsKey(regionName));
