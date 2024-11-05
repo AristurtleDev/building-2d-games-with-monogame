@@ -6,11 +6,16 @@ namespace MonoGameSnake;
 
 public class Sprite
 {
-    //  The reference to the source texture used when rendering this sprite.
-    private readonly Texture2D _texture;
+    /// <summary>
+    /// Gets the source texture used when rendering this Sprite.
+    /// </summary>
+    public Texture2D Texture { get; }
 
-    //  The source rectangle that represents the region in the source texture to use when rendering this sprite.
-    private readonly Rectangle _sourceRectangle;
+    /// <summary>
+    /// Gets the source rectangle that represents the region within the source texture to use
+    /// when rendering this Sprite.
+    /// </summary>
+    public Rectangle SourceRectangle { get; protected set; }
 
     /// <summary>
     /// Gets or Sets the color tint to apply when rendering this sprite.
@@ -53,12 +58,12 @@ public class Sprite
     /// <summary>
     /// Gets the width of this sprite multiplied by the x-axis scale factor.
     /// </summary>
-    public float Width => _sourceRectangle.Width * Scale.X;
+    public float Width => SourceRectangle.Width * Scale.X;
 
     /// <summary>
     /// Gets the height of this sprite, multiplied by the y-axis scale factor.
     /// </summary>
-    public float Height => _sourceRectangle.Height * Scale.Y;
+    public float Height => SourceRectangle.Height * Scale.Y;
 
     /// <summary>
     /// Creates a new Sprite instance using the source texture and source rectangle provided.
@@ -70,8 +75,8 @@ public class Sprite
         Debug.Assert(texture is not null);
         Debug.Assert(!texture.IsDisposed);
 
-        _texture = texture;
-        _sourceRectangle = sourceRectangle;
+        Texture = texture;
+        SourceRectangle = sourceRectangle;
     }
 
     /// <summary>
@@ -81,6 +86,6 @@ public class Sprite
     /// <param name="position">The xy-coordinate position to render this sprite at.</param>
     public void Draw(SpriteBatch spriteBatch, Vector2 position)
     {
-        spriteBatch.Draw(_texture, position, _sourceRectangle, Color, Rotation, Origin, Scale, Effects, LayerDepth);
+        spriteBatch.Draw(Texture, position, SourceRectangle, Color, Rotation, Origin, Scale, Effects, LayerDepth);
     }
 }

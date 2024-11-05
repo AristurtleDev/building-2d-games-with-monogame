@@ -10,8 +10,8 @@ public class Game1 : Game
     private SpriteBatch _spriteBatch;
 
     private Texture2D _logo;
-    private Sprite _bodySprite;
-    private Sprite _foodSprite;
+    private Sprite _monogameIcon;
+    private Sprite _monogameWordmark;
 
     public Game1()
     {
@@ -30,13 +30,8 @@ public class Game1 : Game
         _spriteBatch = new SpriteBatch(GraphicsDevice);
 
         _logo = Content.Load<Texture2D>("images/logo");
-
-        //  Load the texture atlas image as a Texture2D
-        Texture2D textureAtlas = Content.Load<Texture2D>("images/texture-atlas");
-
-        //  Create Sprites using the texture atlas
-        _bodySprite = new Sprite(textureAtlas, new Rectangle(0, 0, 32, 32));
-        _foodSprite = new Sprite(textureAtlas, new Rectangle(32, 0, 32, 32));
+        _monogameIcon = new Sprite(_logo, new Rectangle(0, 0, 128, 128));
+        _monogameWordmark = new Sprite(_logo, new Rectangle(150, 34, 458, 58));
     }
 
     protected override void Update(GameTime gameTime)
@@ -51,18 +46,12 @@ public class Game1 : Game
     {
         GraphicsDevice.Clear(Color.CornflowerBlue);
 
-        Rectangle iconSourceRect = new Rectangle(0, 0, 128, 128);
+        //  Calculates the center xy-coordinate of the game window
+        Vector2 center = new Vector2(Window.ClientBounds.Width, Window.ClientBounds.Height) * 0.5f;
 
         _spriteBatch.Begin();
-        _spriteBatch.Draw(_logo,
-            new Vector2(Window.ClientBounds.Width, Window.ClientBounds.Height) * 0.5f,
-            iconSourceRect,
-            Color.White,
-            0.0f,
-            new Vector2(iconSourceRect.Width, iconSourceRect.Height) * 0.5f,
-            1.0f,
-            SpriteEffects.None,
-            0.0f);
+        _monogameIcon.Draw(_spriteBatch, center);
+        _monogameWordmark.Draw(_spriteBatch, new Vector2(center.X, center.Y + _monogameIcon.Height));
         _spriteBatch.End();
 
         base.Draw(gameTime);
