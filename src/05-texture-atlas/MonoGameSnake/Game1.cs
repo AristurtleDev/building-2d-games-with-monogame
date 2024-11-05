@@ -10,7 +10,6 @@ public class Game1 : Game
     private SpriteBatch _spriteBatch;
 
     private Texture2D _logo;
-    private TextureAtlas _textureAtlas;
     private Sprite _bodySprite;
     private Sprite _foodSprite;
 
@@ -32,17 +31,12 @@ public class Game1 : Game
 
         _logo = Content.Load<Texture2D>("images/logo");
 
-        Texture2D atlasTexture = Content.Load<Texture2D>("images/texture-atlas");
-        _textureAtlas = new TextureAtlas(atlasTexture);
-        _textureAtlas.AddRegion("body", new Rectangle(0, 0, 32, 32));
-        _textureAtlas.AddRegion("food", new Rectangle(32, 0, 32, 32));
-        _textureAtlas.AddRegion("arrow", new Rectangle(0, 32, 32, 32));
-        _textureAtlas.AddRegion("grid", new Rectangle(32, 32, 32,32));
-        _textureAtlas.AddRegion("nineslice", new Rectangle(0, 64, 32, 32));
+        //  Load the texture atlas image as a Texture2D
+        Texture2D textureAtlas = Content.Load<Texture2D>("images/texture-atlas");
 
-        _bodySprite = _textureAtlas.CreateSprite("body");
-        _foodSprite = _textureAtlas.CreateSprite("food");
-
+        //  Create Sprites using the texture atlas
+        _bodySprite = new Sprite(textureAtlas, new Rectangle(0, 0, 32, 32));
+        _foodSprite = new Sprite(textureAtlas, new Rectangle(32, 0, 32, 32));
     }
 
     protected override void Update(GameTime gameTime)

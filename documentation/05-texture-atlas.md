@@ -1,6 +1,6 @@
 # Chapter 05: Texture Atlas
 
-In this chapter, we'll learn about texture atlases, an optimization technique for game rendering. Building on the source rectangle concept from [Chapter 04](04-working-with-textures.md#drawing-texture-regions), we'll create a class to represents a Texture Atlas that will help us manage sprites more efficiently and improve our game's performance.
+In this chapter, we'll learn about texture atlases, an optimization technique for game rendering and how it can improve our game's performance. Building on the source rectangle concept from [Chapter 04](04-working-with-textures.md#drawing-texture-regions), we'll take that and the texture atlas concept and extend it to create a `Sprite` class.
 
 When rendering graphics in MonoGame using `SpriteBatch`, the goal is to minimize state changes by batching similar draw calls together. While putting all your draw calls between `SpriteBatch.Begin()` and `SpriteBatch.End()` is important, another factor to consider is *texture swapping*.
 
@@ -191,6 +191,7 @@ public class Sprite
     {
         Debug.Assert(texture is not null);
         Debug.Assert(!texture.IsDisposed);
+        Debug.Assert(texture.Bounds.Contains(sourceRectangle));
 
         _texture = texture;
         _sourceRectangle = sourceRectangle;
@@ -208,38 +209,27 @@ public class Sprite
 }
 ```
 
-At the top of the `Sprite` class, there are two instance members defines; `_texture` and `_sourceRectangle`.  Just like with the `TextureAtlas` class, the `_texture` member holds a reference to the `Texture2D` that represents the texture atlas.  The `_sourceRectangle` member is the `Rectangle` value that defines the region within the `_texture` to use when the sprite is rendered.
+At the top of the `Sprite` class are the two instance members defined; `_texture` and `_sourceRectangle`.  Following the instance members are the public properties for `Color`, `Rotation`, `Scale`, `Origin`, `Effects` and `LayerDepth`.  Each of these properties mirror the parameter values that can be supplied to the `SpriteBatch.Draw` method, including the default values that are given.
 
-Below the instance members are the properties of the `Sprite` class.  These properties are `Color`, `Rotation`, `Scale`, `Origin`, `Effects`, and `LayerDepth`, all of which mirror the parameter values that can be supplied to the `SpriteBatch.Draw` method when rendering the sprite.   Each of the properties are given a default value which mirrors the default value of the `SpriteBatch.Draw` parameter they are used for.
+Two additional properties are added for the `Width` and `Height`.  Since the `Sprite` itself represents the image within the texture atlas, the width and height should be based on the `_sourceRectangle` width and height.  However, we have a property to scale the sprite, so the final width and height values need to take that into account by multiplying the values by the scale factor for that axis.
 
-Two additional properties for the `Width` and `Height` of the `Sprite` also exist.  These dimensions are derived from the width and height of the source rectangle used by the `Sprite`, and multiplied by the `Scale` factor to give the accurate width and height of the `Sprite` when it's rendered.
+The constructor specifies that it requires a `Texture2D` and a `Rectangle` value be given, with these representing the source texture (texture atlas) and the boundary within the atlas where the sprite is.  Before storing the references, checks are made to ensure:
 
-Following the properties is the `Sprite` constructor.  Similar to the `TextureAtlas` here we specify that it requires a `Texture2D` parameter to be given and the texture given is checked to ensure that it is not null and was not previously disposed of using the `Debug.Assert` method calls.  The second parameter is the `Rectangle` value that defines the source rectangle within the texture to render.  Both of these are stored in their respective field members of the `Sprite` class.  
+1. The `Texture2D` given is not null
+2. The `Texture2D` given was not previously disposed of
+3. The `Rectangle` given is a boundary that is contained within the `Texture2D`.
+
+You might think that adding these checks are pointless, because when would you ever pass in a null or disposed texture, or provide a source rectangle that is out of bounds of the texture bounds. Of course you would never do this right?  Well, we're all human and sometimes we make mistakes.  It's always best to check yourself to be sure before you publish your game with bugs that could have been avoided.
+
+> [!TIP]  
+> Instead of throwing exceptions in the constructor when performing these checks,  `Debug.Assert` is used here.  This has a similar result as throwing an exception, except that the line of code is only ever executed when you run the code in a Debug build.  It asserts that the statement provided is true.  If the statement is false, then code execution will be paused at that line of code similar to if you add a breakpoint to debug.  This allows you to catch any issues while developing your game and running in a Debug build without needing to throw exceptions.  
+>
+> The `Debug.Assert` lines of code are also removed completely when you compile the project in a Release build, so you don't have to worry about debug specific code making its way into your final release.
 
 Finally, we have the `Draw` method.  This method is responsible for rendering the sprite.  It requires a `SpriteBatch` as parameter which will be the `SpriteBatch` instance used to render the sprite, and a `Vector2` value that represents the position to render the sprite at. Then the `SpriteBatch.Draw` method is executed using the `SpriteBatch` given, using the fields and properties of the `Sprite` as the parameters, to render it at the position specified.
 
-## Creating a `Sprite` From the `TextureAtlas`
-We now have a `TextureAtlas` class that represents a source texture with defined regions and a `Sprite` class that represents an image that uses one of the regions and the properties to use when rendering it.  All that's left is to combine the two so that we can tell the `TextureAtlas` a region and have it return back a `Sprite` that represents that region. Open up the *TextureAtlas.cs* class file and add the follow method to it at the bottom of the class:
-
-```cs
-/// <summary>
-/// Creates a new Sprite instance from this texture atlas using the region specified.
-/// </summary>
-/// <param name="regionName">The name of the region.</param>
-/// <returns>The Sprite created by this method.</returns>
-public Sprite CreateSprite(string regionName)
-{
-    Debug.Assert(_regionLookup.ContainsKey(regionName));
-
-    Rectangle region = _regionLookup[regionName];
-    return new Sprite(_texture, region);
-}
-```
-
-For this new `CreateSprite` method we only need to supply it with the name of the region to create the sprite from.  First, a check is made using `Debug.Assert` to ensure that the region has been defined so we can catch any slip ups in development.  Then we get the `Rectangle` value that represents that region from the `_regionLookup` dictionary and use the source `_texture` of the `TextureAtlas` and the region to create and return a new `Sprite` instance.
-
-## Putting It All Together
-Let's take the `TextureAtlas` and `Sprite` classes that we've created and put them to use for our game.  For our snake game, the texture atlas we're going to use is composed of the following images
+## Using the `Sprite` Class
+Now that we have the `Sprite` class defined, let's use it in our game.  For our snake game, the texture atlas we're going to use is composed of the following images:
 
 - The image used to represent the snake body pieces.
 - The image used to represent the food the snake eats.
@@ -251,7 +241,7 @@ Each of the of the images in the texture atlas are 32px by 32px.  See Figure 5-2
 
 <figure><img src="../images/05-texture-atlas/snake-atlas-diagram.png" alt="Figure 5-2: Snake game texture atlas diagram."><figcaption><p><strong>Figure 5-2: Snake game texture atlas diagram.</strong></p></figcaption></figure>
 
-To get started, first, right-click Figure 5-3 below, the texture atlas for our snake game, and save it in the *Content/images* directory int eh game project as *texture-atlas.png*.
+To get started, first, right-click Figure 5-3 below, the texture atlas for our snake game, and save it in the *Content/images* directory in the game project as *texture-atlas.png*.
 
 <figure><img src="../images/05-texture-atlas/texture-atlas.png" alt="Figure 5-3: Snake game texture atlas."><figcaption><p><strong>Figure 5-3: Snake game texture atlas.</strong></p></figcaption></figure>
 
@@ -260,13 +250,25 @@ Next, add the image to your content project using the MGCB Editor like we did in
 Open the *Game1.cs* file in the project and add the following instance members just below where we added the `_logo` instance member field:
 
 ```cs
-private TextureAtlas _textureAtlas;
 private Sprite _bodySprite;
 private Sprite _foodSprite;
 ```
 
-Find the `LoadContent` method and add the following to the end of it after the logo is loaded:
+For now, we're only going to use the body and the food images from the texture atlas.  So we added two new `Sprite` instance members, `_bodySprite` and `_foodSprite`.
+
+Next, locate the `LoadContent` method and add the following to the end of it after the logo is loaded:
 
 ```cs
+//  Load the texture atlas image as a Texture2D
+Texture2D textureAtlas = Content.Load<Texture2D>("images/texture-atlas");
 
+//  Create Sprites using the texture atlas
+_bodySprite = new Sprite(textureAtlas, new Rectangle(0, 0, 32, 32));
+_foodSprite = new Sprite(textureAtlas, new Rectangle(32, 0, 32, 32));
 ```
+
+Here we load the texture atlas image as a `Texture2D` instance. Then, using that texture, both the `_bodySprite` and `_foodSprite` instances are instantiated, with their respective source rectangle values.
+
+
+
+
