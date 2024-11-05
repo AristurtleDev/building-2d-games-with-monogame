@@ -16,7 +16,7 @@ In 2006, Microsoft released a game development framework named _XNA Game Studio_
 
 > [!NOTE]
 >
-> Fun fact, provided by community member stromkos, The release of XNA 3.0 in 2008, which added the support for Windows Phone, is also the release that specified the default window resolution of 800x600 for new projects as this was the preferred resolution on Windows Phone. It is still the default resolution used in MonoGame projects today.
+> Fun fact, provided by community member stromkos, The release of XNA 3.0 in 2008, which added the support for Windows Phone, is also the release that specified the default window resolution of 800x480 for new projects as this was the preferred resolution on Windows Phone. It is still the default resolution used in MonoGame projects today.
 
 As XNA become more popular, the need for cross-platform development started to grow. In 2009, [José Antonio Leal de Farias](https://github.com/jalf) introduced _XNA Touch_, an open-source project that aimed to make games with XNA playable on iOS devices. This marked the beginning of what would later become MonoGame. [Dominique Louis](https://github.com/CartBlanche) came on board in 2009 and soon took over as full-time project lead, driving its initial development and expansion. The project attracted other developers such as [Tom Spilman](https://github.com/tomspilman) who were interested in expanding the scope of the project as well as its reach.
 
