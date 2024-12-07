@@ -1,3 +1,16 @@
+> [!IMPORTANT]
+> Thank you all for woring with me on providing feedback in this repository as I am working on the tutorial.  Doing it through this repository was one of a few different ways I experimenting with receiving community feedback and feedback from the foundation as the tutorial was written, as I wanted to write it in public (sort of like the build in public stuff).
+>
+> At this time, I will no longer be using this repository to gather feedback. Instead, the process going forward will be like this
+> 1. There is an open draft PR for the tutorial in the MonoGame repo at https://github.com/MonoGame/docs.monogame.github.io/pull/85.
+> 2. All updates that I am performing are done to the `2d-tutorial-bounty` branch in my fork at https://github.com/AristurtleDev/docs.monogame.github.io/tree/2d-tutorial-bounty
+> 3. Each new chapter, or significant reworks/changes, are opened as a new PR in my fork when they are ready for review.  During this time, I will make a post in the MonoGame Discord for freedback as well as ask the MonoGame foundation for feedback.
+> 4. Once all feedback has been handled and a foundation member signs off on it, that chapter PR is merged into the `2d-tutorial-bounty` branch of my fork which is tied to the draft PR in the original MonoGame repository.
+>
+> If there are any questions on this process, please let me know.
+>
+> This repository will remain open for now as there is still things written here that need to be moved into different sections of the tutorial, but it will be put into archive mode going forward. Thank you all for your feedback and help, and I look forward to working with you all as I write this tutorial moving foward.
+
 # Preface
 
 I have been using MonoGame for the past several years (since 2017). It was a time in my game development journey where I was looking for something that I had more control over. I didn't want to spend the time to write a full game engine, but I also wanted to have more control than what the current engines at the time (i.e. Unity) offered. At that time, there was a vast amount of resources available for getting started, but none of them felt like they fit a good beginner series. Even now, the resources available still seem this way. They either require the reader to have a great understanding of game development and programming, or they assume the reader has none and instead focuses on teaching programming more than teaching MonoGame. Even still, some relied too heavily on third party libraries, others were simply very bare bones asking the reader to just copy and paste code without explaining the _what_ of it all.
